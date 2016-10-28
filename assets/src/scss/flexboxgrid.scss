@@ -155,6 +155,7 @@ $grid-breakpoints: (
 	/** Size fluid **/
 	.c--#{$bp-short} {
 		flex-grow: 1;
+		flex-basis: auto;
 	}
 
 	/** No gutter **/
