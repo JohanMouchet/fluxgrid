@@ -9,5 +9,5 @@ SASS rewrite of [Flexbox Grid](http://flexboxgrid.com/) (see on [GitHub](https:/
 Add the `flexboxgrid.scss` __development__ to your task runner environment or the `flexboxgrid.min.css` __production__ to your html page.
 
 ```
-<link rel="stylesheet" href="**/style.css" type="text/css">
+<link rel="stylesheet" href="**/flexboxgrid.min.css" type="text/css">
 ```
