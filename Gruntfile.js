@@ -1,7 +1,5 @@
 module.exports = function(grunt) {
 
-	/* Requirements */
-
 	/* Tasks loading */
 	require('load-grunt-tasks')(grunt);
 	grunt.initConfig({});
@@ -30,7 +28,8 @@ module.exports = function(grunt) {
 			},
 			dist: {
 				files: {
-					'assets/dist/css/style.css': 'assets/src/scss/main.scss'
+					'assets/dist/css/flexboxgrid.min.css': 'assets/src/scss/flexboxgrid.scss',
+					'assets/dist/css/homeview.css': 'assets/src/scss/homeview.scss'
 				}
 			}
 		},
@@ -42,7 +41,8 @@ module.exports = function(grunt) {
 			},
 			dist: {
 				files: {
-					'assets/dist/css/style.css': 'assets/dist/css/style.css'
+					'assets/dist/css/flexboxgrid.min.css': 'assets/dist/css/flexboxgrid.min.css',
+					'assets/dist/css/homeview.css': 'assets/dist/css/homeview.css'
 				}
 			}
 		},

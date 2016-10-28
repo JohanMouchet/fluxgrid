@@ -7,6 +7,8 @@ $grid-division: 12;
 $grid-gutter: 1rem;
 $grid-outer-margin: 2rem;
 
+@import 'flexboxgrid-debug'; // Optional
+
 // Breakpoints (Mobile first)
 $grid-breakpoints: (
 	// (xs : Extra small devices (phones): 0 and up)
