@@ -1,0 +1,90 @@
+/**
+ * Grid debug
+ */
+
+$color-grid: #9b4dca;
+$color-grid-column: #76b24f;
+$color-grid-cell: #999;
+
+.g--debug {
+	&,
+	.grid,
+	.cell {
+		position: relative;
+
+		&::after {
+			content: '';
+			position: absolute;
+			outline: 1px dashed;
+		}
+	}
+
+	/* Grid */
+	/** Row **/
+	&:not([class*='column']),
+	.grid:not([class*='column']) {
+		&::after,
+		.cell::after {
+			top: 0;
+			bottom: 0;
+			left: ($grid-gutter / 2);
+			right: ($grid-gutter / 2);
+		}
+
+		&::after {
+			outline-color: $color-grid;
+		}
+
+		/*** Grid no gutter ***/
+		&[class*='noGutter'] {
+			&::after,
+			& > .cell::after {
+				left: 0;
+				right: 0;
+			}
+		}
+
+		/*** Cell no gutter ***/
+		.cell[class*='noGutter']::after {
+			left: 0;
+			right: 0;
+		}
+	}
+
+	/** Column **/
+	&[class*='column'],
+	.grid[class*='column'] {
+		&::after,
+		.cell::after {
+			top: ($grid-gutter / 2);
+			bottom: ($grid-gutter / 2);
+			left: 0;
+			right: 0;
+		}
+
+		&::after {
+			outline-color: $color-grid-column;
+		}
+
+		/*** Grid no gutter ***/
+		&[class*='noGutter'] {
+			&::after,
+			& > .cell::after {
+				top: 0;
+				bottom: 0;
+			}
+		}
+
+		/*** Cell no gutter ***/
+		.cell[class*='noGutter']::after {
+			top: 0;
+			bottom: 0;
+		}
+	}
+
+	/* Cell */
+	.cell::after {
+		outline-style: dotted;
+		outline-color: $color-grid-cell;
+	}
+}

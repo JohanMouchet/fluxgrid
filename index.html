@@ -1,0 +1,449 @@
+<!doctype html>
+<html lang="en" >
+	<head>
+		<title>Flexgrid</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" media="screen" type="text/css" href="assets/dist/css/style.css">
+	</head>
+
+	<body>
+		<main class="container">
+			<h1>Flex grid</h1>
+
+			<p>
+				<strong>Columns:</strong> 12<br>
+				<strong>Gutter width:</strong> <code>1rem</code> (<code>.5rem</code> on each side of a cell)<br>
+				<strong>Nestable:</strong> Yes<br>
+				<strong>Direction:</strong> Row / Column
+			</p>
+
+			<table class="table">
+				<thead>
+					<tr>
+						<th></th>
+						<th>Extra small</th>
+						<th>Small</th>
+						<th>Medium</th>
+						<th>Large</th>
+						<th>Extra large</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th scope="row">Device</th>
+						<td>Phone</td>
+						<td>Tablet</td>
+						<td>Desktop</td>
+						<td>Large desktop</td>
+						<td>Extra large desktop</td>
+					</tr>
+					<tr>
+						<th scope="row">Breakpoint</th>
+						<td>&gt; 0</td>
+						<td>&ge; <code>grid-breakpoints(sm: 425px)</code></td>
+						<td>&ge; <code>grid-breakpoints(md: 768px)</code></td>
+						<td>&ge; <code>grid-breakpoints(lg: 1024px)</code></td>
+						<td>&ge; <code>grid-breakpoints(xl: 1366px)</code></td>
+					</tr>
+					<tr>
+						<th scope="row">Cell responsive prefix</th>
+						<td><code>xs</code></td>
+						<td><code>sm</code></td>
+						<td><code>md</code></td>
+						<td><code>lg</code></td>
+						<td><code>xl</code></td>
+					</tr>
+				</tbody>
+			</table>
+
+			<hr>
+
+			<h2>1. Syntax</h2>
+<pre>
+<code>&lt;div class="container"&gt;
+	&lt;div class="grid g--<i>modifier</i>"&gt;
+		&lt;div class="cell c--*-<i>modifier</i>"&gt;&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/div&gt;</code>
+</pre>
+			<em>Responsive:</em> *<code>xs|sm|md|lg|xl</code>
+
+			<h2>2. Grid</h2>
+			<h3>2.1 Direction</h3>
+			<div class="grid">
+				<div class="cell c--xs-12 c--lg-5">
+					<h4>Row (default) <code>&amp;.g--row</code></h4>
+					<div class="grid g--row g--debug">
+						<div class="cell c--xs"><code>A</code></div>
+						<div class="cell c--xs"><code>B</code></div>
+						<div class="cell c--xs"><code>C</code></div>
+					</div>
+
+					<h4>Reversed row <code>&amp;.g--rowReverse</code></h4>
+					<div class="grid g--rowReverse g--debug">
+						<div class="cell c--xs"><code>A</code></div>
+						<div class="cell c--xs"><code>B</code></div>
+						<div class="cell c--xs"><code>C</code></div>
+					</div>
+				</div>
+
+				<div class="cell c--xs-invisible c--lg-2"></div>
+
+				<div class="cell c--xs-12 c--lg-5">
+					<h4>Column <code>&amp;.g--column</code></h4>
+					<div class="grid g--column g--debug">
+						<div class="cell c--xs-3"><code>A</code></div>
+						<div class="cell c--xs-3"><code>B</code></div>
+						<div class="cell c--xs-3"><code>C</code></div>
+					</div>
+
+					<h4>Reversed column <code>&amp;.g--columnReverse</code></h4>
+					<div class="grid g--columnReverse g--debug">
+						<div class="cell c--xs-3"><code>A</code></div>
+						<div class="cell c--xs-3"><code>B</code></div>
+						<div class="cell c--xs-3"><code>C</code></div>
+					</div>
+				</div>
+			</div>
+
+			<hr>
+
+			<h3>2.2 No gutter <code>&amp;.g--noGutter</code></h3>
+			<div class="grid">
+				<div class="cell c--xs-12 c--lg-5">
+					<div class="grid g--noGutter g--debug">
+						<div class="cell c--xs"><code>.cell</code></div>
+						<div class="cell c--xs"><code>.cell</code></div>
+						<div class="cell c--xs"><code>.cell</code></div>
+					</div>
+				</div>
+
+				<div class="cell c--xs-12 c--lg-2">&nbsp;</div>
+
+				<div class="cell c--xs-12 c--lg-5">
+					<div class="grid g--noGutter g--column g--debug">
+						<div class="cell c--xs"><code>.cell</code></div>
+						<div class="cell c--xs"><code>.cell</code></div>
+						<div class="cell c--xs"><code>.cell</code></div>
+					</div>
+				</div>
+			</div>
+
+			<hr>
+
+			<h3>2.3 Justification main axis <em>"a"</em></h3>
+			<div class="grid">
+				<div class="cell c--xs-12 c--lg-5">
+					<h4>Start (default) <code>&amp;.g--aStart</code></h4>
+					<div class="grid g--aStart g--debug">
+						<div class="cell c--xs-3"><code>.cell</code></div>
+						<div class="cell c--xs-3"><code>.cell</code></div>
+						<div class="cell c--xs-3"><code>.cell</code></div>
+					</div>
+
+					<h4>Center <code>&amp;.g--aCenter</code></h4>
+					<div class="grid g--aCenter g--debug">
+						<div class="cell c--xs-3"><code>.cell</code></div>
+						<div class="cell c--xs-3"><code>.cell</code></div>
+						<div class="cell c--xs-3"><code>.cell</code></div>
+					</div>
+
+					<h4>End <code>&amp;.g--aEnd</code></h4>
+					<div class="grid g--aEnd g--debug">
+						<div class="cell c--xs-3"><code>.cell</code></div>
+						<div class="cell c--xs-3"><code>.cell</code></div>
+						<div class="cell c--xs-3"><code>.cell</code></div>
+					</div>
+
+					<h4>Around <code>&amp;.g--aAround</code></h4>
+					<div class="grid g--aAround g--debug">
+						<div class="cell c--xs-3"><code>.cell</code></div>
+						<div class="cell c--xs-3"><code>.cell</code></div>
+						<div class="cell c--xs-3"><code>.cell</code></div>
+					</div>
+
+					<h4>Between <code>&amp;.g--aBetween</code></h4>
+					<div class="grid g--aBetween g--debug">
+						<div class="cell c--xs-3"><code>.cell</code></div>
+						<div class="cell c--xs-3"><code>.cell</code></div>
+						<div class="cell c--xs-3"><code>.cell</code></div>
+					</div>
+				</div>
+
+				<div class="cell c--xs-invisible c--lg-2"></div>
+
+				<div class="cell c--xs-12 c--lg-5">
+					<h4>Start (default) <code>&amp;.g--aStart</code></h4>
+					<div class="grid g--aStart g--column g--debug" style="height: 105px">
+						<div class="cell c--xs-4"><code>.cell</code></div>
+						<div class="cell c--xs-4"><code>.cell</code></div>
+					</div>
+
+					<h4>Center <code>&amp;.g--aCenter</code></h4>
+					<div class="grid g--aCenter g--column g--debug" style="height: 105px">
+						<div class="cell c--xs-4"><code>.cell</code></div>
+						<div class="cell c--xs-4"><code>.cell</code></div>
+					</div>
+
+					<h4>End <code>&amp;.g--aEnd</code></h4>
+					<div class="grid g--aEnd g--column g--debug" style="height: 105px">
+						<div class="cell c--xs-4"><code>.cell</code></div>
+						<div class="cell c--xs-4"><code>.cell</code></div>
+					</div>
+
+					<h4>Around <code>&amp;.g--aAround</code></h4>
+					<div class="grid g--aAround g--column g--debug" style="height: 105px">
+						<div class="cell c--xs-4"><code>.cell</code></div>
+						<div class="cell c--xs-4"><code>.cell</code></div>
+					</div>
+
+					<h4>Between <code>&amp;.g--aBetween</code></h4>
+					<div class="grid g--aBetween g--column g--debug" style="height: 105px">
+						<div class="cell c--xs-4"><code>.cell</code></div>
+						<div class="cell c--xs-4"><code>.cell</code></div>
+					</div>
+				</div>
+			</div>
+
+			<hr>
+
+			<h3>2.4 Justification cross axis <em>"b"</em></h3>
+			<div class="grid">
+				<div class="cell c--xs-12 c--lg-5">
+					<h4>Stretch (default) <code>&amp;.g--bStretch</code></h4>
+					<div class="grid g--bStretch g--debug" style="height: 70px">
+						<div class="cell c--xs"><code>.cell</code></div>
+						<div class="cell c--xs"><code>.cell</code></div>
+						<div class="cell c--xs"><code>.cell</code></div>
+					</div>
+
+					<h4>Start <code>&amp;.g--bStart</code></h4>
+					<div class="grid g--bStart g--debug" style="height: 70px">
+						<div class="cell c--xs"><code>.cell</code></div>
+						<div class="cell c--xs"><code>.cell</code></div>
+						<div class="cell c--xs"><code>.cell</code></div>
+					</div>
+
+					<h4>Center <code>&amp;.g--bCenter</code></h4>
+					<div class="grid g--bCenter g--debug" style="height: 70px">
+						<div class="cell c--xs"><code>.cell</code></div>
+						<div class="cell c--xs"><code>.cell</code></div>
+						<div class="cell c--xs"><code>.cell</code></div>
+					</div>
+
+					<h4>End <code>&amp;.g--bEnd</code></h4>
+					<div class="grid g--bEnd g--debug" style="height: 70px">
+						<div class="cell c--xs"><code>.cell</code></div>
+						<div class="cell c--xs"><code>.cell</code></div>
+						<div class="cell c--xs"><code>.cell</code></div>
+					</div>
+				</div>
+
+				<div class="cell c--xs-invisible c--lg-2"></div>
+
+				<div class="cell c--xs-12 c--lg-5">
+					<h4>Stretch (default) <code>&amp;.g--bStretch</code></h4>
+					<div class="grid g--bStretch g--column g--debug">
+						<div class="cell c--xs"><code>.cell</code></div>
+						<div class="cell c--xs"><code>.cell</code></div>
+					</div>
+
+					<h4>Start <code>&amp;.g--bStart</code></h4>
+					<div class="grid g--bStart g--column g--debug">
+						<div class="cell c--xs"><code>.cell</code></div>
+						<div class="cell c--xs"><code>.cell</code></div>
+					</div>
+
+					<h4>Center <code>&amp;.g--bCenter</code></h4>
+					<div class="grid g--bCenter g--column g--debug">
+						<div class="cell c--xs"><code>.cell</code></div>
+						<div class="cell c--xs"><code>.cell</code></div>
+					</div>
+
+					<h4>End <code>&amp;.g--bEnd</code></h4>
+					<div class="grid g--bEnd g--column g--debug">
+						<div class="cell c--xs"><code>.cell</code></div>
+						<div class="cell c--xs"><code>.cell</code></div>
+					</div>
+				</div>
+			</div>
+
+			<hr>
+
+			<h2>3. Cells</h2>
+			<h3>3.1 Size <code>&amp;.c--*-[1-12]</code></h3>
+			<div class="grid">
+				<div class="cell c--xs-12 c--lg-6">
+					<h4>Defined</h4>
+					<div class="grid g--debug">
+						<div class="cell c--xs-1"><code>.c--*-1</code></div>
+						<div class="cell c--xs-11"><code>.c--*-11</code></div>
+						<div class="cell c--xs-2"><code>.c--*-2</code></div>
+						<div class="cell c--xs-10"><code>.c--*-10</code></div>
+						<div class="cell c--xs-3"><code>.c--*-3</code></div>
+						<div class="cell c--xs-9"><code>.c--*-9</code></div>
+						<div class="cell c--xs-4"><code>.c--*-4</code></div>
+						<div class="cell c--xs-8"><code>.c--*-8</code></div>
+						<div class="cell c--xs"><code>.c--*-5</code></div>
+						<div class="cell c--xs-7"><code>.c--*-7</code></div>
+						<div class="cell c--xs-6"><code>.c--*-6</code></div>
+						<div class="cell c--xs-6"><code>.c--*-6</code></div>
+						<div class="cell c--xs-12"><code>.c--*-12</code></div>
+					</div>
+
+					<h4>Fluid <code>&amp;.c--*</code></h4>
+					<div class="grid g--debug">
+						<div class="cell c--xs"><code>c--*</code></div>
+						<div class="cell c--xs-2"><code>c--xs-2</code></div>
+						<div class="cell c--xs-2"><code>c--xs-2</code></div>
+					</div>
+				</div>
+
+				<div class="cell c--xs-invisible c--lg-1"></div>
+
+				<div class="cell c--xs-12 c--lg-5">
+					<h4>Defined</h4>
+					<div class="grid g--column g--debug" style="height: 420px">
+						<div class="cell c--xs-1"><code>.c--*-1</code></div>
+						<div class="cell c--xs-11"><code>.c--*-11</code></div>
+						<div class="cell c--xs-2"><code>.c--*-2</code></div>
+						<div class="cell c--xs-10"><code>.c--*-10</code></div>
+						<div class="cell c--xs-3"><code>.c--*-3</code></div>
+						<div class="cell c--xs-9"><code>.c--*-9</code></div>
+						<div class="cell c--xs-4"><code>.c--*-4</code></div>
+						<div class="cell c--xs-8"><code>.c--*-8</code></div>
+						<div class="cell c--xs"><code>.c--*-5</code></div>
+						<div class="cell c--xs-7"><code>.c--*-7</code></div>
+						<div class="cell c--xs-6"><code>.c--*-6</code></div>
+						<div class="cell c--xs-6"><code>.c--*-6</code></div>
+						<div class="cell c--xs-12"><code>.c--*-12</code></div>
+					</div>
+
+					<h4>Fluid <code>&amp;.c--*</code></h4>
+					<div class="grid g--column g--debug" style="height: 140px">
+						<div class="cell c--xs"><code>c--*</code></div>
+						<div class="cell c--xs-2"><code>c--xs-2</code></div>
+						<div class="cell c--xs-2"><code>c--xs-2</code></div>
+					</div>
+				</div>
+			</div>
+
+			<hr>
+
+			<h3>3.2 No gutter <code>&amp;.c--*-noGutter</code></h3>
+			<div class="grid">
+				<div class="cell c--xs-12 c--lg-5">
+					<div class="grid g--debug">
+						<div class="cell c--xs"><code>.cell</code></div>
+						<div class="cell c--xs c--xs-noGutter"><code>.c--*-noGutter</code></div>
+						<div class="cell c--xs c--xs-noGutter"><code>.c--*-noGutter</code></div>
+						<div class="cell c--xs"><code>.cell</code></div>
+					</div>
+				</div>
+
+				<div class="cell c--xs-12 c--lg-2">&nbsp;</div>
+
+				<div class="cell c--xs-12 c--lg-5">
+					<div class="grid g--column g--debug">
+						<div class="cell c--xs"><code>.cell</code></div>
+						<div class="cell c--xs c--xs-noGutter"><code>.c--*-noGutter</code></div>
+						<div class="cell c--xs c--xs-noGutter"><code>.c--*-noGutter</code></div>
+						<div class="cell c--xs"><code>.cell</code></div>
+					</div>
+				</div>
+			</div>
+
+			<hr>
+
+			<h3>3.3 Visibility <code>&amp;.c--*-hidden|visible</code></h3>
+			<div class="grid">
+				<div class="cell c--xs-12 c--lg-5">
+					<div class="grid g--debug">
+						<div class="cell c--xs-6 c--xs-hidden"><code>.c--*-hidden</code></div>
+						<div class="cell c--xs-6 c--xs-visible"><code>.c--*-visible</code></div>
+					</div>
+				</div>
+
+				<div class="cell c--xs-12 c--lg-2">&nbsp;</div>
+
+				<div class="cell c--xs-12 c--lg-5">
+					<div class="grid g--column g--debug" style="height: 70px">
+						<div class="cell c--xs-6 c--xs-hidden"><code>.c--*-hidden</code></div>
+						<div class="cell c--xs-6 c--xs-visible"><code>.c--*-visible</code></div>
+					</div>
+				</div>
+			</div>
+
+			<hr>
+
+			<h3>3.4 Self justification cross axis "b" <code>&amp;.c--*-bStretch(default)|bStart|bCenter|bEnd</code></h3>
+			<div class="grid">
+				<div class="cell c--xs-12 c--lg-5">
+					<div class="grid g--debug" style="height: 70px">
+						<div class="cell c--xs c--xs-bStretch"><code>.c--*-bStretch</code></div>
+						<div class="cell c--xs c--xs-bStart"><code>.c--*-bStart</code></div>
+						<div class="cell c--xs c--xs-bCenter"><code>.c--*-bCenter</code></div>
+						<div class="cell c--xs c--xs-bEnd"><code>.c--*-bEnd</code></div>
+					</div>
+				</div>
+
+				<div class="cell c--xs-12 c--lg-2">&nbsp;</div>
+
+				<div class="cell c--xs-12 c--lg-5">
+					<div class="grid g--column g--debug" style="height: 140px">
+						<div class="cell c--xs c--xs-bStretch"><code>.c--*-bStretch</code></div>
+						<div class="cell c--xs c--xs-bStart"><code>.c--*-bStart</code></div>
+						<div class="cell c--xs c--xs-bCenter"><code>.c--*-bCenter</code></div>
+						<div class="cell c--xs c--xs-bEnd"><code>.c--*-bEnd</code></div>
+					</div>
+				</div>
+			</div>
+
+			<hr>
+
+			<h3>3.5 Self justification main axis "a" <code>&amp;.c--*-aCenter|aStart|aEnd</code></h3>
+			<div class="grid">
+				<div class="cell c--xs-12 c--lg-5">
+					<div class="grid g--debug">
+						<div class="cell c--xs-3 c--xs-aStart"><code>.c--*-aStart</code></div>
+						<div class="cell c--xs-3 c--xs-aCenter"><code>.c--*-aCenter</code></div>
+						<div class="cell c--xs-3 c--xs-aEnd"><code>.c--*-aEnd</code></div>
+					</div>
+				</div>
+
+				<div class="cell c--xs-12 c--lg-2">&nbsp;</div>
+
+				<div class="cell c--xs-12 c--lg-5">
+					<div class="grid g--column g--debug" style="height: 140px">
+						<div class="cell c--xs-2 c--xs-aStart"><code>.c--*-aStart</code></div>
+						<div class="cell c--xs-2 c--xs-aCenter"><code>.c--*-aCenter</code></div>
+						<div class="cell c--xs-2 c--xs-aEnd"><code>.c--*-aEnd</code></div>
+					</div>
+				</div>
+			</div>
+
+			<hr>
+
+			<h3>3.6 Order <code>&amp;.c--*-first|last</code></h3>
+			<div class="grid">
+				<div class="cell c--xs-12 c--lg-5">
+					<div class="grid g--debug">
+						<div class="cell c--xs c--xs-last">A <code>.c--*-last</code></div>
+						<div class="cell c--xs">B</div>
+						<div class="cell c--xs c--xs-first">C <code>.c--*-first</code></div>
+					</div>
+				</div>
+
+				<div class="cell c--xs-12 c--lg-2">&nbsp;</div>
+
+				<div class="cell c--xs-12 c--lg-5">
+					<div class="grid g--column g--debug" style="height: 140px">
+						<div class="cell c--xs c--xs-last">A <code>.c--*-last</code></div>
+						<div class="cell c--xs">B</div>
+						<div class="cell c--xs c--xs-first">C <code>.c--*-first</code></div>
+					</div>
+				</div>
+			</div>
+		</main>
+	</body>
+</html>

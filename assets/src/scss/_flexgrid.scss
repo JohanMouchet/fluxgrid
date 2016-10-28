@@ -1,0 +1,247 @@
+/**
+ * Grid
+ */
+
+/* Config (editable) */
+$grid-division: 12;
+$grid-gutter: 1rem;
+$grid-outer-margin: 2rem;
+
+// Breakpoints (Mobile first)
+$grid-breakpoints: (
+	// (xs : Extra small devices (phones): 0 and up)
+	sm: 425px, // Small devices (tablets): 425px and up
+	md: 768px, // Medium devices (desktops): 768px and up
+	lg: 1024px, // Large devices (large desktops): 1024px and up
+	xl: 1366px, // Extra large devices (extra large desktops): 1366px and up
+);
+
+/* Container */
+.container {
+	box-sizing: border-box;
+	width: 100%;
+	padding-left: $grid-outer-margin;
+	padding-right: $grid-outer-margin;
+	position: relative;
+}
+
+/* Grid */
+.grid {
+	box-sizing: border-box;
+	display: flex;
+	flex-wrap: wrap;
+
+	&:not([class*='column']) {
+		margin-left: ($grid-gutter / -2);
+		margin-right: ($grid-gutter / -2);
+	}
+
+	&[class*='column'] {
+		margin-top: ($grid-gutter / -2);
+		margin-bottom: ($grid-gutter / -2);
+	}
+}
+
+/* Cell */
+.cell {
+	box-sizing: border-box;
+	flex: 0 1 auto;
+
+	.grid:not([class*='column']) > & {
+		padding-left: ($grid-gutter / 2);
+		padding-right: ($grid-gutter / 2);
+	}
+
+	.grid[class*='column'] > & {
+		padding-top: ($grid-gutter / 2);
+		padding-bottom: ($grid-gutter / 2);
+	}
+}
+
+/* Grid options */
+/** Direction **/
+.g--row {
+	flex-direction: row;
+}
+
+.g--rowReverse {
+	flex-direction: row-reverse;
+}
+
+.g--column {
+	flex-direction: column;
+}
+
+.g--columnReverse {
+	flex-direction: column-reverse;
+}
+
+/** No gutter **/
+.g--noGutter {
+	&:not([class*='column']) {
+		margin-left: 0;
+		margin-right: 0;
+
+		> .cell {
+			padding-left: 0;
+			padding-right: 0;
+		}
+	}
+
+	&[class*='column'] {
+		margin-top: 0;
+		margin-bottom: 0;
+
+		> .cell {
+			padding-top: 0;
+			padding-bottom: 0;
+		}
+	}
+}
+
+/** Justification main axis "a" **/
+.g--aStart {
+	justify-content: flex-start;
+}
+
+.g--aCenter {
+	justify-content: center;
+}
+
+.g--aEnd {
+	justify-content: flex-end;
+}
+
+.g--aAround {
+	justify-content: space-around;
+}
+
+.g--aBetween {
+	justify-content: space-between;
+}
+
+/** Justification cross axis "b" **/
+.g--bStretch {
+	align-items: stretch;
+}
+
+.g--bStart {
+	align-items: flex-start;
+}
+
+.g--bCenter {
+	align-items: center;
+}
+
+.g--bEnd {
+	align-items: flex-end;
+}
+
+/* Cell options */
+@mixin cell-generation($bp-short) {
+	/** Sizes **/
+	@for $i from 1 through $grid-division {
+		.c--#{$bp-short}-#{$i} {
+			flex-basis: percentage($i / $grid-division);
+
+			.grid:not([class*='column']) > & {
+				max-width: percentage($i / $grid-division);
+			}
+		}
+	}
+
+	/** Size fluid **/
+	.c--#{$bp-short} {
+		flex-grow: 1;
+	}
+
+	/** No gutter **/
+	.c--#{$bp-short}-noGutter {
+		.grid:not([class*='column']) > & {
+			padding-left: 0;
+			padding-right: 0;
+		}
+
+		.grid[class*='column'] > & {
+			padding-top: 0;
+			padding-bottom: 0;
+		}
+	}
+
+	/** Visibility **/
+	.c--#{$bp-short}-hidden {
+		display: none;
+	}
+
+	.c--#{$bp-short}-visible {
+		display: block;
+	}
+
+	/** Self justification cross axis "b" **/
+	.c--#{$bp-short}-bStretch {
+		align-self: stretch;
+	}
+
+	.c--#{$bp-short}-bStart {
+		 align-self: flex-start;
+	}
+
+	.c--#{$bp-short}-bCenter {
+		 align-self: center;
+	}
+
+	.c--#{$bp-short}-bEnd {
+		 align-self: flex-end;
+	}
+
+	/** Self justification main axis "a" **/
+	.c--#{$bp-short}-aCenter {
+		.grid:not([class*='column']) > & {
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+		.grid[class*='column'] > & {
+			margin-top: auto;
+			margin-bottom: auto;
+		}
+	}
+
+	.c--#{$bp-short}-aStart {
+		.grid:not([class*='column']) > & {
+			margin-right: auto;
+		}
+
+		.grid[class*='column'] > & {
+			margin-bottom: auto;
+		}
+	}
+
+	.c--#{$bp-short}-aEnd {
+		.grid:not([class*='column']) > & {
+			margin-left: auto;
+		}
+
+		.grid[class*='column'] > & {
+			margin-top: auto;
+		}
+	}
+
+	/** Order **/
+	.c--#{$bp-short}-first {
+		order: -1;
+	}
+
+	.c--#{$bp-short}-last {
+		order: 1;
+	}
+}
+
+/* Cell generation */
+@include cell-generation('xs');
+
+@each $bp-short, $bp-size in $grid-breakpoints {
+	@media only screen and (min-width: $bp-size) {
+		@include cell-generation($bp-short);
+	}
+}
