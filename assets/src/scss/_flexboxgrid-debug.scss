@@ -24,7 +24,7 @@ $color-grid-cell: #999;
 	&:not([class*='column']),
 	.grid:not([class*='column']) {
 		&::after,
-		.cell::after {
+		> .cell::after {
 			top: 0;
 			bottom: 0;
 			left: ($grid-gutter / 2);
@@ -38,14 +38,14 @@ $color-grid-cell: #999;
 		/*** Grid no gutter ***/
 		&[class*='noGutter'] {
 			&::after,
-			& > .cell::after {
+			> .cell::after {
 				left: 0;
 				right: 0;
 			}
 		}
 
 		/*** Cell no gutter ***/
-		.cell[class*='noGutter']::after {
+		> .cell[class*='noGutter']::after {
 			left: 0;
 			right: 0;
 		}
@@ -69,14 +69,14 @@ $color-grid-cell: #999;
 		/*** Grid no gutter ***/
 		&[class*='noGutter'] {
 			&::after,
-			& > .cell::after {
+			> .cell::after {
 				top: 0;
 				bottom: 0;
 			}
 		}
 
 		/*** Cell no gutter ***/
-		.cell[class*='noGutter']::after {
+		> .cell[class*='noGutter']::after {
 			top: 0;
 			bottom: 0;
 		}
