@@ -177,7 +177,13 @@ $grid-breakpoints: (
 		}
 	}
 
-	/** Size fluid **/
+	/** Collapse **/
+	.c--#{$bp-short}-0 {
+		flex-grow: 0;
+		flex-basis: auto;
+	}
+
+	/** Expend **/
 	.c--#{$bp-short} {
 		flex-grow: 1;
 		flex-basis: auto;
@@ -262,6 +268,10 @@ $grid-breakpoints: (
 
 	.c--#{$bp-short}-last {
 		order: 1;
+	}
+
+	.c--#{$bp-short}-ordered {
+		order: 0;
 	}
 }
 
