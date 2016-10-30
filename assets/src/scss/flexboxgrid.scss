@@ -27,6 +27,20 @@ $grid-breakpoints: (
 	position: relative;
 }
 
+.containe--sm,
+.containe--md,
+.containe--lg,
+.containe--xl {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+@each $bp-short, $bp-size in $grid-breakpoints {
+	.containe--#{$bp-short} {
+		max-width: #{$bp-size};
+	}
+}
+
 /* Grid */
 .grid {
 	box-sizing: border-box;
