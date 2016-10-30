@@ -139,6 +139,31 @@ $grid-breakpoints: (
 	align-items: flex-end;
 }
 
+/** Justification cross axis "a" **/
+.g--cStretch {
+	align-content: stretch;
+}
+
+.g--cStart {
+	align-content: flex-start;
+}
+
+.g--cCenter {
+	align-content: center;
+}
+
+.g--cEnd {
+	align-content: flex-end;
+}
+
+.g--cAround {
+	align-content: space-around;
+}
+
+.g--cBetween {
+	align-content: space-between;
+}
+
 /* Cell options */
 @mixin cell-generation($bp-short) {
 	/** Sizes **/
