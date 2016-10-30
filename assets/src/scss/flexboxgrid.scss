@@ -195,12 +195,20 @@ $grid-breakpoints: (
 	.c--#{$bp-short}-0 {
 		flex-grow: 0;
 		flex-basis: auto;
+
+		.grid:not([class*='column']) > & {
+			max-width: none;
+		}
 	}
 
 	/** Expend **/
 	.c--#{$bp-short} {
 		flex-grow: 1;
 		flex-basis: auto;
+
+		.grid:not([class*='column']) > & {
+			max-width: none;
+		}
 	}
 
 	/** No gutter **/
