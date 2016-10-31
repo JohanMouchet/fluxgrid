@@ -2,6 +2,8 @@
 
 SASS rewrite of [Flexbox Grid](http://flexboxgrid.com/) (see on [GitHub](https://github.com/kristoferjoseph/flexboxgrid)) with some opinionated renaming and improvements on columns.
 
+[Demo](http://codepen.io/johanmouchet/pen/ORKLdm)
+
 ## To use
 * [Development](https://github.com/JohanMouchet/flexboxgrid-sass/blob/master/assets/src/scss/flexboxgrid.scss)
 * [Production](https://github.com/JohanMouchet/flexboxgrid-sass/blob/master/assets/dist/css/flexboxgrid.min.css)
