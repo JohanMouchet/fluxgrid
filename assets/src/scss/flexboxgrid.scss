@@ -7,6 +7,8 @@ $grid-division: 12;
 $grid-gutter: 1rem;
 $grid-outer-margin: 2rem;
 
+$grid-half-gutter: $grid-gutter / 2;
+
 @import 'flexboxgrid-debug'; // Optional
 
 // Breakpoints (Mobile first)
@@ -48,13 +50,13 @@ $grid-breakpoints: (
 	flex-wrap: wrap;
 
 	&:not([class*='column']) {
-		margin-left: ($grid-gutter / -2);
-		margin-right: ($grid-gutter / -2);
+		margin-left: - $grid-half-gutter;
+		margin-right: - $grid-half-gutter;
 	}
 
 	&[class*='column'] {
-		margin-top: ($grid-gutter / -2);
-		margin-bottom: ($grid-gutter / -2);
+		margin-top: - $grid-half-gutter;
+		margin-bottom: - $grid-half-gutter;
 	}
 }
 
@@ -64,13 +66,13 @@ $grid-breakpoints: (
 	flex: 0 1 auto;
 
 	.grid:not([class*='column']) > & {
-		padding-left: ($grid-gutter / 2);
-		padding-right: ($grid-gutter / 2);
+		padding-left: $grid-half-gutter;
+		padding-right: $grid-half-gutter;
 	}
 
 	.grid[class*='column'] > & {
-		padding-top: ($grid-gutter / 2);
-		padding-bottom: ($grid-gutter / 2);
+		padding-top: $grid-half-gutter;
+		padding-bottom: $grid-half-gutter;
 	}
 }
 
@@ -221,6 +223,19 @@ $grid-breakpoints: (
 		.grid[class*='column'] > & {
 			padding-top: 0;
 			padding-bottom: 0;
+		}
+	}
+
+	/** Gutter **/
+	.c--#{$bp-short}-gutter {
+		.grid:not([class*='column']) > & {
+			padding-left: $grid-half-gutter;
+			padding-right: $grid-half-gutter;
+		}
+
+		.grid[class*='column'] > & {
+			padding-top: $grid-half-gutter;
+			padding-bottom: $grid-half-gutter;
 		}
 	}
 

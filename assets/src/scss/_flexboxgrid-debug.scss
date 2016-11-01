@@ -27,8 +27,8 @@ $color-grid-cell: #999;
 		> .cell::after {
 			top: 0;
 			bottom: 0;
-			left: ($grid-gutter / 2);
-			right: ($grid-gutter / 2);
+			left: $grid-half-gutter;
+			right: $grid-half-gutter;
 		}
 
 		&::after {
@@ -56,8 +56,8 @@ $color-grid-cell: #999;
 	.grid[class*='column'] {
 		&::after,
 		.cell::after {
-			top: ($grid-gutter / 2);
-			bottom: ($grid-gutter / 2);
+			top: $grid-half-gutter;
+			bottom: $grid-half-gutter;
 			left: 0;
 			right: 0;
 		}
