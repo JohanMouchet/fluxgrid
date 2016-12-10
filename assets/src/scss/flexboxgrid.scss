@@ -166,14 +166,6 @@ $grid-breakpoints: (
 	flex: 0 1 auto;
 	padding-left: $grid-half-gutter;
 	padding-right: $grid-half-gutter;
-
-	> *:first-child {
-		margin-top: 0;
-	}
-
-	> *:last-child {
-		margin-bottom: 0;
-	}
 }
 
 @mixin cell-generation($bp-short) {
