@@ -1,13 +1,14 @@
 /**
- * Grid
+ * Flexbox grid
  */
 
 /* Config (editable) */
 $grid-division: 12;
 $grid-gutter: 1rem;
-$grid-outer-margin: 2rem;
-
+$grid-gutter-lg: $grid-gutter * 2;
 $grid-half-gutter: $grid-gutter / 2;
+$grid-half-gutter-lg: $grid-gutter-lg / 2;
+$grid-outer-margin: 2rem;
 
 @import 'flexboxgrid-debug'; // Optional
 
@@ -24,29 +25,24 @@ $grid-breakpoints: (
 .container {
 	box-sizing: border-box;
 	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
 	padding-left: $grid-outer-margin;
 	padding-right: $grid-outer-margin;
 	position: relative;
 }
 
-.container--sm,
-.container--md,
-.container--lg,
-.container--xl {
-	margin-left: auto;
-	margin-right: auto;
-}
-
+/** Sizes **/
 @each $bp-short, $bp-size in $grid-breakpoints {
 	.container--#{$bp-short} {
 		max-width: #{$bp-size};
 	}
 }
 
+/** No gutters **/
 .container--noGutter {
 	padding-left: 0;
 	padding-right: 0;
-	overflow: hidden;
 }
 
 /* Grid */
@@ -54,55 +50,34 @@ $grid-breakpoints: (
 	box-sizing: border-box;
 	display: flex;
 	flex-wrap: wrap;
+	margin-left: - $grid-half-gutter;
+	margin-right: - $grid-half-gutter;
+}
 
-	&:not([class*='column']) {
-		margin-left: - $grid-half-gutter;
-		margin-right: - $grid-half-gutter;
+@mixin grid-generation($bp-short) {
+	/** Direction **/
+	.g--#{$bp-short}-row {
+		flex-direction: row;
 	}
 
-	&[class*='column'] {
-		margin-top: - $grid-half-gutter;
-		margin-bottom: - $grid-half-gutter;
-	}
-}
-
-/* Cell */
-.cell {
-	box-sizing: border-box;
-	flex: 0 1 auto;
-
-	.grid:not([class*='column']) > & {
-		padding-left: $grid-half-gutter;
-		padding-right: $grid-half-gutter;
+	.g--#{$bp-short}-rowReverse {
+		flex-direction: row-reverse;
 	}
 
-	.grid[class*='column'] > & {
-		padding-top: $grid-half-gutter;
-		padding-bottom: $grid-half-gutter;
+	/** Gutters **/
+	/*** Large ***/
+	.g--#{$bp-short}-lgGutter {
+		margin-left: - $grid-half-gutter-lg;
+		margin-right: - $grid-half-gutter-lg;
+
+		> .cell {
+			padding-left: $grid-half-gutter-lg;
+			padding-right: $grid-half-gutter-lg;
+		}
 	}
-}
 
-/* Grid options */
-/** Direction **/
-.g--row {
-	flex-direction: row;
-}
-
-.g--rowReverse {
-	flex-direction: row-reverse;
-}
-
-.g--column {
-	flex-direction: column;
-}
-
-.g--columnReverse {
-	flex-direction: column-reverse;
-}
-
-/** No gutter **/
-.g--noGutter {
-	&:not([class*='column']) {
+	/** None **/
+	.g--#{$bp-short}-noGutter {
 		margin-left: 0;
 		margin-right: 0;
 
@@ -112,137 +87,133 @@ $grid-breakpoints: (
 		}
 	}
 
-	&[class*='column'] {
-		margin-top: 0;
-		margin-bottom: 0;
+	/** Justification X axis **/
+	.g--#{$bp-short}-xStart {
+		justify-content: flex-start;
+	}
 
-		> .cell {
-			padding-top: 0;
-			padding-bottom: 0;
-		}
+	.g--#{$bp-short}-xCenter {
+		justify-content: center;
+	}
+
+	.g--#{$bp-short}-xEnd {
+		justify-content: flex-end;
+	}
+
+	.g--#{$bp-short}-xAround {
+		justify-content: space-around;
+	}
+
+	.g--#{$bp-short}-xBetween {
+		justify-content: space-between;
+	}
+
+	/** Justification Y axis **/
+	.g--#{$bp-short}-yStretch {
+		align-items: stretch;
+	}
+
+	.g--#{$bp-short}-yStart {
+		align-items: flex-start;
+	}
+
+	.g--#{$bp-short}-yCenter {
+		align-items: center;
+	}
+
+	.g--#{$bp-short}-yEnd {
+		align-items: flex-end;
+	}
+
+	/** Justification Y axis when wrapped: Z **/
+	.g--#{$bp-short}-zStretch {
+		align-content: stretch;
+	}
+
+	.g--#{$bp-short}-zStart {
+		align-content: flex-start;
+	}
+
+	.g--#{$bp-short}-zCenter {
+		align-content: center;
+	}
+
+	.g--#{$bp-short}-zEnd {
+		align-content: flex-end;
+	}
+
+	.g--#{$bp-short}-zAround {
+		align-content: space-around;
+	}
+
+	.g--#{$bp-short}-zBetween {
+		align-content: space-between;
 	}
 }
 
-/** Justification main axis "a" **/
-.g--aStart {
-	justify-content: flex-start;
+/** Grid generation **/
+@include grid-generation('xs');
+
+@each $bp-short, $bp-size in $grid-breakpoints {
+	@media only screen and (min-width: $bp-size) {
+		@include grid-generation($bp-short);
+	}
 }
 
-.g--aCenter {
-	justify-content: center;
+/* Cells */
+.cell {
+	box-sizing: border-box;
+	flex: 0 1 auto;
+	padding-left: $grid-half-gutter;
+	padding-right: $grid-half-gutter;
+
+	> *:first-child {
+		margin-top: 0;
+	}
+
+	> *:last-child {
+		margin-bottom: 0;
+	}
 }
 
-.g--aEnd {
-	justify-content: flex-end;
-}
-
-.g--aAround {
-	justify-content: space-around;
-}
-
-.g--aBetween {
-	justify-content: space-between;
-}
-
-/** Justification cross axis "b" **/
-.g--bStretch {
-	align-items: stretch;
-}
-
-.g--bStart {
-	align-items: flex-start;
-}
-
-.g--bCenter {
-	align-items: center;
-}
-
-.g--bEnd {
-	align-items: flex-end;
-}
-
-/** Justification cross axis "a" **/
-.g--cStretch {
-	align-content: stretch;
-}
-
-.g--cStart {
-	align-content: flex-start;
-}
-
-.g--cCenter {
-	align-content: center;
-}
-
-.g--cEnd {
-	align-content: flex-end;
-}
-
-.g--cAround {
-	align-content: space-around;
-}
-
-.g--cBetween {
-	align-content: space-between;
-}
-
-/* Cell options */
 @mixin cell-generation($bp-short) {
 	/** Sizes **/
 	@for $i from 1 through $grid-division {
 		.c--#{$bp-short}-#{$i} {
 			flex-basis: percentage($i / $grid-division);
-
-			.grid:not([class*='column']) > & {
-				max-width: percentage($i / $grid-division);
-			}
+			max-width: percentage($i / $grid-division);
 		}
 	}
 
-	/** Collapse **/
+	/** Collapsed **/
 	.c--#{$bp-short}-0 {
 		flex-grow: 0;
 		flex-basis: auto;
-
-		.grid:not([class*='column']) > & {
-			max-width: none;
-		}
+		max-width: none;
 	}
 
-	/** Expend **/
+	/** Expended **/
 	.c--#{$bp-short} {
 		flex-grow: 1;
 		flex-basis: auto;
-
-		.grid:not([class*='column']) > & {
-			max-width: none;
-		}
+		max-width: none;
 	}
 
-	/** No gutter **/
-	.c--#{$bp-short}-noGutter {
-		.grid:not([class*='column']) > & {
-			padding-left: 0;
-			padding-right: 0;
-		}
-
-		.grid[class*='column'] > & {
-			padding-top: 0;
-			padding-bottom: 0;
-		}
+	/** No gutters **/
+	.grid > .c--#{$bp-short}-noGutter {
+		padding-left: 0;
+		padding-right: 0;
 	}
 
-	/** Gutter **/
-	.c--#{$bp-short}-gutter {
-		.grid:not([class*='column']) > & {
-			padding-left: $grid-half-gutter;
-			padding-right: $grid-half-gutter;
-		}
+	/** Gutters **/
+	.grid > .c--#{$bp-short}-gutter {
+		padding-left: $grid-half-gutter;
+		padding-right: $grid-half-gutter;
+	}
 
-		.grid[class*='column'] > & {
-			padding-top: $grid-half-gutter;
-			padding-bottom: $grid-half-gutter;
-		}
+	.grid[class*='-lgGutter'] > .c--#{$bp-short}-gutter {
+		padding-left: $grid-half-gutter-lg;
+		padding-right: $grid-half-gutter-lg;
 	}
 
 	/** Visibility **/
@@ -254,54 +225,35 @@ $grid-breakpoints: (
 		display: block;
 	}
 
-	/** Self justification cross axis "b" **/
-	.c--#{$bp-short}-bStretch {
+	/** Self justification Y axis **/
+	.c--#{$bp-short}-yStretch {
 		align-self: stretch;
 	}
 
-	.c--#{$bp-short}-bStart {
-		 align-self: flex-start;
+	.c--#{$bp-short}-yStart {
+		align-self: flex-start;
 	}
 
-	.c--#{$bp-short}-bCenter {
-		 align-self: center;
+	.c--#{$bp-short}-yCenter {
+		align-self: center;
 	}
 
-	.c--#{$bp-short}-bEnd {
-		 align-self: flex-end;
+	.c--#{$bp-short}-yEnd {
+		align-self: flex-end;
 	}
 
-	/** Self justification main axis "a" **/
-	.c--#{$bp-short}-aCenter {
-		.grid:not([class*='column']) > & {
-			margin-left: auto;
-			margin-right: auto;
-		}
-
-		.grid[class*='column'] > & {
-			margin-top: auto;
-			margin-bottom: auto;
-		}
+	/** Self justification X axis **/
+	.c--#{$bp-short}-xCenter {
+		margin-left: auto;
+		margin-right: auto;
 	}
 
-	.c--#{$bp-short}-aStart {
-		.grid:not([class*='column']) > & {
-			margin-right: auto;
-		}
-
-		.grid[class*='column'] > & {
-			margin-bottom: auto;
-		}
+	.c--#{$bp-short}-xStart {
+		margin-right: auto;
 	}
 
-	.c--#{$bp-short}-aEnd {
-		.grid:not([class*='column']) > & {
-			margin-left: auto;
-		}
-
-		.grid[class*='column'] > & {
-			margin-top: auto;
-		}
+	.c--#{$bp-short}-xEnd {
+		margin-left: auto;
 	}
 
 	/** Order **/
@@ -318,7 +270,7 @@ $grid-breakpoints: (
 	}
 }
 
-/* Cell generation */
+/** Cell generation **/
 @include cell-generation('xs');
 
 @each $bp-short, $bp-size in $grid-breakpoints {
