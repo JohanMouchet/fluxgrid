@@ -1,6 +1,6 @@
 # Flexbox Grid Sass
 
-SASS rewrite of [Flexbox Grid](http://flexboxgrid.com/) (see on [GitHub](https://github.com/kristoferjoseph/flexboxgrid)) with some opinionated renaming and improvements on columns.
+SASS rewrite of [Flexbox Grid](http://flexboxgrid.com/) (see on [GitHub](https://github.com/kristoferjoseph/flexboxgrid)) with some opinionated renaming and improvements.
 
 [Demo](http://codepen.io/johanmouchet/pen/ORKLdm)
 
