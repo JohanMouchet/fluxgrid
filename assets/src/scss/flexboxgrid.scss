@@ -155,7 +155,7 @@ $grid-breakpoints: (
 @include grid-generation('xs');
 
 @each $bp-short, $bp-size in $grid-breakpoints {
-	@media only screen and (min-width: $bp-size) {
+	@media (min-width: $bp-size) {
 		@include grid-generation($bp-short);
 	}
 }
@@ -266,7 +266,7 @@ $grid-breakpoints: (
 @include cell-generation('xs');
 
 @each $bp-short, $bp-size in $grid-breakpoints {
-	@media only screen and (min-width: $bp-size) {
+	@media (min-width: $bp-size) {
 		@include cell-generation($bp-short);
 	}
 }
