@@ -64,6 +64,15 @@ $grid-breakpoints: (
 		flex-direction: row-reverse;
 	}
 
+	/** Wrap **/
+	.g--#{$bp-short}-wrap {
+		flex-wrap: wrap;
+	}
+
+	.g--#{$bp-short}-noWrap {
+		flex-wrap: nowrap;
+	}
+
 	/** Gutters **/
 	/*** Large ***/
 	.g--#{$bp-short}-lgGutter {
