@@ -10,11 +10,12 @@
 	<body>
 		<main class="container">
 			<h1>Flexbox grid Sass</h1>
+
 			<p>See on <a href="https://github.com/JohanMouchet/flexboxgrid-sass">GitHub</a></p>
 
 			<p>
 				<strong>Columns:</strong> 12<br>
-				<strong>Gutters width:</strong> <code>1rem</code>, <code>.g--*-lgGutter: 2rem</code><br>
+				<strong>Gutters width:</strong> <code>1rem</code>, <code>.grid--lgGutter-*: 2rem</code><br>
 				<strong>Nestable:</strong> Yes<br>
 				<strong>Direction:</strong> Row
 			</p>
@@ -42,18 +43,18 @@
 					<tr>
 						<th scope="row">Breakpoint</th>
 						<td>&gt; 0</td>
-						<td>&ge; <code>grid-breakpoints(sm: 425px)</code></td>
-						<td>&ge; <code>grid-breakpoints(md: 768px)</code></td>
-						<td>&ge; <code>grid-breakpoints(lg: 1024px)</code></td>
-						<td>&ge; <code>grid-breakpoints(xl: 1366px)</code></td>
+						<td>&ge; 425px</td>
+						<td>&ge; 768px</td>
+						<td>&ge; 1024px</td>
+						<td>&ge; 1366px</td>
 					</tr>
 					<tr>
 						<th scope="row">Prefix</th>
-						<td><code>xs</code></td>
-						<td><code>sm</code></td>
-						<td><code>md</code></td>
-						<td><code>lg</code></td>
-						<td><code>xl</code></td>
+						<td><code>@xs</code></td>
+						<td><code>@sm</code></td>
+						<td><code>@md</code></td>
+						<td><code>@lg</code></td>
+						<td><code>@xl</code></td>
 					</tr>
 				</tbody>
 			</table>
@@ -63,12 +64,12 @@
 			<h3>Syntax</h3>
 <pre>
 <code>&lt;div class="container <i>container--modifier</i>"&gt;
-	&lt;div class="grid <i>g--*-modifier</i>"&gt;
-		&lt;div class="cell <i>c--*-modifier</i>"&gt;&lt;/div&gt;
+	&lt;div class="grid <i>grid--modifier-*</i>"&gt;
+		&lt;div class="cell <i>cell--modifier-*</i>"&gt;&lt;/div&gt;
 	&lt;/div&gt;
 &lt;/div&gt;</code>
 </pre>
-			<em>Responsive:</em> *<code>xs|sm|md|lg|xl</code>
+			<em>Responsive:</em> *<code>@xs|@sm|@md|@lg|@xl</code>
 
 			<h2>1. Container</h2>
 			<code>.container--*</code> <code>&amp;.container--noGutter</code>
@@ -77,23 +78,23 @@
 			<code>.grid</code>
 			<h3>2.1 Direction</h3>
 			<div class="grid">
-				<div class="cell c--xs-12 c--lg-5">
-					<h4>Row (default) <code>&amp;.g--*-row</code></h4>
-					<div class="grid g--xs-row g--debug">
-						<div class="cell c--xs"><code>A</code></div>
-						<div class="cell c--xs"><code>B</code></div>
-						<div class="cell c--xs"><code>C</code></div>
+				<div class="cell cell--12-@xs cell--5-@md">
+					<h4>Row (default) <code>&amp;.grid--row-*</code></h4>
+					<div class="grid grid--row-@xs grid--debug">
+						<div class="cell cell--@xs"><code>A</code></div>
+						<div class="cell cell--@xs"><code>B</code></div>
+						<div class="cell cell--@xs"><code>C</code></div>
 					</div>
 				</div>
 
-				<div class="cell c--xs-12 c--lg-2">&nbsp;</div>
+				<div class="cell cell--12-@xs cell--2-@md">&nbsp;</div>
 
-				<div class="cell c--xs-12 c--lg-5">
-					<h4>Reversed row <code>&amp;.g--*-rowReverse</code></h4>
-					<div class="grid g--xs-rowReverse g--debug">
-						<div class="cell c--xs"><code>A</code></div>
-						<div class="cell c--xs"><code>B</code></div>
-						<div class="cell c--xs"><code>C</code></div>
+				<div class="cell cell--12-@xs cell--5-@md">
+					<h4>Reversed row <code>&amp;.grid--rowReverse-*</code></h4>
+					<div class="grid grid--rowReverse-@xs grid--debug">
+						<div class="cell cell--@xs"><code>A</code></div>
+						<div class="cell cell--@xs"><code>B</code></div>
+						<div class="cell cell--@xs"><code>C</code></div>
 					</div>
 				</div>
 			</div>
@@ -102,21 +103,21 @@
 
 			<h3>2.2 Wrap</h3>
 			<div class="grid">
-				<div class="cell c--xs-12 c--lg-5">
-					<h4>Wrap (default) <code>&amp;.g--*-wrap</code></h4>
-					<div class="grid g--xs-wrap g--debug">
-						<div class="cell c--xs-8"><code>A</code></div>
-						<div class="cell c--xs-6"><code>B</code></div>
+				<div class="cell cell--12-@xs cell--5-@md">
+					<h4>Wrap (default) <code>&amp;.grid--wrap-*</code></h4>
+					<div class="grid grid--wrap-@xs grid--debug">
+						<div class="cell cell--8-@xs"><code>.cell--8-@xs</code></div>
+						<div class="cell cell--6-@xs"><code>.cell--6-@xs</code></div>
 					</div>
 				</div>
 
-				<div class="cell c--xs-12 c--lg-2">&nbsp;</div>
+				<div class="cell cell--12-@xs cell--2-@md">&nbsp;</div>
 
-				<div class="cell c--xs-12 c--lg-5">
-					<h4>No wrap <code>&amp;.g--*-noWrap</code></h4>
-					<div class="grid g--xs-noWrap g--debug">
-						<div class="cell c--xs-8"><code>A</code></div>
-						<div class="cell c--xs-6"><code>B</code></div>
+				<div class="cell cell--12-@xs cell--5-@md">
+					<h4>No wrap <code>&amp;.grid--noWrap-*</code></h4>
+					<div class="grid grid--noWrap-@xs grid--debug">
+						<div class="cell cell--8-@xs"><code>.cell--8-@xs</code></div>
+						<div class="cell cell--6-@xs"><code>.cell--6-@xs</code></div>
 					</div>
 				</div>
 			</div>
@@ -125,23 +126,23 @@
 
 			<h3>2.3 Gutters</h3>
 			<div class="grid">
-				<div class="cell c--xs-12 c--lg-5">
-					<h4>Large <code>&amp;.g--*-lgGutter</code></h4>
-					<div class="grid g--xs-lgGutter g--debug">
-						<div class="cell c--xs"><code>.cell</code></div>
-						<div class="cell c--xs"><code>.cell</code></div>
-						<div class="cell c--xs"><code>.cell</code></div>
+				<div class="cell cell--12-@xs cell--5-@md">
+					<h4>Large <code>&amp;.grid--lgGutter-*</code></h4>
+					<div class="grid grid--lgGutter-@xs grid--debug">
+						<div class="cell cell--@xs"><code>.cell</code></div>
+						<div class="cell cell--@xs"><code>.cell</code></div>
+						<div class="cell cell--@xs"><code>.cell</code></div>
 					</div>
 				</div>
 
-				<div class="cell c--xs-12 c--lg-2">&nbsp;</div>
+				<div class="cell cell--12-@xs cell--2-@md">&nbsp;</div>
 
-				<div class="cell c--xs-12 c--lg-5">
-					<h4>None <code>&amp;.g--*-noGutter</code></h4>
-					<div class="grid g--xs-noGutter g--debug">
-						<div class="cell c--xs"><code>.cell</code></div>
-						<div class="cell c--xs"><code>.cell</code></div>
-						<div class="cell c--xs"><code>.cell</code></div>
+				<div class="cell cell--12-@xs cell--5-@md">
+					<h4>None <code>&amp;.grid--noGutter-*</code></h4>
+					<div class="grid grid--noGutter-@xs grid--debug">
+						<div class="cell cell--@xs"><code>.cell</code></div>
+						<div class="cell cell--@xs"><code>.cell</code></div>
+						<div class="cell cell--@xs"><code>.cell</code></div>
 					</div>
 				</div>
 			</div>
@@ -150,115 +151,115 @@
 
 			<h3>2.4 Justification</h3>
 			<div class="grid">
-				<div class="cell c--xs-12 c--lg-5">
+				<div class="cell cell--12-@xs cell--4-@md">
 					<h4>X axis</h4>
-					<h5>Start (default) <code>&amp;.g--*-xStart</code></h5>
-					<div class="grid g--xs-xStart g--debug">
-						<div class="cell c--xs-3"><code>.cell</code></div>
-						<div class="cell c--xs-3"><code>.cell</code></div>
-						<div class="cell c--xs-3"><code>.cell</code></div>
+					<h5>Start (default) <code>&amp;.grid--xStart-*</code></h5>
+					<div class="grid grid--xStart-@xs grid--debug">
+						<div class="cell cell--3-@xs"><code>.cell</code></div>
+						<div class="cell cell--3-@xs"><code>.cell</code></div>
+						<div class="cell cell--3-@xs"><code>.cell</code></div>
 					</div>
 
-					<h5>Center <code>&amp;.g--*-xCenter</code></h5>
-					<div class="grid g--xs-xCenter g--debug">
-						<div class="cell c--xs-3"><code>.cell</code></div>
-						<div class="cell c--xs-3"><code>.cell</code></div>
-						<div class="cell c--xs-3"><code>.cell</code></div>
+					<h5>Center <code>&amp;.grid--xCenter-*</code></h5>
+					<div class="grid grid--xCenter-@xs grid--debug">
+						<div class="cell cell--3-@xs"><code>.cell</code></div>
+						<div class="cell cell--3-@xs"><code>.cell</code></div>
+						<div class="cell cell--3-@xs"><code>.cell</code></div>
 					</div>
 
-					<h5>End <code>&amp;.g--*-xEnd</code></h5>
-					<div class="grid g--xs-xEnd g--debug">
-						<div class="cell c--xs-3"><code>.cell</code></div>
-						<div class="cell c--xs-3"><code>.cell</code></div>
-						<div class="cell c--xs-3"><code>.cell</code></div>
+					<h5>End <code>&amp;.grid--xEnd-*</code></h5>
+					<div class="grid grid--xEnd-@xs grid--debug">
+						<div class="cell cell--3-@xs"><code>.cell</code></div>
+						<div class="cell cell--3-@xs"><code>.cell</code></div>
+						<div class="cell cell--3-@xs"><code>.cell</code></div>
 					</div>
 
-					<h5>Around <code>&amp;.g--*-xAround</code></h5>
-					<div class="grid g--xs-xAround g--debug">
-						<div class="cell c--xs-3"><code>.cell</code></div>
-						<div class="cell c--xs-3"><code>.cell</code></div>
-						<div class="cell c--xs-3"><code>.cell</code></div>
+					<h5>Around <code>&amp;.grid--xAround-*</code></h5>
+					<div class="grid grid--xAround-@xs grid--debug">
+						<div class="cell cell--3-@xs"><code>.cell</code></div>
+						<div class="cell cell--3-@xs"><code>.cell</code></div>
+						<div class="cell cell--3-@xs"><code>.cell</code></div>
 					</div>
 
-					<h5>Between <code>&amp;.g--*-xBetween</code></h5>
-					<div class="grid g--xs-xBetween g--debug">
-						<div class="cell c--xs-3"><code>.cell</code></div>
-						<div class="cell c--xs-3"><code>.cell</code></div>
-						<div class="cell c--xs-3"><code>.cell</code></div>
+					<h5>Between <code>&amp;.grid--xBetween-*</code></h5>
+					<div class="grid grid--xBetween-@xs grid--debug">
+						<div class="cell cell--3-@xs"><code>.cell</code></div>
+						<div class="cell cell--3-@xs"><code>.cell</code></div>
+						<div class="cell cell--3-@xs"><code>.cell</code></div>
 					</div>
 				</div>
 
-				<div class="cell c--xs-12 c--lg-2">&nbsp;</div>
+				<div class="cell cell--12-@xs cell--visible-@xs cell--hidden-@md">&nbsp;</div>
 
-				<div class="cell c--xs-12 c--lg-5">
+				<div class="cell cell--12-@xs cell--4-@md">
 					<h4>Y axis</h4>
-					<h5>Stretch (default) <code>&amp;.g--*-yStretch</code></h5>
-					<div class="grid g--xs-yStretch g--debug" style="height: 70px">
-						<div class="cell c--xs"><code>.cell</code></div>
-						<div class="cell c--xs"><code>.cell</code></div>
-						<div class="cell c--xs"><code>.cell</code></div>
+					<h5>Stretch (default) <code>&amp;.grid--yStretch-*</code></h5>
+					<div class="grid grid--yStretch-@xs grid--debug" style="height: 70px">
+						<div class="cell cell--@xs"><code>.cell</code></div>
+						<div class="cell cell--@xs"><code>.cell</code></div>
+						<div class="cell cell--@xs"><code>.cell</code></div>
 					</div>
 
-					<h5>Start <code>&amp;.g--*-yStart</code></h5>
-					<div class="grid g--xs-yStart g--debug" style="height: 70px">
-						<div class="cell c--xs"><code>.cell</code></div>
-						<div class="cell c--xs"><code>.cell</code></div>
-						<div class="cell c--xs"><code>.cell</code></div>
+					<h5>Start <code>&amp;.grid--yStart-*</code></h5>
+					<div class="grid grid--yStart-@xs grid--debug" style="height: 70px">
+						<div class="cell cell--@xs"><code>.cell</code></div>
+						<div class="cell cell--@xs"><code>.cell</code></div>
+						<div class="cell cell--@xs"><code>.cell</code></div>
 					</div>
 
-					<h5>Center <code>&amp;.g--*-yCenter</code></h5>
-					<div class="grid g--xs-yCenter g--debug" style="height: 70px">
-						<div class="cell c--xs"><code>.cell</code></div>
-						<div class="cell c--xs"><code>.cell</code></div>
-						<div class="cell c--xs"><code>.cell</code></div>
+					<h5>Center <code>&amp;.grid--yCenter-*</code></h5>
+					<div class="grid grid--yCenter-@xs grid--debug" style="height: 70px">
+						<div class="cell cell--@xs"><code>.cell</code></div>
+						<div class="cell cell--@xs"><code>.cell</code></div>
+						<div class="cell cell--@xs"><code>.cell</code></div>
 					</div>
 
-					<h5>End <code>&amp;.g--*-yEnd</code></h5>
-					<div class="grid g--xs-yEnd g--debug" style="height: 70px">
-						<div class="cell c--xs"><code>.cell</code></div>
-						<div class="cell c--xs"><code>.cell</code></div>
-						<div class="cell c--xs"><code>.cell</code></div>
+					<h5>End <code>&amp;.grid--yEnd-*</code></h5>
+					<div class="grid grid--yEnd-@xs grid--debug" style="height: 70px">
+						<div class="cell cell--@xs"><code>.cell</code></div>
+						<div class="cell cell--@xs"><code>.cell</code></div>
+						<div class="cell cell--@xs"><code>.cell</code></div>
 					</div>
 				</div>
 
-				<div class="cell c--xs-12">&nbsp;</div>
+				<div class="cell cell--12-@xs cell--visible-@xs cell--hidden-@md">&nbsp;</div>
 
-				<div class="cell c--xs-12 c--lg-5">
-					<h4>Y axis when wrapped: "Z"</h4>
-					<h5>Stretch (default)  <code>&amp;.g--*-zStretch</code></h5>
-					<div class="grid g--xs-zStretch g--debug" style="height: 70px">
-						<div class="cell c--xs-12"><code>.cell</code></div>
-						<div class="cell c--xs-12"><code>.cell</code></div>
+				<div class="cell cell--12-@xs cell--4-@md">
+					<h4>"Z": Y axis when wrapped</h4>
+					<h5>Stretch (default)  <code>&amp;.grid--zStretch-*</code></h5>
+					<div class="grid grid--zStretch-@xs grid--debug" style="height: 70px">
+						<div class="cell cell--12-@xs"><code>.cell</code></div>
+						<div class="cell cell--12-@xs"><code>.cell</code></div>
 					</div>
 
-					<h5>Start <code>&amp;.g--*-zStart</code></h5>
-					<div class="grid g--xs-zStart g--debug" style="height: 70px">
-						<div class="cell c--xs-12"><code>.cell</code></div>
-						<div class="cell c--xs-12"><code>.cell</code></div>
+					<h5>Start <code>&amp;.grid--zStart-*</code></h5>
+					<div class="grid grid--zStart-@xs grid--debug" style="height: 70px">
+						<div class="cell cell--12-@xs"><code>.cell</code></div>
+						<div class="cell cell--12-@xs"><code>.cell</code></div>
 					</div>
 
-					<h5>Center <code>&amp;.g--*-zCenter</code></h5>
-					<div class="grid g--xs-zCenter g--debug" style="height: 70px">
-						<div class="cell c--xs-12"><code>.cell</code></div>
-						<div class="cell c--xs-12"><code>.cell</code></div>
+					<h5>Center <code>&amp;.grid--zCenter-*</code></h5>
+					<div class="grid grid--zCenter-@xs grid--debug" style="height: 70px">
+						<div class="cell cell--12-@xs"><code>.cell</code></div>
+						<div class="cell cell--12-@xs"><code>.cell</code></div>
 					</div>
 
-					<h5>End <code>&amp;.g--*-zEnd</code></h5>
-					<div class="grid g--xs-zEnd g--debug" style="height: 70px">
-						<div class="cell c--xs-12"><code>.cell</code></div>
-						<div class="cell c--xs-12"><code>.cell</code></div>
+					<h5>End <code>&amp;.grid--zEnd-*</code></h5>
+					<div class="grid grid--zEnd-@xs grid--debug" style="height: 70px">
+						<div class="cell cell--12-@xs"><code>.cell</code></div>
+						<div class="cell cell--12-@xs"><code>.cell</code></div>
 					</div>
 
-					<h5>Around <code>&amp;.g--*-zAround</code></h5>
-					<div class="grid g--xs-zAround g--debug" style="height: 70px">
-						<div class="cell c--xs-12"><code>.cell</code></div>
-						<div class="cell c--xs-12"><code>.cell</code></div>
+					<h5>Around <code>&amp;.grid--zAround-*</code></h5>
+					<div class="grid grid--zAround-@xs grid--debug" style="height: 70px">
+						<div class="cell cell--12-@xs"><code>.cell</code></div>
+						<div class="cell cell--12-@xs"><code>.cell</code></div>
 					</div>
 
-					<h5>Between <code>&amp;.g--*-zBetween</code></h5>
-					<div class="grid g--xs-zBetween g--debug" style="height: 70px">
-						<div class="cell c--xs-12"><code>.cell</code></div>
-						<div class="cell c--xs-12"><code>.cell</code></div>
+					<h5>Between <code>&amp;.grid--zBetween-*</code></h5>
+					<div class="grid grid--zBetween-@xs grid--debug" style="height: 70px">
+						<div class="cell cell--12-@xs"><code>.cell</code></div>
+						<div class="cell cell--12-@xs"><code>.cell</code></div>
 					</div>
 				</div>
 			</div>
@@ -267,82 +268,82 @@
 
 			<h2>3. Cells</h2>
 			<code>.cell</code>
-			<h3>3.1 Size <code>&amp;.c--*-[1-12]</code></h3>
+			<h3>3.1 Size <code>&amp;.cell--[1-12]-*</code></h3>
 			<h4>Defined</h4>
-			<div class="grid g--debug">
-				<div class="cell c--xs-1"><code>.c--*-1</code></div>
-				<div class="cell c--xs-11"><code>.c--*-11</code></div>
-				<div class="cell c--xs-2"><code>.c--*-2</code></div>
-				<div class="cell c--xs-10"><code>.c--*-10</code></div>
-				<div class="cell c--xs-3"><code>.c--*-3</code></div>
-				<div class="cell c--xs-9"><code>.c--*-9</code></div>
-				<div class="cell c--xs-4"><code>.c--*-4</code></div>
-				<div class="cell c--xs-8"><code>.c--*-8</code></div>
-				<div class="cell c--xs-5"><code>.c--*-5</code></div>
-				<div class="cell c--xs-7"><code>.c--*-7</code></div>
-				<div class="cell c--xs-6"><code>.c--*-6</code></div>
-				<div class="cell c--xs-6"><code>.c--*-6</code></div>
-				<div class="cell c--xs-12"><code>.c--*-12</code></div>
+			<div class="grid grid--debug">
+				<div class="cell cell--1-@xs"><code>.cell--1-*</code></div>
+				<div class="cell cell--11-@xs"><code>.cell--11-*</code></div>
+				<div class="cell cell--2-@xs"><code>.cell--2-*</code></div>
+				<div class="cell cell--10-@xs"><code>.cell--10-*</code></div>
+				<div class="cell cell--3-@xs"><code>.cell--3-*</code></div>
+				<div class="cell cell--9-@xs"><code>.cell--9-*</code></div>
+				<div class="cell cell--4-@xs"><code>.cell--4-*</code></div>
+				<div class="cell cell--8-@xs"><code>.cell--8-*</code></div>
+				<div class="cell cell--5-@xs"><code>.cell--5-*</code></div>
+				<div class="cell cell--7-@xs"><code>.cell--7-*</code></div>
+				<div class="cell cell--6-@xs"><code>.cell--6-*</code></div>
+				<div class="cell cell--6-@xs"><code>.cell--6-*</code></div>
+				<div class="cell cell--12-@xs"><code>.cell--12-*</code></div>
 			</div>
 
-			<h4>Expended / Collapsed <code>&amp;.c--*</code> / <code>&amp;.c--*-0</code></h4>
-			<div class="grid g--debug">
-				<div class="cell c--xs"><code>c--*</code></div>
-				<div class="cell c--xs-3"><code>c--*-3</code></div>
-				<div class="cell c--xs-0"><code>c--*-0</code></div>
-			</div>
-
-			<hr>
-
-			<h3>3.2 Visibility <code>&amp;.c--*-hidden|visible</code></h3>
-			<div class="grid g--debug">
-				<div class="cell c--xs-6 c--xs-hidden"><code>.c--*-hidden</code></div>
-				<div class="cell c--xs-6 c--xs-visible"><code>.c--*-visible</code></div>
+			<h4>Expended / Collapsed <code>&amp;.cell--*</code> / <code>&amp;.cell--0-*</code></h4>
+			<div class="grid grid--debug">
+				<div class="cell cell--@xs"><code>cell--*</code></div>
+				<div class="cell cell--3-@xs"><code>cell--3-*</code></div>
+				<div class="cell cell--0-@xs"><code>cell--0-*</code></div>
 			</div>
 
 			<hr>
 
-			<h3>3.3 No gutter <code>&amp;.c--*-noGutter|gutter</code></h3>
-			<div class="grid g--debug">
-				<div class="cell c--xs"><code>.cell</code></div>
-				<div class="cell c--xs c--xs-noGutter"><code>.c--*-noGutter</code></div>
-				<div class="cell c--xs c--xs-noGutter"><code>.c--*-noGutter</code></div>
-				<div class="cell c--xs"><code>.cell</code></div>
+			<h3>3.2 Visibility <code>&amp;.cell--hidden|visible-*</code></h3>
+			<div class="grid grid--debug">
+				<div class="cell cell--6-@xs cell--hidden-@xs"><code>.cell--hidden-*</code></div>
+				<div class="cell cell--6-@xs cell--visible-@xs"><code>.cell--visible-*</code></div>
+			</div>
+
+			<hr>
+
+			<h3>3.3 No gutter <code>&amp;.cell--noGutter|gutter-*</code></h3>
+			<div class="grid grid--debug">
+				<div class="cell cell--@xs"><code>.cell</code></div>
+				<div class="cell cell--@xs cell--noGutter-@xs"><code>.cell--noGutter-*</code></div>
+				<div class="cell cell--@xs cell--noGutter-@xs"><code>.cell--noGutter-*</code></div>
+				<div class="cell cell--@xs"><code>.cell</code></div>
 			</div>
 
 			<hr>
 
 			<h3>3.4 Self justification</h3>
 			<div class="grid">
-				<div class="cell c--xs-12 c--lg-5">
-					<h4>Y axis <code>&amp;.c--*-yStretch(default)|yStart|yCenter|yEnd</code></h4>
-					<div class="grid g--debug" style="height: 70px">
-						<div class="cell c--xs c--xs-yStretch"><code>.c--*-yStretch</code></div>
-						<div class="cell c--xs c--xs-yStart"><code>.c--*-yStart</code></div>
-						<div class="cell c--xs c--xs-yCenter"><code>.c--*-yCenter</code></div>
-						<div class="cell c--xs c--xs-yEnd"><code>.c--*-yEnd</code></div>
+				<div class="cell cell--12-@xs cell--5-@md">
+					<h4>Y axis <code>&amp;.cell--yStretch(default)|yStart|yCenter|yEnd-*</code></h4>
+					<div class="grid grid--debug" style="height: 70px">
+						<div class="cell cell--@xs cell--yStretch-@xs"><code>.cell--yStretch-*</code></div>
+						<div class="cell cell--@xs cell--yStart-@xs"><code>.cell--yStart-*</code></div>
+						<div class="cell cell--@xs cell--yCenter-@xs"><code>.cell--yCenter-*</code></div>
+						<div class="cell cell--@xs cell--yEnd-@xs"><code>.cell--yEnd-*</code></div>
 					</div>
 				</div>
 
-				<div class="cell c--xs-12 c--lg-2">&nbsp;</div>
+				<div class="cell cell--12-@xs cell--2-@md">&nbsp;</div>
 
-				<div class="cell c--xs-12 c--lg-5">
-					<h4>X axis <code>&amp;.c--*-xCenter|xStart|xEnd</code></h4>
-					<div class="grid g--debug">
-						<div class="cell c--xs-3 c--xs-xStart"><code>.c--*-xStart</code></div>
-						<div class="cell c--xs-3 c--xs-xCenter"><code>.c--*-xCenter</code></div>
-						<div class="cell c--xs-3 c--xs-xEnd"><code>.c--*-xEnd</code></div>
+				<div class="cell cell--12-@xs cell--5-@md">
+					<h4>X axis <code>&amp;.cell--xCenter|xStart|xEnd-*</code></h4>
+					<div class="grid grid--debug">
+						<div class="cell cell--3-@xs cell--xStart-@xs"><code>.cell--xStart-*</code></div>
+						<div class="cell cell--3-@xs cell--xCenter-@xs"><code>.cell--xCenter-*</code></div>
+						<div class="cell cell--3-@xs cell--xEnd-@xs"><code>.cell--xEnd-*</code></div>
 					</div>
 				</div>
 			</div>
 
 			<hr>
 
-			<h3>3.5 Order <code>&amp;.c--*-first|ordered|last</code></h3>
-			<div class="grid g--debug">
-				<div class="cell c--xs c--xs-last">A <code>.c--*-last</code></div>
-				<div class="cell c--xs c--xs-ordered">B <code>.c--*-ordered</code></div>
-				<div class="cell c--xs c--xs-first">C <code>.c--*-first</code></div>
+			<h3>3.5 Order <code>&amp;.cell--first|ordered|last-*</code></h3>
+			<div class="grid grid--debug">
+				<div class="cell cell--@xs cell--last-@xs">A <code>.cell--last-*</code></div>
+				<div class="cell cell--@xs cell--ordered-@xs">B <code>.cell--ordered-*</code></div>
+				<div class="cell cell--@xs cell--first-@xs">C <code>.cell--first-*</code></div>
 			</div>
 		</main>
 	</body>

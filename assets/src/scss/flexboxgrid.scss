@@ -33,7 +33,7 @@ $grid-breakpoints: (
 
 /** Sizes **/
 @each $bp-short, $bp-size in $grid-breakpoints {
-	.container--#{$bp-short} {
+	.container--\@#{$bp-short} {
 		max-width: #{$bp-size};
 	}
 }
@@ -55,26 +55,26 @@ $grid-breakpoints: (
 
 @mixin grid-generation($bp-short) {
 	/** Direction **/
-	.g--#{$bp-short}-row {
+	.grid--row-\@#{$bp-short} {
 		flex-direction: row;
 	}
 
-	.g--#{$bp-short}-rowReverse {
+	.grid--rowReverse-\@#{$bp-short} {
 		flex-direction: row-reverse;
 	}
 
 	/** Wrap **/
-	.g--#{$bp-short}-wrap {
+	.grid--wrap-\@#{$bp-short} {
 		flex-wrap: wrap;
 	}
 
-	.g--#{$bp-short}-noWrap {
+	.grid--noWrap-\@#{$bp-short} {
 		flex-wrap: nowrap;
 	}
 
 	/** Gutters **/
 	/*** Large ***/
-	.g--#{$bp-short}-lgGutter {
+	.grid--lgGutter-\@#{$bp-short} {
 		margin-left: - $grid-half-gutter-lg;
 		margin-right: - $grid-half-gutter-lg;
 
@@ -85,7 +85,7 @@ $grid-breakpoints: (
 	}
 
 	/** None **/
-	.g--#{$bp-short}-noGutter {
+	.grid--noGutter-\@#{$bp-short} {
 		margin-left: 0;
 		margin-right: 0;
 
@@ -96,65 +96,65 @@ $grid-breakpoints: (
 	}
 
 	/** Justification X axis **/
-	.g--#{$bp-short}-xStart {
+	.grid--xStart-\@#{$bp-short} {
 		justify-content: flex-start;
 	}
 
-	.g--#{$bp-short}-xCenter {
+	.grid--xCenter-\@#{$bp-short} {
 		justify-content: center;
 	}
 
-	.g--#{$bp-short}-xEnd {
+	.grid--xEnd-\@#{$bp-short} {
 		justify-content: flex-end;
 	}
 
-	.g--#{$bp-short}-xAround {
+	.grid--xAround-\@#{$bp-short} {
 		justify-content: space-around;
 	}
 
-	.g--#{$bp-short}-xBetween {
+	.grid--xBetween-\@#{$bp-short} {
 		justify-content: space-between;
 	}
 
 	/** Justification Y axis **/
-	.g--#{$bp-short}-yStretch {
+	.grid--yStretch-\@#{$bp-short} {
 		align-items: stretch;
 	}
 
-	.g--#{$bp-short}-yStart {
+	.grid--yStart-\@#{$bp-short} {
 		align-items: flex-start;
 	}
 
-	.g--#{$bp-short}-yCenter {
+	.grid--yCenter-\@#{$bp-short} {
 		align-items: center;
 	}
 
-	.g--#{$bp-short}-yEnd {
+	.grid--yEnd-\@#{$bp-short} {
 		align-items: flex-end;
 	}
 
 	/** Justification Y axis when wrapped: Z **/
-	.g--#{$bp-short}-zStretch {
+	.grid--zStretch-\@#{$bp-short} {
 		align-content: stretch;
 	}
 
-	.g--#{$bp-short}-zStart {
+	.grid--zStart-\@#{$bp-short} {
 		align-content: flex-start;
 	}
 
-	.g--#{$bp-short}-zCenter {
+	.grid--zCenter-\@#{$bp-short} {
 		align-content: center;
 	}
 
-	.g--#{$bp-short}-zEnd {
+	.grid--zEnd-\@#{$bp-short} {
 		align-content: flex-end;
 	}
 
-	.g--#{$bp-short}-zAround {
+	.grid--zAround-\@#{$bp-short} {
 		align-content: space-around;
 	}
 
-	.g--#{$bp-short}-zBetween {
+	.grid--zBetween-\@#{$bp-short} {
 		align-content: space-between;
 	}
 }
@@ -179,93 +179,93 @@ $grid-breakpoints: (
 @mixin cell-generation($bp-short) {
 	/** Sizes **/
 	@for $i from 1 through $grid-division {
-		.c--#{$bp-short}-#{$i} {
+		.cell--#{$i}-\@#{$bp-short} {
 			flex-basis: percentage($i / $grid-division);
 			max-width: percentage($i / $grid-division);
 		}
 	}
 
 	/** Collapsed **/
-	.c--#{$bp-short}-0 {
+	.cell--0-\@#{$bp-short} {
 		flex-grow: 0;
 		flex-basis: auto;
 		max-width: none;
 	}
 
 	/** Expended **/
-	.c--#{$bp-short} {
+	.cell--\@#{$bp-short} {
 		flex-grow: 1;
 		flex-basis: auto;
 		max-width: none;
 	}
 
 	/** No gutters **/
-	.grid > .c--#{$bp-short}-noGutter {
+	.grid > .cell--noGutter-\@#{$bp-short} {
 		padding-left: 0;
 		padding-right: 0;
 	}
 
 	/** Gutters **/
-	.grid > .c--#{$bp-short}-gutter {
+	.grid > .cell--gutter-\@#{$bp-short} {
 		padding-left: $grid-half-gutter;
 		padding-right: $grid-half-gutter;
 	}
 
-	.grid[class*='-lgGutter'] > .c--#{$bp-short}-gutter {
+	.grid[class*='--lgGutter'] > .cell--gutter-\@#{$bp-short} {
 		padding-left: $grid-half-gutter-lg;
 		padding-right: $grid-half-gutter-lg;
 	}
 
 	/** Visibility **/
-	.c--#{$bp-short}-hidden {
+	.cell--hidden-\@#{$bp-short} {
 		display: none;
 	}
 
-	.c--#{$bp-short}-visible {
+	.cell--visible-\@#{$bp-short} {
 		display: block;
 	}
 
 	/** Self justification Y axis **/
-	.c--#{$bp-short}-yStretch {
+	.cell--yStretch-\@#{$bp-short} {
 		align-self: stretch;
 	}
 
-	.c--#{$bp-short}-yStart {
+	.cell--yStart-\@#{$bp-short} {
 		align-self: flex-start;
 	}
 
-	.c--#{$bp-short}-yCenter {
+	.cell--yCenter-\@#{$bp-short} {
 		align-self: center;
 	}
 
-	.c--#{$bp-short}-yEnd {
+	.cell--yEnd-\@#{$bp-short} {
 		align-self: flex-end;
 	}
 
 	/** Self justification X axis **/
-	.c--#{$bp-short}-xCenter {
+	.cell--xCenter-\@#{$bp-short} {
 		margin-left: auto;
 		margin-right: auto;
 	}
 
-	.c--#{$bp-short}-xStart {
+	.cell--xStart-\@#{$bp-short} {
 		margin-right: auto;
 	}
 
-	.c--#{$bp-short}-xEnd {
+	.cell--xEnd-\@#{$bp-short} {
 		margin-left: auto;
 	}
 
 	/** Order **/
-	.c--#{$bp-short}-first {
+	.cell--first-\@#{$bp-short} {
 		order: -1;
 	}
 
-	.c--#{$bp-short}-last {
+	.cell--last-\@#{$bp-short} {
 		order: 1;
 	}
 
-	.c--#{$bp-short}-ordered {
+	.cell--ordered-\@#{$bp-short} {
 		order: 0;
 	}
 }

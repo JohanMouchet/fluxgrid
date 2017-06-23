@@ -3,7 +3,7 @@
 $color-grid: #9b4dca;
 $color-grid-cell: #999;
 
-.g--debug {
+.grid--debug {
 	&,
 	.grid,
 	.cell {
@@ -13,6 +13,7 @@ $color-grid-cell: #999;
 			content: '';
 			position: absolute;
 			outline: 1px dashed;
+			user-select: none;
 		}
 	}
 
@@ -33,7 +34,7 @@ $color-grid-cell: #999;
 		}
 
 		/*** Grid large gutters ***/
-		&[class*='-lgGutter'] {
+		&[class*='--lgGutter'] {
 			&::after,
 			> .cell::after {
 				left: $grid-half-gutter-lg;
@@ -42,7 +43,7 @@ $color-grid-cell: #999;
 		}
 
 		/*** Grid no gutters ***/
-		&[class*='-noGutter'] {
+		&[class*='--noGutter'] {
 			&::after,
 			> .cell::after {
 				left: 0;
@@ -51,7 +52,7 @@ $color-grid-cell: #999;
 		}
 
 		/*** Cell no gutter ***/
-		> .cell[class*='-noGutter']::after {
+		> .cell[class*='--noGutter']::after {
 			left: 0;
 			right: 0;
 		}
