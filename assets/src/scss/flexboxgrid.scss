@@ -3,9 +3,9 @@
 /* Config */
 $grid-division: 12 !default;
 $grid-gutter: 1rem !default;
+$grid-gutter-lg: $grid-gutter * 3 !default;
 $grid-outer-margin: 2rem !default;
 
-$grid-gutter-lg: $grid-gutter * 2;
 $grid-half-gutter: $grid-gutter / 2;
 $grid-half-gutter-lg: $grid-gutter-lg / 2;
 
