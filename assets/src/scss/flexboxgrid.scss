@@ -1,12 +1,13 @@
 /*! Flexboxgrid-sass | MIT License | https://github.com/JohanMouchet/flexboxgrid-sass */
 
-/* Config (editable) */
-$grid-division: 12;
-$grid-gutter: 1rem;
+/* Config */
+$grid-division: 12 !default;
+$grid-gutter: 1rem !default;
+$grid-outer-margin: 2rem !default;
+
 $grid-gutter-lg: $grid-gutter * 2;
 $grid-half-gutter: $grid-gutter / 2;
 $grid-half-gutter-lg: $grid-gutter-lg / 2;
-$grid-outer-margin: 2rem;
 
 @import 'flexboxgrid-debug'; // Optional
 
@@ -17,7 +18,7 @@ $grid-breakpoints: (
 	md: 768px, // Medium devices (desktops): 768px and up
 	lg: 1024px, // Large devices (large desktops): 1024px and up
 	xl: 1366px, // Extra large devices (extra large desktops): 1366px and up
-);
+) !default;
 
 /* Container */
 .container {
