@@ -33,7 +33,7 @@ $grid-breakpoints: (
 
 /** Sizes **/
 @each $bp-short, $bp-size in $grid-breakpoints {
-	.container--\@#{$bp-short} {
+	.container--#{$bp-short} {
 		max-width: #{$bp-size};
 	}
 }
