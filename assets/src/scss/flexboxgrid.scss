@@ -4,7 +4,7 @@
 $grid-division: 12 !default;
 $grid-gutter: 1rem !default;
 $grid-gutter-lg: $grid-gutter * 3 !default;
-$grid-outer-margin: 2rem !default;
+$grid-outer-margin: $grid-gutter + 1 !default;
 
 $grid-half-gutter: $grid-gutter / 2;
 $grid-half-gutter-lg: $grid-gutter-lg / 2;
@@ -20,6 +20,11 @@ $grid-breakpoints: (
 	xl: 1366px, // Extra large devices (extra large desktops): 1366px and up
 ) !default;
 
+/* Test */
+@if ($grid-outer-margin < $grid-gutter) {
+	@warn 'To avoid overflow, the `$grid-outer-margin` has to be as large or larger than the `$grid-gutter`. This is for the `.container` to cancel the `.grid` negative margins used to align the `.cells`.';
+}
+
 /* Container */
 .container {
 	box-sizing: border-box;
@@ -31,17 +36,17 @@ $grid-breakpoints: (
 	position: relative;
 }
 
-/** Sizes **/
-@each $bp-short, $bp-size in $grid-breakpoints {
-	.container--#{$bp-short} {
-		max-width: #{$bp-size};
-	}
-}
-
 /** No gutters **/
 .container--noGutter {
 	padding-left: 0;
 	padding-right: 0;
+}
+
+/** Sizes **/
+@mixin container-modifiers($bp-short, $bp-size) {
+	.container--#{$bp-short} {
+		max-width: #{$bp-size};
+	}
 }
 
 /* Grid */
@@ -53,7 +58,7 @@ $grid-breakpoints: (
 	margin-right: - $grid-half-gutter;
 }
 
-@mixin grid-generation($bp-short) {
+@mixin grid-modifiers($bp-short) {
 	/** Direction **/
 	.grid--row-\@#{$bp-short} {
 		flex-direction: row;
@@ -159,15 +164,6 @@ $grid-breakpoints: (
 	}
 }
 
-/** Grid generation **/
-@include grid-generation('xs');
-
-@each $bp-short, $bp-size in $grid-breakpoints {
-	@media (min-width: $bp-size) {
-		@include grid-generation($bp-short);
-	}
-}
-
 /* Cells */
 .cell {
 	box-sizing: border-box;
@@ -176,7 +172,7 @@ $grid-breakpoints: (
 	padding-right: $grid-half-gutter;
 }
 
-@mixin cell-generation($bp-short) {
+@mixin cell-modifiers($bp-short) {
 	/** Sizes **/
 	@for $i from 1 through $grid-division {
 		.cell--#{$i}-\@#{$bp-short} {
@@ -270,11 +266,15 @@ $grid-breakpoints: (
 	}
 }
 
-/** Cell generation **/
-@include cell-generation('xs');
+/** Modifiers **/
+@include grid-modifiers('xs');
+@include cell-modifiers('xs');
 
 @each $bp-short, $bp-size in $grid-breakpoints {
+	@include container-modifiers($bp-short, $bp-size);
+
 	@media (min-width: $bp-size) {
-		@include cell-generation($bp-short);
+		@include grid-modifiers($bp-short);
+		@include cell-modifiers($bp-short);
 	}
 }
