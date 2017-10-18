@@ -9,8 +9,6 @@ $grid-outer-margin: $grid-gutter + 1 !default;
 $grid-half-gutter: $grid-gutter / 2;
 $grid-half-gutter-lg: $grid-gutter-lg / 2;
 
-@import 'flexboxgrid-debug'; // Optional
-
 // Breakpoints (Mobile first)
 $grid-breakpoints: (
 	// (xs : Extra small devices (phones): 0 and up)
@@ -19,6 +17,8 @@ $grid-breakpoints: (
 	lg: 1024px + 1, // Large devices (large desktops): 1024px and up
 	xl: 1366px + 1, // Extra large devices (extra large desktops): 1366px and up
 ) !default;
+
+@import 'flexboxgrid-debug'; // Optional
 
 /* Test */
 @if ($grid-outer-margin < $grid-gutter) {
