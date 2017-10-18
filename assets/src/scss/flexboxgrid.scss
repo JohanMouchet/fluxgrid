@@ -196,18 +196,18 @@ $grid-breakpoints: (
 	}
 
 	/** No gutters **/
-	.grid > .cell--noGutter-\@#{$bp-short} {
+	.cell--noGutter-\@#{$bp-short} {
 		padding-left: 0;
 		padding-right: 0;
 	}
 
 	/** Gutters **/
-	.grid > .cell--gutter-\@#{$bp-short} {
+	.cell--gutter-\@#{$bp-short} {
 		padding-left: $grid-half-gutter;
 		padding-right: $grid-half-gutter;
 	}
 
-	.grid[class*='--lgGutter'] > .cell--gutter-\@#{$bp-short} {
+	[class*='grid--lgGutter'] > .cell--gutter-\@#{$bp-short} {
 		padding-left: $grid-half-gutter-lg;
 		padding-right: $grid-half-gutter-lg;
 	}
