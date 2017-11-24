@@ -38,8 +38,14 @@ $grid-breakpoints: (
 
 /** No gutters **/
 .container--noGutter {
-	padding-left: 0;
-	padding-right: 0;
+	padding-left: $grid-half-gutter;
+	padding-right: $grid-half-gutter;
+}
+
+/** No gutters large grid **/
+.container--noGutter-lgGrid {
+	padding-left: $grid-half-gutter-lg;
+	padding-right: $grid-half-gutter-lg;
 }
 
 /** Sizes **/
