@@ -1,7 +1,7 @@
 /*! Flexboxgrid-sass debug | MIT License | https://github.com/JohanMouchet/flexboxgrid-sass */
 
-$color-grid: #9b4dca;
-$color-grid-cell: #999;
+$grid-debug-color: #9b4dca;
+$grid-cell-debug-color: #999;
 
 .grid--debug {
 	&,
@@ -22,7 +22,7 @@ $color-grid-cell: #999;
 	&,
 	.grid {
 		&::after {
-			outline-color: $color-grid;
+			outline-color: $grid-debug-color;
 			left: $grid-half-gutter;
 			right: $grid-half-gutter;
 		}
@@ -31,7 +31,7 @@ $color-grid-cell: #999;
 	.cell {
 		&::after {
 			outline-style: dotted;
-			outline-color: $color-grid-cell;
+			outline-color: $grid-cell-debug-color;
 			left: $grid-half-gutter;
 			right: $grid-half-gutter;
 		}
