@@ -11,11 +11,10 @@ $grid-half-gutter-lg: $grid-gutter-lg / 2;
 
 // Breakpoints (Mobile first)
 $grid-breakpoints: (
-	// (xs : Extra small devices (phones): 0 and up)
-	sm: 425px + 1, // Small devices (tablets): 425px and up
-	md: 768px + 1, // Medium devices (desktops): 768px and up
-	lg: 1024px + 1, // Large devices (large desktops): 1024px and up
-	xl: 1366px + 1, // Extra large devices (extra large desktops): 1366px and up
+	sm: 425px + 1,
+	md: 768px + 1,
+	lg: 1024px + 1,
+	xl: 1366px + 1
 ) !default;
 
 @import 'flexboxgrid-debug'; // Optional
@@ -60,8 +59,8 @@ $grid-breakpoints: (
 	box-sizing: border-box;
 	display: flex;
 	flex-wrap: wrap;
-	margin-left: - $grid-half-gutter;
-	margin-right: - $grid-half-gutter;
+	margin-left: -1 * $grid-half-gutter;
+	margin-right: -1 * $grid-half-gutter;
 }
 
 @mixin grid-modifiers($bp-short) {
@@ -86,8 +85,8 @@ $grid-breakpoints: (
 	/** Gutters **/
 	/*** Large ***/
 	.grid--lgGutter-\@#{$bp-short} {
-		margin-left: - $grid-half-gutter-lg;
-		margin-right: - $grid-half-gutter-lg;
+		margin-left: -1 * $grid-half-gutter-lg;
+		margin-right: -1 * $grid-half-gutter-lg;
 
 		> .cell {
 			padding-left: $grid-half-gutter-lg;
