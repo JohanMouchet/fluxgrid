@@ -15,6 +15,12 @@ Add the `flexboxgrid.scss` **development** to your task runner environment or th
 <link rel="stylesheet" href="**/flexboxgrid.min.css" type="text/css">
 ```
 
+## Development
+
+- Install dependencies: `$ npm i`
+- Use npx to run gulp: `$ npx gulp <option>`
+- To list available tasks, try running: `$ npx gulp --tasks`
+
 <!-- TODO
 - Re write README
 - Conditional @import debug
