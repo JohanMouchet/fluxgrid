@@ -1,7 +1,12 @@
 /**
  * Home view
  */
+
+/* stylelint-disable color-no-hex */
 $color-primary: #4f91b2;
+$color-grey: #f2f2f2;
+$color-grey-light: #e5e5e5;
+/* stylelint-disable enable */
 
 html {
 	font-size: 14px;
@@ -27,7 +32,7 @@ a {
 /* Code */
 code,
 pre {
-	background-color: #f2f2f2;
+	background-color: $color-grey;
 }
 
 /** Inline code **/
@@ -44,6 +49,7 @@ pre {
 	padding: 1.5rem;
 	tab-size: 2;
 
+	/* stylelint-disable-next-line selector-max-type */
 	code {
 		padding: 0;
 	}
@@ -58,8 +64,9 @@ table {
 .table {
 	margin: 2em 0;
 
+	/* stylelint-disable-next-line selector-max-type */
 	tbody tr:not(:last-child) {
-		border-bottom: 1px solid #e5e5e5;
+		border-bottom: 1px solid $color-grey-light;
 	}
 
 	th,
@@ -69,7 +76,7 @@ table {
 	}
 
 	th {
-		font-weight: bold;
+		font-weight: 700;
 	}
 
 	thead {
@@ -84,5 +91,5 @@ hr {
 	width: 100%;
 	margin: 2.5rem 0;
 	border: 0;
-	border-bottom: 1px solid #e5e5e5;
+	border-bottom: 1px solid $color-grey-light;
 }
