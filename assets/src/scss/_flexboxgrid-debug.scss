@@ -16,7 +16,7 @@ $grid-cell-debug-color: #999;
 			top: 0;
 			bottom: 0;
 			outline: 1px dashed;
-			user-select: none;
+			pointer-events: none;
 		}
 	}
 
