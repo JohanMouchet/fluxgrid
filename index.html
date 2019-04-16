@@ -22,16 +22,19 @@
 		<main class="container">
 			<h1>Flexbox grid Sass</h1>
 
+			<p>Responsive and customisable utility-based CSS grid built with Sass.</p>
+
 			<p>
 				See on
 				<a href="https://github.com/JohanMouchet/flexboxgrid-sass">GitHub</a>
 			</p>
 
 			<p>
-				<strong>Columns:</strong> 12<br />
+				<strong>Columns:</strong> <code>12</code><br />
 				<strong>Gutters width:</strong> <code>1rem</code><br />
 				<strong>Nestable:</strong> Yes<br />
-				<strong>Direction:</strong> Row
+				<strong>Direction:</strong> Row<br />
+				<strong>Breakpoints:</strong>
 			</p>
 
 			<table class="table">
@@ -76,7 +79,7 @@
 			<hr />
 
 			<h3>Syntax</h3>
-			<pre>
+<pre>
 <code>&lt;div class="container <i>container--modifier</i>"&gt;
 	&lt;div class="grid <i>grid--modifier-*</i>"&gt;
 		&lt;div class="cell <i>cell--modifier-*</i>"&gt;&lt;/div&gt;
@@ -85,10 +88,10 @@
 </pre>
 			<em>Responsive:</em> *<code>@xs|@sm|@md|@lg|@xl</code>
 
-			<h2>1. Container</h2>
+			<h2 class="heading-level-1">Container</h2>
 			<code>.container--*</code> <code>&amp;.container--noGutter</code>
 
-			<h2>2. Grid</h2>
+			<h2 class="heading-level-1">Grid</h2>
 			<code>.grid</code>
 			<h3>2.1 Direction</h3>
 			<div class="grid">
@@ -284,7 +287,7 @@
 
 			<hr />
 
-			<h2>3. Cells</h2>
+			<h2 class="heading-level-1">Cells</h2>
 			<code>.cell</code>
 			<h3>3.1 Size <code>&amp;.cell--[1-12]-*</code></h3>
 			<h4>Defined</h4>

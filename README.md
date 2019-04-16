@@ -4,7 +4,7 @@ Responsive and customisable utility-based CSS grid built with Sass.
 
 ## Default config
 
-- Columns: 12
+- Columns: `12`
 - Gutters width: `1rem`
 - Nestable: Yes
 - Direction: Row

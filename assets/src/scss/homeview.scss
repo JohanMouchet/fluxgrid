@@ -100,3 +100,26 @@ hr {
 	border: 0;
 	border-bottom: 1px solid $color-grey-light;
 }
+
+/* Headings */
+.heading {
+	counter-reset: index-1;
+
+	/* Index */
+	@for $i from 1 through 6 {
+		&-level-#{$i} {
+			counter-increment: index-#{$i};
+			counter-reset: index-#{$i + 1};
+
+			&::before {
+				$k: '';
+
+				@for $j from 1 through $i {
+					$k: $k + counter(index-#{$j});
+				}
+
+				content: #{$k}'. ';
+			}
+		}
+	}
+}
