@@ -55,6 +55,13 @@ pre {
 	}
 }
 
+.box {
+	display: inline-block;
+	height: 100%;
+	width: 100%;
+	box-sizing: border-box;
+}
+
 /* Table */
 table {
 	width: 100%;

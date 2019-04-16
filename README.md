@@ -24,7 +24,5 @@ Add the `flexboxgrid.scss` **development** to your task runner environment or th
 <!-- TODO
 - Re write README
 - Conditional @import debug
-- Grid debug after: pointer-events: none;
-- Demo block: h/w: 100%; box-sizing: border-box;
 - Split media queries?
  -->
