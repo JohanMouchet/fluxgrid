@@ -101,13 +101,38 @@ hr {
 	border-bottom: 1px solid $color-grey-light;
 }
 
-/* Headings */
-.heading {
+/* Anchor */
+.anchor {
+	position: relative;
+
+	&-link {
+		position: absolute;
+		right: 100%;
+		padding-right: .25em;
+		font-weight: 300;
+		font-style: normal;
+		opacity: 0;
+
+		&:focus {
+			opacity: 1;
+			text-decoration: none;
+		}
+	}
+
+	&:hover & {
+		&-link {
+			opacity: 1;
+			text-decoration: none;
+		}
+	}
+}
+
+/* Counters */
+.counter {
 	counter-reset: index-1;
 
-	/* Index */
 	@for $i from 1 through 6 {
-		&-level-#{$i} {
+		.counter-index-#{$i} {
 			counter-increment: index-#{$i};
 			counter-reset: index-#{$i + 1};
 
@@ -115,10 +140,10 @@ hr {
 				$k: '';
 
 				@for $j from 1 through $i {
-					$k: $k + counter(index-#{$j});
+					$k: $k + counter(index-#{$j}) + '"."';
 				}
 
-				content: #{$k}'. ';
+				content: #{$k} ' ';
 			}
 		}
 	}
