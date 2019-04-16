@@ -1,0 +1,7 @@
+{
+	"recommendations": [
+		"editorconfig.editorconfig",
+		"shinnn.stylelint",
+		"esbenp.prettier-vscode"
+	]
+}
