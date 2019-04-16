@@ -9,12 +9,10 @@ import { task } from 'gulp';
 import buildcss from './tasks/buildcss';
 import lintcss from './tasks/lintcss';
 import dev from './tasks/dev';
-import prod from './tasks/prod';
 
 export const task_buildcss = task(buildcss);
 export const task_lintcss = task(lintcss);
 export const task_dev = task(dev);
-export const task_prod = task(prod);
 
 export { default } from './tasks/dev';
 
