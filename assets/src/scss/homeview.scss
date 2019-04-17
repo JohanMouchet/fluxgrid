@@ -2,11 +2,13 @@
  * Home view
  */
 
+@import 'flexboxgrid-settings';
+
 /* stylelint-disable color-no-hex */
-$color-primary: #4f91b2;
-$color-secondary: #9b4dca;
+$color-primary: $grid-debug-container-color;
+$color-secondary: $grid-debug-grid-color;
 $color-grey: #f2f2f2;
-$color-grey-light: #e5e5e5;
+$color-grey-lighter: #e5e5e5;
 /* stylelint-disable enable */
 
 html {
@@ -77,7 +79,7 @@ table {
 
 	/* stylelint-disable-next-line selector-max-type */
 	tbody tr:not(:last-child) {
-		border-bottom: 1px solid $color-grey-light;
+		border-bottom: 1px solid $color-grey-lighter;
 	}
 
 	th,
@@ -116,7 +118,7 @@ hr {
 	width: 100%;
 	margin: 2.5em 0;
 	border: 0;
-	border-bottom: 1px solid $color-grey-light;
+	border-bottom: 1px solid $color-grey-lighter;
 }
 
 .box {

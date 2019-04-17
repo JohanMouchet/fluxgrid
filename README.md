@@ -48,8 +48,11 @@ Link the [minified](https://github.com/JohanMouchet/flexboxgrid-sass/blob/master
 
 ### B. Within a build environment (Gulp / Grunt / any)
 
-- Add the [development](https://github.com/JohanMouchet/flexboxgrid-sass/blob/master/assets/src/scss/flexboxgrid.scss) (`assets/src/flexboxgrid.scss`) and optionally the [debug](https://github.com/JohanMouchet/flexboxgrid-sass/blob/master/assets/src/scss/_flexboxgrid-debug.scss.scss) (`assets/src/_flexboxgrid-debug.scss`) Sass files to your build environment
-- Customise the grid variables from `flexboxgrid.scss` to your liking. It is recommended to override the `!default` ones in another file, but you can also edit them directly:
+- Add these files from `assets/src/` to your build environment:
+  - [`_flexboxgrid-settings.scss`](https://github.com/JohanMouchet/flexboxgrid-sass/blob/master/assets/src/scss/_flexboxgrid-settings.scss)
+  - [`_flexboxgrid-grid.scss`](https://github.com/JohanMouchet/flexboxgrid-sass/blob/master/assets/src/scss/_flexboxgrid-grid.scss)
+  - [`_flexboxgrid-debug.scss`](https://github.com/JohanMouchet/flexboxgrid-sass/blob/master/assets/src/scss/_flexboxgrid-debug.scss.scss) (optional)
+- Customise the grid variables from `_flexboxgrid-settings.scss` to your liking. It is recommended to override the `!default` ones in another file, but you can also edit them directly:
   - `$grid-division`
   - `$grid-gutter`
   - `$grid-breakpoints`
