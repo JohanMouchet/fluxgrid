@@ -64,6 +64,6 @@ Link the [minified](https://github.com/JohanMouchet/flexboxgrid-sass/blob/master
 
 ## TODO
 
-- Make table responsive
+- Separate homeview.css from prod build
 - Conditional @import debug
 - Split media queries?

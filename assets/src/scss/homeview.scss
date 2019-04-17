@@ -43,11 +43,12 @@ h1 {
 code,
 pre {
 	background-color: $color-grey;
+	border-radius: .3em;
 }
 
 /** Inline code **/
 code {
-	padding: .2em .5em;
+	padding: .3em .5em;
 	font-size: .85rem;
 	font-weight: 300;
 	text-transform: none;
@@ -96,6 +97,16 @@ table {
 		background-clip: text;
 		-webkit-text-fill-color: transparent;
 		box-decoration-break: clone;
+	}
+
+	@media screen and (max-width: 768px) {
+		&--responsive {
+			display: inline-block;
+			max-width: 100%;
+			overflow-x: auto;
+			white-space: nowrap;
+			-webkit-overflow-scrolling: touch;
+		}
 	}
 }
 

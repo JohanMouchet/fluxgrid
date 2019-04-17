@@ -1,9 +1,9 @@
 /*! Flexboxgrid-sass debug | MIT License | https://github.com/JohanMouchet/flexboxgrid-sass */
 
 /* stylelint-disable color-no-hex */
-$grid-container-debug-color: #4f91b2;
+$grid-debug-container-color: #4f91b2;
 $grid-debug-color: #9b4dca;
-$grid-cell-debug-color: #999;
+$grid-debug-cell-color: #999;
 
 .flexboxgrid-debug {
 	.container,
@@ -18,12 +18,13 @@ $grid-cell-debug-color: #999;
 			bottom: 0;
 			outline: 1px dashed;
 			pointer-events: none;
+			outline-offset: -1px;
 		}
 	}
 
 	.container {
 		&::after {
-			outline-color: $grid-container-debug-color;
+			outline-color: $grid-debug-container-color;
 			left: 0;
 			right: 0;
 		}
@@ -40,7 +41,7 @@ $grid-cell-debug-color: #999;
 	.cell {
 		&::after {
 			outline-style: dotted;
-			outline-color: $grid-cell-debug-color;
+			outline-color: $grid-debug-cell-color;
 			left: $grid-half-gutter;
 			right: $grid-half-gutter;
 		}
