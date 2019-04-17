@@ -22,7 +22,7 @@ const buildExpandedCss = () =>
 		.pipe(dest(config.css.dest, { sourcemaps: true }))
 		.pipe(server.stream());
 
-const buildCompressedCss = () =>
+const buildMinifiedCss = () =>
 	src(config.css.src.flexboxgrid)
 		.pipe(sass({ outputStyle: 'compressed' }))
 		.pipe(
@@ -32,10 +32,10 @@ const buildCompressedCss = () =>
 		)
 		.pipe(postcss([cssnano()]))
 		.pipe(rename({ suffix: '.min' }))
-		.pipe(size({ showFiles: true }))
+		.pipe(size({ showFiles: true, gzip: true }))
 		.pipe(dest(config.css.dest));
 
-const buildcss = done => parallel(buildExpandedCss, buildCompressedCss)(done);
+const buildcss = done => parallel(buildExpandedCss, buildMinifiedCss)(done);
 
 buildcss.displayName = 'build:css';
 buildcss.description = 'Compile SASS, Autoprefix, minify';
