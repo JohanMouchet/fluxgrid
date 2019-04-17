@@ -64,5 +64,6 @@ Link the [minified](https://github.com/JohanMouchet/flexboxgrid-sass/blob/master
 
 ## TODO
 
+- Toggle grid--demo
 - Conditional @import debug
 - Split media queries?

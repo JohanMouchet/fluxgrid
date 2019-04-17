@@ -101,6 +101,18 @@ hr {
 	border-bottom: 1px solid $color-grey-light;
 }
 
+.hide-grid-debug.hide-grid-debug {
+	&::after {
+		outline: none;
+	}
+
+	> .cell {
+		&::after {
+			outline: none;
+		}
+	}
+}
+
 /* Anchor */
 .anchor {
 	position: relative;

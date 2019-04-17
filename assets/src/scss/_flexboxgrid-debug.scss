@@ -1,11 +1,12 @@
 /*! Flexboxgrid-sass debug | MIT License | https://github.com/JohanMouchet/flexboxgrid-sass */
 
 /* stylelint-disable color-no-hex */
+$grid-container-debug-color: #4f91b2;
 $grid-debug-color: #9b4dca;
 $grid-cell-debug-color: #999;
 
-.grid--debug {
-	&,
+.flexboxgrid-debug {
+	.container,
 	.grid,
 	.cell {
 		position: relative;
@@ -20,7 +21,14 @@ $grid-cell-debug-color: #999;
 		}
 	}
 
-	&,
+	.container {
+		&::after {
+			outline-color: $grid-container-debug-color;
+			left: 0;
+			right: 0;
+		}
+	}
+
 	.grid {
 		&::after {
 			outline-color: $grid-debug-color;
@@ -40,7 +48,6 @@ $grid-cell-debug-color: #999;
 
 	@mixin grid-debug($bp-short) {
 		/* Grid */
-		&,
 		.grid {
 			/** Grid large gutters **/
 			&.grid--lgGutter-\@#{$bp-short} {
