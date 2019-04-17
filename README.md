@@ -1,6 +1,6 @@
 # Flexbox Grid Sass
 
-Responsive and customisable utility-based CSS grid built with Sass.
+_Responsive and customisable utility-based CSS grid built with Sass._
 
 ## Default config
 
@@ -64,6 +64,6 @@ Link the [minified](https://github.com/JohanMouchet/flexboxgrid-sass/blob/master
 
 ## TODO
 
-- Toggle grid--demo
+- Make table responsive
 - Conditional @import debug
 - Split media queries?

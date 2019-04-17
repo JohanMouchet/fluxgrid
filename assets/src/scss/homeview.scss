@@ -4,6 +4,7 @@
 
 /* stylelint-disable color-no-hex */
 $color-primary: #4f91b2;
+$color-secondary: #9b4dca;
 $color-grey: #f2f2f2;
 $color-grey-light: #e5e5e5;
 /* stylelint-disable enable */
@@ -21,12 +22,21 @@ body {
 main {
 	max-width: 1200px;
 	margin: auto;
-	padding-top: 60px;
-	padding-bottom: 60px;
+	padding-top: 4em;
+	padding-bottom: 4em;
 }
 
 a {
 	color: $color-primary;
+}
+
+h1 {
+	display: inline-block;
+	color: $color-primary;
+	background: linear-gradient(to right, $color-primary, $color-secondary);
+	background-clip: text;
+	-webkit-text-fill-color: transparent;
+	box-decoration-break: clone;
 }
 
 /* Code */
@@ -46,20 +56,13 @@ code {
 /** Block of code **/
 pre {
 	line-height: 1.2;
-	padding: 1.5rem;
+	padding: 1.5em;
 	tab-size: 2;
 
 	/* stylelint-disable-next-line selector-max-type */
 	code {
 		padding: 0;
 	}
-}
-
-.box {
-	display: inline-block;
-	height: 100%;
-	width: 100%;
-	box-sizing: border-box;
 }
 
 /* Table */
@@ -89,6 +92,10 @@ table {
 	thead {
 		border-bottom: 2px solid;
 		color: $color-primary;
+		background: linear-gradient(to right, $color-primary, $color-secondary);
+		background-clip: text;
+		-webkit-text-fill-color: transparent;
+		box-decoration-break: clone;
 	}
 }
 
@@ -96,9 +103,56 @@ table {
 hr {
 	height: 0;
 	width: 100%;
-	margin: 2.5rem 0;
+	margin: 2.5em 0;
 	border: 0;
 	border-bottom: 1px solid $color-grey-light;
+}
+
+.box {
+	display: inline-block;
+	height: 100%;
+	width: 100%;
+	box-sizing: border-box;
+}
+
+/* Grid */
+.toggle-grid-debug {
+	display: inline-block;
+	position: fixed;
+	bottom: 1em;
+	right: 1em;
+	background-image: linear-gradient(45deg, $color-primary, $color-secondary);
+	color: #fff;
+	white-space: nowrap;
+	cursor: pointer;
+	padding: 1em;
+	border-radius: .5em;
+	box-shadow:
+		0 5px 10px rgba(17, 17, 17, .04),
+		0 2px 5px rgba(17, 17, 17, .04);
+	transition: background-color .2s ease-out;
+	animation: slide-in .4s ease-out both;
+
+	@keyframes slide-in {
+		from {
+			opacity: 0;
+			transform: translateY(100%);
+		}
+
+		to {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+
+	&:hover {
+		opacity: .8;
+	}
+}
+
+.toggle-grid-debug-checkbox {
+	margin: 0 .2em 0 0;
+	vertical-align: middle;
 }
 
 .hide-grid-debug.hide-grid-debug {
@@ -107,6 +161,7 @@ hr {
 	}
 
 	> .cell {
+		/* stylelint-disable-next-line */
 		&::after {
 			outline: none;
 		}
@@ -120,7 +175,7 @@ hr {
 	&-link {
 		position: absolute;
 		right: 100%;
-		padding-right: .25em;
+		padding-right: .25rem;
 		font-weight: 300;
 		font-style: normal;
 		opacity: 0;
@@ -151,6 +206,7 @@ hr {
 			&::before {
 				$k: '';
 
+				/* stylelint-disable-next-line */
 				@for $j from 1 through $i {
 					$k: $k + counter(index-#{$j}) + '"."';
 				}
