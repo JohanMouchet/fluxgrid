@@ -10,9 +10,9 @@ import buildcss from './tasks/buildcss';
 import lintcss from './tasks/lintcss';
 import dev from './tasks/dev';
 
-export const task_buildcss = task(buildcss);
-export const task_lintcss = task(lintcss);
-export const task_dev = task(dev);
+export const taskBuildcss = task(buildcss);
+export const taskLintcss = task(lintcss);
+export const taskDev = task(dev);
 
 export { default } from './tasks/dev';
 
