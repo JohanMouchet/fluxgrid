@@ -10,10 +10,10 @@ const config = {
 	css: {
 		src: {
 			flexboxgrid: `${dir.src}scss/flexboxgrid.scss`,
-			homeview: `${dir.src}scss/homeview.scss`
+			homeview: `${dir.src}scss/index.scss`
 		},
 		watch: `${dir.src}scss/**/*.scss`,
-		lint: [`${dir.src}scss/**/*.scss`, `!${dir.src}scss/vendors/**/*.scss`],
+		lint: `${dir.src}scss/**/*.scss`,
 		dest: `${dir.dist}css/`
 	}
 };

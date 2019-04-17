@@ -15,6 +15,11 @@ $grid-breakpoints: (
 	xl: 1366px + 1
 ) !default;
 
+/* Test */
+@if ($grid-outer-margin < $grid-half-gutter) {
+	@warn 'To avoid overflow, the `$grid-outer-margin` has to be as large or larger than the `$grid-gutter`. This is for the `.container` to cancel the `.grid` negative margins used to align the `.cells`.';
+}
+
 /* Debug */
 /* stylelint-disable color-no-hex */
 $grid-debug-container-color: #4f91b2;
