@@ -25,8 +25,7 @@ body {
 }
 
 main {
-	padding-top: 4em;
-	padding-bottom: 4em;
+	margin: 2em 1em;
 }
 
 a {
@@ -168,11 +167,10 @@ hr {
 	cursor: pointer;
 	padding: 1em;
 	border-radius: .5em;
-	box-shadow:
-		0 5px 10px rgba(17, 17, 17, .04),
-		0 2px 5px rgba(17, 17, 17, .04);
+	box-shadow: 0 5px 10px rgba(17, 17, 17, .2), 0 2px 5px rgba(17, 17, 17, .2);
 	transition: background-color .2s ease-out;
 	animation: slide-in .4s ease-out both;
+	z-index: 1;
 
 	@keyframes slide-in {
 		from {
@@ -186,7 +184,8 @@ hr {
 		}
 	}
 
-	&:hover {
+	&:hover,
+	&:focus {
 		opacity: .8;
 	}
 }
