@@ -7,6 +7,11 @@ $color-primary: $grid-debug-container-color;
 $color-secondary: $grid-debug-grid-color;
 $color-grey: #f2f2f2;
 $color-grey-lighter: #e5e5e5;
+$color-syntax-grey: #282c35;
+$color-syntax-w: #d7dae0;
+$color-syntax-r: #e06c75;
+$color-syntax-g: #98c379;
+$color-syntax-y: #d19a66;
 /* stylelint-disable enable */
 
 html {
@@ -42,8 +47,8 @@ h1 {
 /* Code */
 code,
 pre {
-	background-color: $color-grey;
 	border-radius: .3em;
+	background-color: $color-grey;
 }
 
 /** Inline code **/
@@ -62,8 +67,34 @@ pre {
 
 	/* stylelint-disable-next-line selector-max-type */
 	code {
+		background-color: transparent;
 		padding: 0;
 	}
+
+	/* stylelint-disable-next-line selector-max-type */
+	u {
+		text-decoration: none;
+	}
+}
+
+.syntax {
+	background-color: $color-syntax-grey;
+}
+
+.syntax--w {
+	color: $color-syntax-w;
+}
+
+.syntax--r {
+	color: $color-syntax-r;
+}
+
+.syntax--g {
+	color: $color-syntax-g;
+}
+
+.syntax--y {
+	color: $color-syntax-y;
 }
 
 /* Table */
