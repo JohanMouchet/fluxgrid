@@ -48,7 +48,7 @@ Link the [minified](https://github.com/JohanMouchet/flexboxgrid-sass/blob/master
 
 ### B. Within a build environment (Gulp / Grunt / any)
 
-- Add these files from `assets/src/` to your build environment:
+- Add these files from `assets/src/flexboxgrid/` to your build environment:
   - [`_flexboxgrid-settings.scss`](https://github.com/JohanMouchet/flexboxgrid-sass/blob/master/assets/src/scss/_flexboxgrid-settings.scss)
   - [`_flexboxgrid-grid.scss`](https://github.com/JohanMouchet/flexboxgrid-sass/blob/master/assets/src/scss/_flexboxgrid-grid.scss)
   - [`_flexboxgrid-debug.scss`](https://github.com/JohanMouchet/flexboxgrid-sass/blob/master/assets/src/scss/_flexboxgrid-debug.scss) (optional)
@@ -69,6 +69,5 @@ Link the [minified](https://github.com/JohanMouchet/flexboxgrid-sass/blob/master
 ## TODO
 
 - Comment on flexbox support & grid benefits: https://caniuse.com/#feat=flexbox
-- Separate homeview.css from prod build
 - Conditional @import debug
 - Split media queries?

@@ -5,10 +5,11 @@ import postcss from 'gulp-postcss';
 import autoprefixer from 'autoprefixer';
 import cssnano from 'cssnano';
 import rename from 'gulp-rename';
-import { server } from '../utils/livereload';
+import { server } from './livereload';
 import { config } from '../config';
 
-const buildExpandedCss = () => src([config.css.src.homeview, config.css.src.flexboxgrid], {
+/* Build Flexboxgrid */
+const buildFlexboxgrid = () => src(config.css.src.flexboxgrid, {
   sourcemaps: true,
 })
   .pipe(sass({ outputStyle: 'expanded' }).on('error', sass.logError))
@@ -17,11 +18,12 @@ const buildExpandedCss = () => src([config.css.src.homeview, config.css.src.flex
       autoprefixer({ browsers: ['last 1 version', 'not dead', '> 0.2%'] }),
     ]),
   )
-  .pipe(size({ showFiles: true, showTotal: false }))
+  .pipe(size({ showFiles: true }))
   .pipe(dest(config.css.dest, { sourcemaps: true }))
   .pipe(server.stream());
 
-const buildMinifiedCss = () => src(config.css.src.flexboxgrid)
+/* Build minified Flexboxgrid */
+const buildFlexboxgridMin = () => src(config.css.src.flexboxgrid)
   .pipe(sass({ outputStyle: 'compressed' }))
   .pipe(
     postcss([
@@ -33,9 +35,21 @@ const buildMinifiedCss = () => src(config.css.src.flexboxgrid)
   .pipe(size({ showFiles: true, gzip: true }))
   .pipe(dest(config.css.dest));
 
-const buildcss = done => parallel(buildExpandedCss, buildMinifiedCss)(done);
+/* Build Flexboxgrid expanded and minified */
+const buildFlexboxgrids = done => parallel(buildFlexboxgrid, buildFlexboxgridMin)(done);
 
-buildcss.displayName = 'build:css';
-buildcss.description = 'Compile SASS, Autoprefix, minify';
+/* Build index view */
+const buildIndex = () => src(config.css.src.index, {
+  sourcemaps: true,
+})
+  .pipe(sass({ outputStyle: 'expanded' }).on('error', sass.logError))
+  .pipe(
+    postcss([
+      autoprefixer({ browsers: ['last 1 version', 'not dead', '> 0.2%'] }),
+    ]),
+  )
+  .pipe(size({ showFiles: true }))
+  .pipe(dest(config.css.dest, { sourcemaps: true }))
+  .pipe(server.stream());
 
-export default buildcss;
+export { buildFlexboxgrids, buildFlexboxgridMin, buildIndex };

@@ -9,10 +9,13 @@ const config = {
   },
   css: {
     src: {
-      flexboxgrid: `${dir.src}scss/flexboxgrid.scss`,
-      homeview: `${dir.src}scss/index.scss`,
+      flexboxgrid: `${dir.src}scss/flexboxgrid/flexboxgrid.scss`,
+      index: `${dir.src}scss/index.scss`,
     },
-    watch: `${dir.src}scss/**/*.scss`,
+    watch: {
+      flexboxgrid: `${dir.src}scss/flexboxgrid/*.scss`,
+      index: `${dir.src}scss/index.scss`,
+    },
     lint: `${dir.src}scss/**/*.scss`,
     dest: `${dir.dist}css/`,
   },
