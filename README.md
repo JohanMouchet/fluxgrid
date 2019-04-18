@@ -67,6 +67,7 @@ Link the [minified](https://github.com/JohanMouchet/flexboxgrid-sass/blob/master
 
 ## TODO
 
+- Comment on flexbox support & grid benefits: https://caniuse.com/#feat=flexbox
 - Separate homeview.css from prod build
 - Conditional @import debug
 - Split media queries?
