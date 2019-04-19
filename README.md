@@ -70,7 +70,6 @@ Choose your preferred way:
 
 ## TODO
 
-- Only include debug on non .min
 - Comment on flexbox support & grid benefits: https://caniuse.com/#feat=flexbox
 - Conditional @import debug
 - Split media queries?
