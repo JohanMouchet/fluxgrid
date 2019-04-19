@@ -9,9 +9,7 @@ import { server } from './livereload';
 import { config } from '../config';
 
 /* Build Flexboxgrid */
-const buildFlexboxgrid = () => src(config.css.src.flexboxgrid, {
-  sourcemaps: true,
-})
+const buildFlexboxgrid = () => src(config.css.src.flexboxgrid, { sourcemaps: true })
   .pipe(sass({ outputStyle: 'expanded' }).on('error', sass.logError))
   .pipe(
     postcss([
