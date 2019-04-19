@@ -1,3 +1,4 @@
 {
-  "endOfLine": "lf"
+	"useTabs": true,
+	"endOfLine": "lf"
 }

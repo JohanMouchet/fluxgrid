@@ -38,27 +38,29 @@ Choose your preferred way:
 
 ### A. With the default config
 
-Link the [minified](https://github.com/JohanMouchet/flexboxgrid-sass/blob/master/assets/dist/css/flexboxgrid.min.css) CSS file (`assets/dist/flexboxgrid.min.css`) to your document's `<head>`:
+- Link the files from `assets/dist/css/` to your document's `<head>`:
+  - [`flexboxgrid.min.css`](https://github.com/JohanMouchet/flexboxgrid-sass/blob/master/assets/dist/css/flexboxgrid.min.css)
+  - [`flexboxgrid-debug.min.css`](https://github.com/JohanMouchet/flexboxgrid-sass/blob/master/assets/dist/css/flexboxgrid-debug.min.css) (optional, not recommended in production)
 
 ```
 <head>
-  <link rel="stylesheet" href="**/flexboxgrid.min.css" type="text/css">
+  <link rel="stylesheet" type="text/css" href="flexboxgrid.min.css" >
+  <link rel="stylesheet" type="text/css" href="flexboxgrid-debug.min.css" >
 </head>
 ```
 
 ### B. Within a build environment (Gulp / Grunt / any)
 
-- Add these files from `assets/src/flexboxgrid/` to your build environment:
+- Add the files from `assets/src/flexboxgrid/` to your build environment:
   - [`_flexboxgrid-settings.scss`](https://github.com/JohanMouchet/flexboxgrid-sass/blob/master/assets/src/scss/_flexboxgrid-settings.scss)
-  - [`_flexboxgrid-grid.scss`](https://github.com/JohanMouchet/flexboxgrid-sass/blob/master/assets/src/scss/_flexboxgrid-grid.scss)
-  - [`_flexboxgrid-debug.scss`](https://github.com/JohanMouchet/flexboxgrid-sass/blob/master/assets/src/scss/_flexboxgrid-debug.scss) (optional)
+  - [`flexboxgrid-debug.scss`](https://github.com/JohanMouchet/flexboxgrid-sass/blob/master/assets/src/scss/_flexboxgrid-debug.scss)
   - [`flexboxgrid.scss`](https://github.com/JohanMouchet/flexboxgrid-sass/blob/master/assets/src/scss/flexboxgrid.scss)
 - Customise the grid variables from `_flexboxgrid-settings.scss` to your liking. It is recommended to override the `!default` ones in another file, but you can also edit them directly:
   - `$grid-division`
   - `$grid-gutter`
   - `$grid-breakpoints`
-- Run `flexboxgrid.scss` trough your build (it is advised to Autoprefix and minify it)
-- Link the output file to your document's `<head>`
+- Run `flexboxgrid.scss` and optionally `flexboxgrid-debug.scss` trough your build. It is advised to Autoprefix and minify them
+- Link the output files to your document's `<head>`. `flexboxgrid-debug.scss` is not recommended in production
 
 ## Development
 

@@ -13,6 +13,8 @@ module.exports = {
 		sourceType: 'module',
 	},
 	rules: {
-		'max-len': ['error', { code: 80, ignoreUrls: true }],
+		'max-len': ['warn', { code: 80, ignoreUrls: true }],
+		indent: ['error', 'tab'],
+		'no-tabs': 0,
 	},
 };
