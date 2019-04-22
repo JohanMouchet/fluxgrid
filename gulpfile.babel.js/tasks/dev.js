@@ -4,17 +4,17 @@ import watcher from '../utils/watcher';
 import {
 	buildFlexboxgrid,
 	buildFlexboxgridMin,
-	buildIndex,
+	buildDemo,
 } from '../utils/buildcss';
 
 const dev = done => series(
-	buildIndex,
+	buildDemo,
 	parallel(buildFlexboxgrid, buildFlexboxgridMin),
 	livereload,
 	watcher,
 )(done);
 
 dev.displayName = 'dev';
-dev.description =	'Build flexboxgrid and index CSS, start a browserSync server and watcher';
+dev.description =	'Build flexboxgrid and demo CSS, start a browserSync server and watcher';
 
 export default dev;

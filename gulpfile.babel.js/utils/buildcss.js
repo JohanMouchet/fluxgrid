@@ -33,8 +33,8 @@ const buildFlexboxgridMin = () => src(config.css.src.flexboxgrid)
 	.pipe(size({ showFiles: true, gzip: true }))
 	.pipe(dest(config.css.dest));
 
-/* Build index view */
-const buildIndex = () => src(config.css.src.index, { sourcemaps: true })
+/* Build demo view */
+const buildDemo = () => src(config.css.src.demo, { sourcemaps: true })
 	.pipe(sass({ outputStyle: 'expanded' }).on('error', sass.logError))
 	.pipe(
 		postcss([
@@ -45,4 +45,4 @@ const buildIndex = () => src(config.css.src.index, { sourcemaps: true })
 	.pipe(dest(config.css.dest, { sourcemaps: true }))
 	.pipe(server.stream());
 
-export { buildFlexboxgrid, buildFlexboxgridMin, buildIndex };
+export { buildFlexboxgrid, buildFlexboxgridMin, buildDemo };

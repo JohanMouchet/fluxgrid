@@ -10,11 +10,11 @@ const config = {
 	css: {
 		src: {
 			flexboxgrid: `${dir.src}scss/flexboxgrid/*.scss`,
-			index: `${dir.src}scss/index.scss`,
+			demo: `${dir.src}scss/demo.scss`,
 		},
 		watch: {
 			flexboxgrid: `${dir.src}scss/flexboxgrid/*.scss`,
-			index: `${dir.src}scss/index.scss`,
+			demo: `${dir.src}scss/demo.scss`,
 		},
 		lint: `${dir.src}scss/**/*.scss`,
 		dest: `${dir.dist}css/`,
