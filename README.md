@@ -72,4 +72,4 @@ Choose your preferred way:
 
 - Comment on flexbox support & grid benefits: https://caniuse.com/#feat=flexbox
 - Conditional @import debug
-- Split media queries?
+- Split media queries? Use `--split` CLI arg
