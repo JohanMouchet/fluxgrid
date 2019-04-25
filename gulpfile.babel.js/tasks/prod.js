@@ -1,4 +1,3 @@
-import { series } from 'gulp';
 import { buildFlexboxgridMin } from '../utils/buildcss';
 
 const prod = done => buildFlexboxgridMin(done);
