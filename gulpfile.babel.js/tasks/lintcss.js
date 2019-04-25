@@ -2,7 +2,7 @@ import { src, lastRun } from 'gulp';
 import stylelint from 'gulp-stylelint';
 import { config } from '../config';
 
-const lintcss = () => src(config.css.lint, { since: lastRun('lint:css') }).pipe(
+const lintcss = () => src(config.css.lint, { since: lastRun(lintcss) }).pipe(
 	stylelint({
 		failAfterError: false,
 		reporters: [
