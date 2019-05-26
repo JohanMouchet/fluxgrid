@@ -3,19 +3,54 @@
 	<head>
 		<title>Flexbox grid Sass</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<!-- Make sure to use flexboxgrid.min.css for production -->
+		<!-- Flexbox grid Sass as a standalone -->
 		<link
 			rel="stylesheet"
 			type="text/css"
-			href="assets/dist/css/flexboxgrid.css"
+			href="assets/dist/css/flexboxgrid/flexboxgrid.min.css"
 		/>
-		<!-- Optional for production -->
+		<!-- Flexbox grid Sass as split imports -->
+		<!-- <link
+			rel="stylesheet"
+			type="text/css"
+			href="assets/dist/css/flexboxgrid/split/flexboxgrid-xs.min.css"
+		/>
 		<link
 			rel="stylesheet"
 			type="text/css"
-			href="assets/dist/css/flexboxgrid-debug.css"
+			href="assets/dist/css/flexboxgrid/split/flexboxgrid-sm.min.css"
+			media="(min-width: 426px)"
 		/>
-		<link rel="stylesheet" type="text/css" href="assets/dist/css/demo.css" />
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="assets/dist/css/flexboxgrid/split/flexboxgrid-md.min.css"
+			media="(min-width: 769px)"
+		/>
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="assets/dist/css/flexboxgrid/split/flexboxgrid-lg.min.css"
+			media="(min-width: 1025px)"
+		/>
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="assets/dist/css/flexboxgrid/split/flexboxgrid-xl.min.css"
+			media="(min-width: 1367px)"
+		/> -->
+		<!-- Flexbox grid Sass debug (optional) -->
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="assets/dist/css/flexboxgrid/flexboxgrid-debug.min.css"
+		/>
+		<!-- Demo styling -->
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="assets/dist/css/demo.min.css"
+		/>
 	</head>
 
 	<body class="flexboxgrid-debug counter">
