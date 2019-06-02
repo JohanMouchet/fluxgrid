@@ -1,23 +1,2 @@
-# CSS & Sass
-.sass-cache/
-*.scssc
-
-# Dependencies
 node_modules/*
-
-# IDE generated files
-*.sublime-*
-
-# IDE plugin
-.settings
-
-# OS generated files
-.DS_Store
-.DS_Store?
-._*
-.Trashes
-ehthumbs.db
-Thumbs.db
-
-# Miscellaneous
-*.log
+*.code-*
