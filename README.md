@@ -125,5 +125,4 @@ Choose your preferred way:
 
 ## TODO
 
-- Comment on flexbox over grid benefits
 - Add a live Flexbox Grid Sass demo?
