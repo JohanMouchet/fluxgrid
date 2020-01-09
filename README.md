@@ -118,7 +118,3 @@ Choose your preferred way:
   - `$fluxgrid-breakpoints`
 - Run `fluxgrid.scss` OR `split/` and optionally (not recommended in production) `fluxgrid-debug.scss` trough your build. It is advised to Autoprefix and minify them
 - Link the output files to your document's `<head>` as above
-
-## TODO
-
-- Add a live Flexbox Grid Sass demo?
