@@ -46,11 +46,7 @@ const buildcss = env => () => {
     sourcemaps: dev
   })
     .pipe(sass({ outputStyle: "compressed" }).on("error", sass.logError))
-    .pipe(
-      postcss([
-        autoprefixer({ browsers: ["last 1 version", "not dead", "> 0.2%"] })
-      ])
-    )
+    .pipe(postcss([autoprefixer()]))
     .pipe(postcss([cssnano()]))
     .pipe(rename({ suffix: ".min" }))
     .pipe(size({ showFiles: true, gzip: true }))
