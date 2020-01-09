@@ -5,8 +5,8 @@
 /* stylelint-disable color-no-hex */
 $color-primary: $fluxgrid-debug-container-color;
 $color-secondary: $fluxgrid-debug-grid-color;
-$color-grey: #f2f2f2;
-$color-grey-lighter: #e5e5e5;
+$color-grey: #e5e5e5;
+$color-grey-lighter: #f2f2f2;
 $color-syntax-grey: #282c35;
 $color-syntax-w: #d7dae0;
 $color-syntax-r: #e06c75;
@@ -45,7 +45,7 @@ h1 {
 code,
 pre {
   border-radius: 0.3em;
-  background-color: $color-grey;
+  background-color: $color-grey-lighter;
 }
 
 /** Inline code **/
@@ -106,7 +106,7 @@ table {
 
   /* stylelint-disable-next-line selector-max-type */
   tbody tr:not(:last-child) {
-    border-bottom: 1px solid $color-grey-lighter;
+    border-bottom: 1px solid $color-grey;
   }
 
   th,
@@ -117,15 +117,15 @@ table {
 
   th {
     font-weight: 700;
-  }
-
-  thead {
-    border-bottom: 2px solid;
     color: $color-grey;
     background: linear-gradient(to right, $color-primary, $color-secondary);
     background-clip: text;
     -webkit-text-fill-color: transparent;
     box-decoration-break: clone;
+  }
+
+  thead {
+    border-bottom: 2px solid $color-grey;
   }
 
   @media screen and (max-width: 768px) {
@@ -145,7 +145,7 @@ hr {
   width: 100%;
   margin: 2.5em 0;
   border: 0;
-  border-bottom: 1px solid $color-grey-lighter;
+  border-bottom: 1px solid $color-grey;
 }
 
 .box {
