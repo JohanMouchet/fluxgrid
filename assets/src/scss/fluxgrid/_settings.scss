@@ -1,0 +1,27 @@
+/* Settings */
+$fluxgrid-division: 12 !default;
+$fluxgrid-gutter: 1rem !default;
+$fluxgrid-gutter-lg: $fluxgrid-gutter * 3 !default;
+$fluxgrid-outer-margin: $fluxgrid-gutter + 1 !default;
+
+$fluxgrid-half-gutter: $fluxgrid-gutter / 2;
+$fluxgrid-half-gutter-lg: $fluxgrid-gutter-lg / 2;
+
+// Breakpoints (Mobile first)
+$fluxgrid-breakpoints: (
+  sm: 425px + 1,
+  md: 768px + 1,
+  lg: 1024px + 1,
+  xl: 1366px + 1
+) !default;
+
+/* Test */
+@if ($fluxgrid-outer-margin < $fluxgrid-half-gutter) {
+  @warn 'To avoid overflow, the `$fluxgrid-outer-margin` has to be as large or larger than the `$fluxgrid-gutter`. This is for the `.container` to cancel the `.grid` negative margins used to align the `.cells`.';
+}
+
+/* Debug */
+/* stylelint-disable color-no-hex */
+$fluxgrid-debug-container-color: #4f91b2;
+$fluxgrid-debug-grid-color: #9b4dca;
+$fluxgrid-debug-cell-color: #999;

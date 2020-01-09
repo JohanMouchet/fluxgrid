@@ -1,4 +1,4 @@
-import yargs from 'yargs';
+import yargs from "yargs";
 
 const SPLIT = yargs.argv.split;
 const DEBUG = yargs.argv.debug;

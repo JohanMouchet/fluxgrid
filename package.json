@@ -1,33 +1,43 @@
 {
-	"name": "Flexbox-grid-Sass",
-	"version": "2.0.0",
-	"description": "Flexbox grid Sass",
-	"main": "index.html",
-	"author": "Johan Mouchet <mouchet-johan@gmail.com> (https://johan-mouchet.com)",
-	"license": "MIT",
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/JohanMouchet/flexboxgrid-sass.git"
-	},
-	"devDependencies": {
-		"@babel/core": "^7.4.0",
-		"@babel/preset-env": "^7.4.2",
-		"@babel/register": "^7.4.0",
-		"autoprefixer": "^9.5.0",
-		"browser-sync": "^2.26.7",
-		"cssnano": "^4.1.10",
-		"eslint": "^5.16.0",
-		"eslint-config-airbnb-base": "^13.1.0",
-		"eslint-plugin-import": "^2.17.2",
-		"gulp": "^4.0.0",
-		"gulp-noop": "^1.0.0",
-		"gulp-postcss": "^8.0.0",
-		"gulp-rename": "^1.4.0",
-		"gulp-sass": "^4.0.2",
-		"gulp-size": "^3.0.0",
-		"gulp-stylelint": "^7.0.0",
-		"node-sass": "^4.12.0",
-		"stylelint": "^9.10.1",
-		"yargs": "^13.2.4"
-	}
+  "name": "fluxgrid",
+  "version": "3.0.0",
+  "description": "Responsive and customisable utility-based CSS grid built with Sass",
+  "main": "index.html",
+  "author": "Johan Mouchet <mouchet-johan@gmail.com> (https://johan-mouchet.com)",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/JohanMouchet/fluxgrid.git"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.7.7",
+    "@babel/preset-env": "^7.7.7",
+    "@babel/register": "^7.7.7",
+    "autoprefixer": "^9.7.3",
+    "browser-sync": "^2.26.7",
+    "cssnano": "^4.1.10",
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb-base": "^13.2.0",
+    "eslint-config-prettier": "^6.3.0",
+    "eslint-plugin-import": "^2.19.1",
+    "eslint-plugin-prettier": "^3.1.1",
+    "gulp": "^4.0.2",
+    "gulp-noop": "^1.0.0",
+    "gulp-postcss": "^8.0.0",
+    "gulp-rename": "^1.4.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-size": "^3.0.0",
+    "gulp-stylelint": "^7.0.0",
+    "node-sass": "^4.13.0",
+    "prettier": "^1.18.2",
+    "stylelint": "^11.0.0",
+    "stylelint-config-prettier": "^6.0.0",
+    "stylelint-config-standard": "^19.0.0",
+    "stylelint-prettier": "^1.1.1",
+    "stylelint-scss": "^3.11.1",
+    "yargs": "^13.3.0"
+  },
+  "browserslist": [
+    "defaults"
+  ]
 }

@@ -1,0 +1,10 @@
+@import "../settings";
+@import "../responsive";
+@import "../base";
+
+@each $bp-short, $bp-size in $fluxgrid-breakpoints {
+  @include container-responsive($bp-short, $bp-size);
+}
+
+@include grid-responsive("xs");
+@include cell-responsive("xs");
