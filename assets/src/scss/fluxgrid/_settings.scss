@@ -1,13 +1,6 @@
 /* Settings */
 $fluxgrid-division: 12 !default;
-$fluxgrid-gutter: 1rem !default;
-$fluxgrid-gutter-lg: $fluxgrid-gutter * 3 !default;
-$fluxgrid-outer-margin: $fluxgrid-gutter + 1 !default;
 
-$fluxgrid-half-gutter: $fluxgrid-gutter / 2;
-$fluxgrid-half-gutter-lg: $fluxgrid-gutter-lg / 2;
-
-// Breakpoints (Mobile first)
 $fluxgrid-breakpoints: (
   sm: 425px + 1,
   md: 768px + 1,
@@ -15,9 +8,57 @@ $fluxgrid-breakpoints: (
   xl: 1366px + 1
 ) !default;
 
+$fluxgrid-gutters: (
+  xs: 12px,
+  sm: 12px,
+  md: 20px,
+  lg: 30px,
+  xl: 30px
+) !default;
+
+$fluxgrid-lg-gutters: (
+  xs: map-get($fluxgrid-gutter, xs) * 3,
+  sm: map-get($fluxgrid-gutter, sm) * 3,
+  md: map-get($fluxgrid-gutter, md) * 3,
+  lg: map-get($fluxgrid-gutter, lg) * 3,
+  xl: map-get($fluxgrid-gutter, xl) * 3
+) !default;
+
+$fluxgrid-outside-margin: (
+  xs: map-get($fluxgrid-gutter, xs) * 2,
+  sm: map-get($fluxgrid-gutter, sm) * 2,
+  md: map-get($fluxgrid-gutter, md) * 2,
+  lg: map-get($fluxgrid-gutter, lg) * 2,
+  xl: map-get($fluxgrid-gutter, xl) * 2
+) !default;
+
+/* Local variables */
+$fluxgrid-half-gutters: (
+  xs: map-get($fluxgrid-gutter, xs) / 2,
+  sm: map-get($fluxgrid-gutter, sm) / 2,
+  md: map-get($fluxgrid-gutter, md) / 2,
+  lg: map-get($fluxgrid-gutter, lg) / 2,
+  xl: map-get($fluxgrid-gutter, xl) / 2
+);
+
+$fluxgrid-half-lg-gutter: (
+  xs: map-get($fluxgrid-lg-gutter, xs) / 2,
+  sm: map-get($fluxgrid-lg-gutter, sm) / 2,
+  md: map-get($fluxgrid-lg-gutter, md) / 2,
+  lg: map-get($fluxgrid-lg-gutter, lg) / 2,
+  xl: map-get($fluxgrid-lg-gutter, xl) / 2
+);
+
+// TODO: Do not generate @media if no change between gutter bp
+// TODO: add $fluxgrid-features map to toggle features
+// TODO: update debug to match gutters
+// TODO: update README doc
+
 /* Test */
-@if ($fluxgrid-outer-margin < $fluxgrid-half-gutter) {
-  @warn 'To avoid overflow, the `$fluxgrid-outer-margin` has to be as large or larger than the `$fluxgrid-gutter`. This is for the `.container` to cancel the `.grid` negative margins used to align the `.cells`.';
+@each $gutter in $fluxgrid-gutters {
+  @if ($fluxgrid-outer-margin < $fluxgrid-half-gutter) {
+    @warn 'To avoid overflow, the `$fluxgrid-outer-margin` has to be as large or larger than the `$fluxgrid-gutter`. This is for the `.container` to cancel the `.grid` negative margins used to align the `.cells`.';
+  }
 }
 
 /* Debug */
