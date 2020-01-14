@@ -1,68 +1,50 @@
-/* Settings */
+/* Default settings */
 $fluxgrid-division: 12 !default;
 
 $fluxgrid-breakpoints: (
-  sm: 425px + 1,
-  md: 768px + 1,
-  lg: 1024px + 1,
-  xl: 1366px + 1
+  xs: (
+    gutter: 12px,
+    gutter-lg: 36px,
+    outside-margin: 24px
+  ),
+  sm: (
+    size: 425px + 1,
+    gutter: 12px,
+    gutter-lg: 36px,
+    outside-margin: 24px
+  ),
+  md: (
+    size: 768px + 1,
+    gutter: 20px,
+    gutter-lg: 60px,
+    outside-margin: 40px
+  ),
+  lg: (
+    size: 1024px + 1,
+    gutter: 20px,
+    gutter-lg: 60px,
+    outside-margin: 40px
+  ),
+  xl: (
+    size: 1366px + 1,
+    gutter: 30px,
+    gutter-lg: 90px,
+    outside-margin: 60px
+  )
 ) !default;
 
-$fluxgrid-gutters: (
-  xs: 12px,
-  sm: 12px,
-  md: 20px,
-  lg: 30px,
-  xl: 30px
-) !default;
-
-$fluxgrid-lg-gutters: (
-  xs: map-get($fluxgrid-gutter, xs) * 3,
-  sm: map-get($fluxgrid-gutter, sm) * 3,
-  md: map-get($fluxgrid-gutter, md) * 3,
-  lg: map-get($fluxgrid-gutter, lg) * 3,
-  xl: map-get($fluxgrid-gutter, xl) * 3
-) !default;
-
-$fluxgrid-outside-margin: (
-  xs: map-get($fluxgrid-gutter, xs) * 2,
-  sm: map-get($fluxgrid-gutter, sm) * 2,
-  md: map-get($fluxgrid-gutter, md) * 2,
-  lg: map-get($fluxgrid-gutter, lg) * 2,
-  xl: map-get($fluxgrid-gutter, xl) * 2
-) !default;
-
-/* Local variables */
-$fluxgrid-half-gutters: (
-  xs: map-get($fluxgrid-gutter, xs) / 2,
-  sm: map-get($fluxgrid-gutter, sm) / 2,
-  md: map-get($fluxgrid-gutter, md) / 2,
-  lg: map-get($fluxgrid-gutter, lg) / 2,
-  xl: map-get($fluxgrid-gutter, xl) / 2
-);
-
-$fluxgrid-half-lg-gutter: (
-  xs: map-get($fluxgrid-lg-gutter, xs) / 2,
-  sm: map-get($fluxgrid-lg-gutter, sm) / 2,
-  md: map-get($fluxgrid-lg-gutter, md) / 2,
-  lg: map-get($fluxgrid-lg-gutter, lg) / 2,
-  xl: map-get($fluxgrid-lg-gutter, xl) / 2
-);
-
+// TODO: used default setting var outside of $fluxgrid-breakpoints? ex: default * 2
+// TODO: merge default $fluxgrid-breakpoints with custom?
 // TODO: Do not generate @media if no change between gutter bp
 // TODO: add $fluxgrid-features map to toggle features
 // TODO: update debug to match gutters
-// TODO: update README doc
+// TODO: update Gulp task: removed split
+// TODO: update README doc: removed split
+// TODO: add tests
 
 /* Test */
-@each $gutter in $fluxgrid-gutters {
-  @if ($fluxgrid-outer-margin < $fluxgrid-half-gutter) {
-    @warn 'To avoid overflow, the `$fluxgrid-outer-margin` has to be as large or larger than the `$fluxgrid-gutter`. This is for the `.container` to cancel the `.grid` negative margins used to align the `.cells`.';
-  }
-}
-
-/* Debug */
-/* stylelint-disable color-no-hex */
-$fluxgrid-debug-container-color: #4f91b2;
-$fluxgrid-debug-grid-color: #9b4dca;
-$fluxgrid-debug-cell-color: #999;
+// @each $gutter in $fluxgrid-gutters {
+//   @if ($fluxgrid-outside-margin < $fluxgrid-half-gutter) {
+//     @warn 'To avoid overflow, the `$fluxgrid-outside-margin` has to be as large or larger than the `$fluxgrid-gutter`. This is for the `.container` to cancel the `.grid` negative margins used to align the `.cells`.';
+//   }
+// }

@@ -1,0 +1,101 @@
+.cell {
+  box-sizing: border-box;
+  flex: 0 1 auto;
+}
+
+@mixin fluxgrid-responsive-cell($breakpoint, $settings) {
+  $half-gutter: map-get($settings, gutter) / 2;
+  $half-gutter-lg: map-get($settings, gutter-lg) / 2;
+
+  /* Spacing */
+  .cell {
+    padding-left: $half-gutter;
+    padding-right: $half-gutter;
+  }
+
+  /* Sizes */
+  @for $i from 1 through $fluxgrid-division {
+    .cell--#{$i}-\@#{$breakpoint} {
+      flex-basis: percentage($i / $fluxgrid-division);
+      max-width: percentage($i / $fluxgrid-division);
+    }
+  }
+
+  /* Collapsed */
+  .cell--0-\@#{$breakpoint} {
+    flex-grow: 0;
+    flex-basis: auto;
+    max-width: none;
+  }
+
+  /* Expended */
+  .cell--\@#{$breakpoint} {
+    flex-grow: 1;
+    flex-basis: auto;
+    max-width: none;
+  }
+
+  /* Gutters */
+  .cell--noGutter-\@#{$breakpoint} {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .cell--gutter-\@#{$breakpoint} {
+    padding-left: $half-gutter;
+    padding-right: $half-gutter;
+  }
+
+  /* Visibility */
+  .cell--hidden-\@#{$breakpoint} {
+    display: none;
+  }
+
+  .cell--visible-\@#{$breakpoint} {
+    display: block;
+  }
+
+  /* Self justification Y axis */
+  .cell--yStretch-\@#{$breakpoint} {
+    align-self: stretch;
+  }
+
+  .cell--yStart-\@#{$breakpoint} {
+    align-self: flex-start;
+  }
+
+  .cell--yCenter-\@#{$breakpoint} {
+    align-self: center;
+  }
+
+  .cell--yEnd-\@#{$breakpoint} {
+    align-self: flex-end;
+  }
+
+  /* Self justification X axis */
+  .cell--xCenter-\@#{$breakpoint} {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .cell--xStart-\@#{$breakpoint} {
+    margin-right: auto;
+  }
+
+  .cell--xEnd-\@#{$breakpoint} {
+    margin-left: auto;
+  }
+
+  /* Order */
+  .cell--first-\@#{$breakpoint} {
+    order: -1;
+  }
+
+  .cell--last-\@#{$breakpoint} {
+    order: 1;
+  }
+
+  .cell--ordered-\@#{$breakpoint} {
+    order: 0;
+  }
+}

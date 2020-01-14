@@ -2,8 +2,12 @@
 
 @import "settings";
 
-/* Debug */
 .fluxgrid-debug {
+  /* stylelint-disable color-no-hex */
+  $fluxgrid-debug-container-color: #4f91b2;
+  $fluxgrid-debug-grid-color: #9b4dca;
+  $fluxgrid-debug-cell-color: #999;
+
   .container,
   .grid,
   .cell {
@@ -45,11 +49,11 @@
     }
   }
 
-  @mixin grid-debug($bp-short) {
+  @mixin grid-debug($bp-shortname) {
     /* Grid */
     .grid {
       /** Grid large gutters **/
-      &.grid--lgGutter-\@#{$bp-short} {
+      &.grid--lgGutter-\@#{$bp-shortname} {
         /* stylelint-disable-next-line */
         &::after,
         > .cell::after {
@@ -59,7 +63,7 @@
       }
 
       /** Grid no gutters **/
-      &.grid--noGutter-\@#{$bp-short} {
+      &.grid--noGutter-\@#{$bp-shortname} {
         /* stylelint-disable-next-line */
         &::after,
         > .cell::after {
@@ -70,7 +74,7 @@
     }
 
     /* Cell */
-    .cell--noGutter-\@#{$bp-short} {
+    .cell--noGutter-\@#{$bp-shortname} {
       &::after {
         left: 0;
         right: 0;
@@ -78,11 +82,13 @@
     }
   }
 
-  @include grid-debug("xs");
-
-  @each $bp-short, $bp-size in $fluxgrid-breakpoints {
-    @media (min-width: $bp-size) {
-      @include grid-debug($bp-short);
+  @each $bp-shortname, $bp-size in $fluxgrid-breakpoints {
+    @if $bp-size == 0 {
+      @include grid-debug($bp-shortname);
+    } @else {
+      @media (min-width: $bp-size) {
+        @include grid-debug($bp-shortname);
+      }
     }
   }
 }
