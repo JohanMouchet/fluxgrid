@@ -4,43 +4,46 @@ $fluxgrid-division: 12 !default;
 $fluxgrid-breakpoints: (
   xs: (
     gutter: 12px,
-    gutter-lg: 36px,
-    outside-margin: 24px
+    gutter-lg: 12px * 1.25,
+    outside-margin: 12px / 2 * 1.75
   ),
   sm: (
-    size: 425px + 1,
-    gutter: 12px,
-    gutter-lg: 36px,
-    outside-margin: 24px
+    size: 425px,
+    gutter: 15px,
+    gutter-lg: 15px * 1.25,
+    outside-margin: 15px / 2 * 1.75
   ),
   md: (
-    size: 768px + 1,
-    gutter: 20px,
-    gutter-lg: 60px,
-    outside-margin: 40px
+    size: 768px,
+    gutter: 18.75px,
+    gutter-lg: 18.75px * 1.25,
+    outside-margin: 18.75px / 2 * 1.75
   ),
   lg: (
-    size: 1024px + 1,
-    gutter: 20px,
-    gutter-lg: 60px,
-    outside-margin: 40px
+    size: 1024px,
+    gutter: 23.438px,
+    gutter-lg: 23.438px * 1.25,
+    outside-margin: 23.438px / 2 * 1.75
   ),
   xl: (
-    size: 1366px + 1,
-    gutter: 30px,
-    gutter-lg: 90px,
-    outside-margin: 60px
+    size: 1366px,
+    gutter: 29.297px,
+    gutter-lg: 29.297px * 1.25,
+    outside-margin: 29.297px / 2 * 1.75
   )
 ) !default;
 
-// TODO: used default setting var outside of $fluxgrid-breakpoints? ex: default * 2
-// TODO: merge default $fluxgrid-breakpoints with custom?
 // TODO: Do not generate @media if no change between gutter bp
 // TODO: add $fluxgrid-features map to toggle features
-// TODO: update debug to match gutters
-// TODO: update Gulp task: removed split
-// TODO: update README doc: removed split
+// TODO: update debug to match gutters (fix '@breakpoint')
 // TODO: add tests
+// TODO: fix .cell--noGutter|gutter-*
+// TODO: run gulp dist as pre commit hook
+
+/* stylelint-disable color-no-hex */
+$fluxgrid-debug-container-color: #4f91b2;
+$fluxgrid-debug-grid-color: #9b4dca;
+$fluxgrid-debug-cell-color: #999;
 
 /* Test */
 // @each $gutter in $fluxgrid-gutters {

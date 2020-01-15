@@ -3,11 +3,6 @@
 @import "settings";
 
 .fluxgrid-debug {
-  /* stylelint-disable color-no-hex */
-  $fluxgrid-debug-container-color: #4f91b2;
-  $fluxgrid-debug-grid-color: #9b4dca;
-  $fluxgrid-debug-cell-color: #999;
-
   .container,
   .grid,
   .cell {
@@ -32,38 +27,54 @@
     }
   }
 
-  .grid {
-    &::after {
-      outline-color: $fluxgrid-debug-grid-color;
-      left: $fluxgrid-half-gutter;
-      right: $fluxgrid-half-gutter;
-    }
-  }
-
+  /* Cell */
   .cell {
     &::after {
       outline-style: dotted;
       outline-color: $fluxgrid-debug-cell-color;
-      left: $fluxgrid-half-gutter;
-      right: $fluxgrid-half-gutter;
     }
   }
 
-  @mixin grid-debug($bp-shortname) {
-    /* Grid */
+  @mixin debug-responsive-cell($breakpoint, $settings) {
+    $half-gutter: map-get($settings, gutter) / 2;
+
+    .cell {
+      &::after {
+        left: $half-gutter;
+        right: $half-gutter;
+      }
+    }
+  }
+
+  /* Grid */
+  .grid {
+    &::after {
+      outline-color: $fluxgrid-debug-grid-color;
+    }
+  }
+
+  @mixin debug-responsive-grid($breakpoint, $settings) {
+    $half-gutter: map-get($settings, gutter) / 2;
+    $half-gutter-lg: map-get($settings, gutter-lg) / 2;
+
     .grid {
+      &::after {
+        left: $half-gutter;
+        right: $half-gutter;
+      }
+
       /** Grid large gutters **/
-      &.grid--lgGutter-\@#{$bp-shortname} {
+      &.grid--lgGutter-\@#{breakpoint} {
         /* stylelint-disable-next-line */
         &::after,
         > .cell::after {
-          left: $fluxgrid-half-gutter-lg;
-          right: $fluxgrid-half-gutter-lg;
+          left: $half-gutter-lg;
+          right: $half-gutter-lg;
         }
       }
 
       /** Grid no gutters **/
-      &.grid--noGutter-\@#{$bp-shortname} {
+      &.grid--noGutter-\@#{breakpoint} {
         /* stylelint-disable-next-line */
         &::after,
         > .cell::after {
@@ -74,7 +85,7 @@
     }
 
     /* Cell */
-    .cell--noGutter-\@#{$bp-shortname} {
+    .cell--noGutter-\@#{breakpoint} {
       &::after {
         left: 0;
         right: 0;
@@ -82,12 +93,28 @@
     }
   }
 
-  @each $bp-shortname, $bp-size in $fluxgrid-breakpoints {
-    @if $bp-size == 0 {
-      @include grid-debug($bp-shortname);
+  // @each $bp-shortname, $bp-size in $fluxgrid-breakpoints {
+  //   @if $bp-size == 0 {
+  //     @include debug-responsive-grid($bp-shortname);
+  //   } @else {
+  //     @media (min-width: $bp-size) {
+  //       @include debug-responsive-grid($bp-shortname);
+  //     }
+  //   }
+  // }
+
+  @mixin debug-responsives($breakpoint, $settings) {
+    // @include debug-responsive-container($breakpoint, $settings);
+    @include debug-responsive-grid($breakpoint, $settings);
+    @include debug-responsive-cell($breakpoint, $settings);
+  }
+
+  @each $breakpoint, $settings in $fluxgrid-breakpoints {
+    @if not map-has-key($settings, size) {
+      @include debug-responsives($breakpoint, $settings);
     } @else {
-      @media (min-width: $bp-size) {
-        @include grid-debug($bp-shortname);
+      @media (min-width: map-get($settings, size)) {
+        @include debug-responsives($breakpoint, $settings);
       }
     }
   }

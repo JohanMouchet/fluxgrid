@@ -36,15 +36,17 @@
   }
 
   /* Gutters */
+  /* stylelint-disable declaration-no-important */
   .cell--noGutter-\@#{$breakpoint} {
-    padding-left: 0;
-    padding-right: 0;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
   }
 
   .cell--gutter-\@#{$breakpoint} {
-    padding-left: $half-gutter;
-    padding-right: $half-gutter;
+    padding-left: $half-gutter !important;
+    padding-right: $half-gutter !important;
   }
+  /* stylelint-enable declaration-no-important */
 
   /* Visibility */
   .cell--hidden-\@#{$breakpoint} {
