@@ -1,0 +1,40 @@
+/* Settings */
+
+$flexgrid-breakpoints: (
+  xs: (
+    division: 4,
+    gutter: 12px,
+    outside-margin: 12px
+  ),
+  sm: (
+    size: 768px,
+    division: 12,
+    gutter: 12px,
+    outside-margin: 24px
+  ),
+  md: (
+    size: 960px,
+    division: 12,
+    gutter: 20px,
+    outside-margin: 40px
+  ),
+  lg: (
+    size: 1290px,
+    division: 12,
+    gutter: 30px,
+    outside-margin: 60px
+  ),
+  xl: (
+    size: 1590px,
+    division: 12,
+    gutter: 30px,
+    outside-margin: 90px
+  )
+) !default;
+
+/* Test */
+@each $breakpoint, $settings in $flexgrid-breakpoints {
+  @if (map-get($settings, outside-margin) < (map-get($settings, gutter) / 2)) {
+    @warn "To avoid overflow, the 'outside-margin' (#{map-get($settings, outside-margin)}) of '#{$breakpoint}' has to be as large or larger than half the 'gutter' (#{map-get($settings, gutter)}). This is for the .container to cancel the .grid negative margins used to align the .cells.";
+  }
+}

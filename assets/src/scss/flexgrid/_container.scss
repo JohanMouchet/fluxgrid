@@ -1,0 +1,33 @@
+/* Container */
+.container {
+  box-sizing: border-box;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@mixin flexgrid-responsive-container($breakpoint, $settings) {
+  $outside-margin: map-get($settings, outside-margin);
+
+  /* Spacing */
+  .container {
+    padding-left: $outside-margin;
+    padding-right: $outside-margin;
+  }
+}
+
+@each $breakpoint, $settings in $flexgrid-breakpoints {
+  $outside-margin: map-get($settings, outside-margin);
+
+  @if not map-has-key($settings, size) {
+    @include flexgrid-responsive-container($breakpoint, $settings);
+  } @else {
+    .container--#{$breakpoint} {
+      max-width: map-get($settings, size);
+    }
+
+    @media (min-width: map-get($settings, size)) {
+      @include flexgrid-responsive-container($breakpoint, $settings);
+    }
+  }
+}

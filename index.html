@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Fluxgrid</title>
+    <title>flexgrid</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <!-- Fluxgrid -->
+    <!-- flexgrid -->
     <link
       rel="stylesheet"
       type="text/css"
-      href="assets/dist/css/fluxgrid/fluxgrid.min.css"
+      href="assets/dist/css/flexgrid/flexgrid.min.css"
     />
-    <!-- Fluxgrid debug (optional) -->
+    <!-- flexgrid debug (optional) -->
     <link
       rel="stylesheet"
       type="text/css"
-      href="assets/dist/css/fluxgrid/fluxgrid-debug.min.css"
+      href="assets/dist/css/flexgrid/flexgrid-debug.min.css"
     />
     <!-- Demo styling -->
     <link
@@ -23,10 +23,10 @@
     />
   </head>
 
-  <body class="fluxgrid-debug counter">
+  <body class="flexgrid-debug counter">
     <main>
       <div class="container container--xl">
-        <h1>Fluxgrid</h1>
+        <h1>flexgrid</h1>
 
         <p>
           <em>
@@ -36,12 +36,12 @@
 
         <p>
           See on
-          <a href="https://github.com/JohanMouchet/fluxgrid">GitHub</a>
+          <a href="https://github.com/JohanMouchet/flexgrid">GitHub</a>
         </p>
 
         <p>
           <strong>Columns:</strong> <code>12</code><br />
-          <strong>Gutters width:</strong> <code>1rem</code><br />
+          <strong>Gutters width:</strong> <code>responsive</code><br />
           <strong>Nestable:</strong> Yes<br />
           <strong>Direction:</strong> Row<br />
           <strong>Breakpoints:</strong>
@@ -70,10 +70,10 @@
             <tr>
               <th scope="row">Breakpoint</th>
               <td>&gt; 0</td>
-              <td>&ge; 425px</td>
               <td>&ge; 768px</td>
-              <td>&ge; 1024px</td>
-              <td>&ge; 1366px</td>
+              <td>&ge; 960px</td>
+              <td>&ge; 1290px</td>
+              <td>&ge; 1590px</td>
             </tr>
             <tr>
               <th scope="row">Suffix</th>
@@ -87,7 +87,7 @@
         </table>
 
         <h3>Syntax</h3>
-<pre class="syntax">
+        <pre class="syntax">
 <code><u class="syntax--w">&lt;</u><u class="syntax--r">div</u> <u class="syntax--y">class</u><u class="syntax--w">=</u><u class="syntax--g">"container <i>container--modifier-*</i>"</u><u class="syntax--w">&gt;</u>
 	<u class="syntax--w">&lt;</u><u class="syntax--r">div</u> <u class="syntax--y">class</u><u class="syntax--w">=</u><u class="syntax--g">"grid <i>grid--modifier-*</i>"</u><u class="syntax--w">&gt;</u>
 		<u class="syntax--w">&lt;</u><u class="syntax--r">div</u> <u class="syntax--y">class</u><u class="syntax--w">=</u><u class="syntax--g">"cell <i>cell--modifier-*</i>"</u><u class="syntax--w">&gt;</u><u class="syntax--w">&lt;</u><u class="syntax--w">/</u><u class="syntax--r">div</u><u class="syntax--w">&gt;</u>
@@ -109,7 +109,7 @@
           <code>.cell</code>s. It can be extended with modifiers throughout
           breakpoints:
         </p>
-        <code>.container--*</code> <code>&amp;.container--noGutter</code>
+        <code>.container--*</code>
 
         <hr />
 
@@ -214,50 +214,6 @@
         <hr />
 
         <h3 class="counter-index-2 anchor">
-          <a id="grid-gutters" href="#grid-gutters" class="anchor-link">#</a
-          >Gutters
-        </h3>
-        <div class="grid hide-grid-debug">
-          <div class="cell cell--12-@xs cell--5-@md">
-            <h4 class="anchor">
-              <a
-                id="grid-gutter-large"
-                href="#grid-gutter-large"
-                class="anchor-link"
-                >#</a
-              >Large
-              <code>&amp;.grid--lgGutter-*</code>
-            </h4>
-            <div class="grid grid--lgGutter-@xs">
-              <div class="cell cell--@xs"><code class="box">.cell</code></div>
-              <div class="cell cell--@xs"><code class="box">.cell</code></div>
-              <div class="cell cell--@xs"><code class="box">.cell</code></div>
-            </div>
-          </div>
-
-          <div class="cell cell--12-@xs cell--2-@md">&nbsp;</div>
-
-          <div class="cell cell--12-@xs cell--5-@md">
-            <h4 class="anchor">
-              <a
-                id="grid-gutter-none"
-                href="#grid-gutter-none"
-                class="anchor-link"
-                >#</a
-              >None
-              <code>&amp;.grid--noGutter-*</code>
-            </h4>
-            <div class="grid grid--noGutter-@xs">
-              <div class="cell cell--@xs"><code class="box">.cell</code></div>
-              <div class="cell cell--@xs"><code class="box">.cell</code></div>
-              <div class="cell cell--@xs"><code class="box">.cell</code></div>
-            </div>
-          </div>
-        </div>
-
-        <hr />
-
-        <h3 class="counter-index-2 anchor">
           <a
             id="grid-justification"
             href="#grid-justification"
@@ -265,7 +221,7 @@
             >#</a
           >Justification
         </h3>
-        <div class="grid grid--lgGutter-@md hide-grid-debug">
+        <div class="grid hide-grid-debug">
           <div class="cell cell--12-@xs cell--4-@md">
             <h4 class="anchor">
               <a
@@ -527,24 +483,6 @@
         <hr />
 
         <h3 class="counter-index-2 anchor">
-          <a id="cell-no-gutter" href="#cell-no-gutter" class="anchor-link">#</a
-          >No gutter
-          <code>&amp;.cell--noGutter|gutter-*</code>
-        </h3>
-        <div class="grid">
-          <div class="cell cell--@xs"><code class="box">.cell</code></div>
-          <div class="cell cell--@xs cell--noGutter-@xs">
-            <code class="box">.cell--noGutter-*</code>
-          </div>
-          <div class="cell cell--@xs cell--noGutter-@xs">
-            <code class="box">.cell--noGutter-*</code>
-          </div>
-          <div class="cell cell--@xs"><code class="box">.cell</code></div>
-        </div>
-
-        <hr />
-
-        <h3 class="counter-index-2 anchor">
           <a
             id="cell-self-justification"
             href="#cell-self-justification"
@@ -641,7 +579,7 @@
     <script>
       function toggleGridDebug() {
         var body = document.body;
-        body.classList.toggle("fluxgrid-debug");
+        body.classList.toggle("flexgrid-debug");
       }
     </script>
   </body>

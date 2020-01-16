@@ -7,6 +7,6 @@ const dev = done => series(buildcss("dev"), livereload, watcher)(done);
 
 dev.displayName = "dev";
 dev.description =
-  "Build fluxgrid (un-minified), debug and demo CSS, start a browserSync server and watcher";
+  "Build flexgrid (un-minified), debug and demo CSS, start a browserSync server and watcher";
 
 export default dev;

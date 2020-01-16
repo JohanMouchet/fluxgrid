@@ -1,12 +1,12 @@
+/* Grid */
 .grid {
   box-sizing: border-box;
   display: flex;
   flex-wrap: wrap;
 }
 
-@mixin fluxgrid-responsive-grid($breakpoint, $settings) {
+@mixin flexgrid-responsive-grid($breakpoint, $settings) {
   $half-gutter: map-get($settings, gutter) / 2;
-  $half-gutter-lg: map-get($settings, gutter-lg) / 2;
 
   /* Spacing */
   .grid {
@@ -31,29 +31,6 @@
   .grid--noWrap-\@#{$breakpoint} {
     flex-wrap: nowrap;
   }
-
-  /* Gutters */
-  /* stylelint-disable declaration-no-important */
-  .grid--lgGutter-\@#{$breakpoint} {
-    margin-left: -1 * $half-gutter-lg !important;
-    margin-right: -1 * $half-gutter-lg !important;
-
-    > .cell {
-      padding-left: $half-gutter-lg;
-      padding-right: $half-gutter-lg;
-    }
-  }
-
-  .grid--noGutter-\@#{$breakpoint} {
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-
-    > .cell {
-      padding-left: 0;
-      padding-right: 0;
-    }
-  }
-  /* stylelint-enable declaration-no-important */
 
   /* Justification X axis */
   .grid--xStart-\@#{$breakpoint} {
@@ -116,5 +93,15 @@
 
   .grid--zBetween-\@#{$breakpoint} {
     align-content: space-between;
+  }
+}
+
+@each $breakpoint, $settings in $flexgrid-breakpoints {
+  @if not map-has-key($settings, size) {
+    @include flexgrid-responsive-grid($breakpoint, $settings);
+  } @else {
+    @media (min-width: map-get($settings, size)) {
+      @include flexgrid-responsive-grid($breakpoint, $settings);
+    }
   }
 }

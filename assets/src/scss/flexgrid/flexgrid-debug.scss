@@ -1,8 +1,12 @@
-/*! Fluxgrid | MIT License | https://github.com/JohanMouchet/fluxgrid */
-
 @import "settings";
 
-.fluxgrid-debug {
+.flexgrid-debug {
+  /* stylelint-disable color-no-hex */
+  $debug-container-color: #4f91b2;
+  $debug-grid-color: #9b4dca;
+  $debug-cell-color: #999;
+  /* stylelint-disable enable */
+
   .container,
   .grid,
   .cell {
@@ -21,7 +25,7 @@
 
   .container {
     &::after {
-      outline-color: $fluxgrid-debug-container-color;
+      outline-color: $debug-container-color;
       left: 0;
       right: 0;
     }
@@ -31,7 +35,7 @@
   .cell {
     &::after {
       outline-style: dotted;
-      outline-color: $fluxgrid-debug-cell-color;
+      outline-color: $debug-cell-color;
     }
   }
 
@@ -49,67 +53,27 @@
   /* Grid */
   .grid {
     &::after {
-      outline-color: $fluxgrid-debug-grid-color;
+      outline-color: $debug-grid-color;
     }
   }
 
   @mixin debug-responsive-grid($breakpoint, $settings) {
     $half-gutter: map-get($settings, gutter) / 2;
-    $half-gutter-lg: map-get($settings, gutter-lg) / 2;
 
     .grid {
       &::after {
         left: $half-gutter;
         right: $half-gutter;
       }
-
-      /** Grid large gutters **/
-      &.grid--lgGutter-\@#{breakpoint} {
-        /* stylelint-disable-next-line */
-        &::after,
-        > .cell::after {
-          left: $half-gutter-lg;
-          right: $half-gutter-lg;
-        }
-      }
-
-      /** Grid no gutters **/
-      &.grid--noGutter-\@#{breakpoint} {
-        /* stylelint-disable-next-line */
-        &::after,
-        > .cell::after {
-          left: 0;
-          right: 0;
-        }
-      }
-    }
-
-    /* Cell */
-    .cell--noGutter-\@#{breakpoint} {
-      &::after {
-        left: 0;
-        right: 0;
-      }
     }
   }
 
-  // @each $bp-shortname, $bp-size in $fluxgrid-breakpoints {
-  //   @if $bp-size == 0 {
-  //     @include debug-responsive-grid($bp-shortname);
-  //   } @else {
-  //     @media (min-width: $bp-size) {
-  //       @include debug-responsive-grid($bp-shortname);
-  //     }
-  //   }
-  // }
-
   @mixin debug-responsives($breakpoint, $settings) {
-    // @include debug-responsive-container($breakpoint, $settings);
     @include debug-responsive-grid($breakpoint, $settings);
     @include debug-responsive-cell($breakpoint, $settings);
   }
 
-  @each $breakpoint, $settings in $fluxgrid-breakpoints {
+  @each $breakpoint, $settings in $flexgrid-breakpoints {
     @if not map-has-key($settings, size) {
       @include debug-responsives($breakpoint, $settings);
     } @else {

@@ -1,11 +1,12 @@
+/* Cell */
 .cell {
   box-sizing: border-box;
   flex: 0 1 auto;
 }
 
-@mixin fluxgrid-responsive-cell($breakpoint, $settings) {
+@mixin flexgrid-responsive-cell($breakpoint, $settings) {
   $half-gutter: map-get($settings, gutter) / 2;
-  $half-gutter-lg: map-get($settings, gutter-lg) / 2;
+  $division: map-get($settings, division);
 
   /* Spacing */
   .cell {
@@ -14,10 +15,10 @@
   }
 
   /* Sizes */
-  @for $i from 1 through $fluxgrid-division {
+  @for $i from 1 through $division {
     .cell--#{$i}-\@#{$breakpoint} {
-      flex-basis: percentage($i / $fluxgrid-division);
-      max-width: percentage($i / $fluxgrid-division);
+      flex-basis: percentage($i / $division);
+      max-width: percentage($i / $division);
     }
   }
 
@@ -34,19 +35,6 @@
     flex-basis: auto;
     max-width: none;
   }
-
-  /* Gutters */
-  /* stylelint-disable declaration-no-important */
-  .cell--noGutter-\@#{$breakpoint} {
-    padding-left: 0 !important;
-    padding-right: 0 !important;
-  }
-
-  .cell--gutter-\@#{$breakpoint} {
-    padding-left: $half-gutter !important;
-    padding-right: $half-gutter !important;
-  }
-  /* stylelint-enable declaration-no-important */
 
   /* Visibility */
   .cell--hidden-\@#{$breakpoint} {
@@ -99,5 +87,15 @@
 
   .cell--ordered-\@#{$breakpoint} {
     order: 0;
+  }
+}
+
+@each $breakpoint, $settings in $flexgrid-breakpoints {
+  @if not map-has-key($settings, size) {
+    @include flexgrid-responsive-cell($breakpoint, $settings);
+  } @else {
+    @media (min-width: map-get($settings, size)) {
+      @include flexgrid-responsive-cell($breakpoint, $settings);
+    }
   }
 }
