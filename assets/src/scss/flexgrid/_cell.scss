@@ -16,9 +16,18 @@
 
   /* Sizes */
   @for $i from 1 through $division {
-    .cell--#{$i}-\@#{$breakpoint} {
-      flex-basis: percentage($i / $division);
-      max-width: percentage($i / $division);
+    @if $division != $flexgrid-division {
+      $j: $i * $flexgrid-division / $division;
+
+      .cell--#{$j}-\@#{$breakpoint} {
+        flex-basis: percentage($i / $division);
+        max-width: percentage($i / $division);
+      }
+    } @else {
+      .cell--#{$i}-\@#{$breakpoint} {
+        flex-basis: percentage($i / $division);
+        max-width: percentage($i / $division);
+      }
     }
   }
 
