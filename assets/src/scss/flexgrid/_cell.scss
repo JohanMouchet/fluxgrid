@@ -98,13 +98,3 @@
     order: 0;
   }
 }
-
-@each $breakpoint, $settings in $flexgrid-breakpoints {
-  @if not map-has-key($settings, size) {
-    @include flexgrid-responsive-cell($breakpoint, $settings);
-  } @else {
-    @media (min-width: map-get($settings, size)) {
-      @include flexgrid-responsive-cell($breakpoint, $settings);
-    }
-  }
-}

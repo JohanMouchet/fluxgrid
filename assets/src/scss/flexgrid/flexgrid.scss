@@ -2,3 +2,21 @@
 @import "container";
 @import "grid";
 @import "cell";
+
+@mixin flexgrid-responsives($breakpoint, $settings) {
+  @include flexgrid-responsive-container($breakpoint, $settings);
+  @include flexgrid-responsive-grid($breakpoint, $settings);
+  @include flexgrid-responsive-cell($breakpoint, $settings);
+}
+
+@each $breakpoint, $settings in $flexgrid-breakpoints {
+  @if not map-has-key($settings, size) {
+    @include flexgrid-responsives($breakpoint, $settings);
+  } @else {
+    @include flexgrid-container-sizes($breakpoint, $settings);
+
+    @media (min-width: map-get($settings, size)) {
+      @include flexgrid-responsives($breakpoint, $settings);
+    }
+  }
+}
