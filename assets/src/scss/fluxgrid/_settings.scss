@@ -4,33 +4,33 @@ $fluxgrid-division: 12 !default;
 
 $fluxgrid-breakpoints: (
   xs: (
-    division: 6,
-    gutter: 12px,
-    outside-margin: 12px
+    division: $fluxgrid-division / 2,
+    gutter: 0.75rem,
+    outside-margin: 1rem
   ),
   sm: (
-    size: 768px,
+    size: 425px + 1,
     division: $fluxgrid-division,
-    gutter: 12px,
-    outside-margin: 24px
+    gutter: 0.75rem,
+    outside-margin: 1rem
   ),
   md: (
-    size: 960px,
+    size: 768px + 1,
     division: $fluxgrid-division,
-    gutter: 20px,
-    outside-margin: 40px
+    gutter: 1.5rem,
+    outside-margin: 2rem
   ),
   lg: (
-    size: 1290px,
+    size: 1024px + 1,
     division: $fluxgrid-division,
-    gutter: 30px,
-    outside-margin: 60px
+    gutter: 2.25rem,
+    outside-margin: 3rem
   ),
   xl: (
-    size: 1590px,
+    size: 1366px + 1,
     division: $fluxgrid-division,
-    gutter: 30px,
-    outside-margin: 90px
+    gutter: 2.25rem,
+    outside-margin: 3rem
   )
 ) !default;
 
