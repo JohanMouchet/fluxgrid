@@ -6,7 +6,7 @@
   margin-right: auto;
 }
 
-@mixin flexgrid-responsive-container($breakpoint, $settings) {
+@mixin fluxgrid-responsive-container($breakpoint, $settings) {
   $outside-margin: map-get($settings, outside-margin);
 
   .container {
@@ -15,7 +15,7 @@
   }
 }
 
-@mixin flexgrid-container-sizes($breakpoint, $settings) {
+@mixin fluxgrid-container-sizes($breakpoint, $settings) {
   .container--#{$breakpoint} {
     max-width: map-get($settings, size);
   }

@@ -4,7 +4,7 @@
   flex: 0 1 auto;
 }
 
-@mixin flexgrid-responsive-cell($breakpoint, $settings) {
+@mixin fluxgrid-responsive-cell($breakpoint, $settings) {
   $half-gutter: map-get($settings, gutter) / 2;
   $division: map-get($settings, division);
 
@@ -16,8 +16,8 @@
 
   /* Sizes */
   @for $i from 1 through $division {
-    @if $division != $flexgrid-division {
-      $j: $i * $flexgrid-division / $division;
+    @if $division != $fluxgrid-division {
+      $j: $i * $fluxgrid-division / $division;
 
       .cell--#{$j}-\@#{$breakpoint} {
         flex-basis: percentage($i / $division);

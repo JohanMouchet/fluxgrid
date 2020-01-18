@@ -18,7 +18,7 @@ const buildcss = env => () => {
     prod = env === "prod"
   } = env;
 
-  const sources = [config.css.src.flexgrid];
+  const sources = [config.css.src.fluxgrid];
   const postCssPlugins = [autoprefixer()];
 
   if (dev) {

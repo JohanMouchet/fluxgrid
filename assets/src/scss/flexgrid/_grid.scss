@@ -5,7 +5,7 @@
   flex-wrap: wrap;
 }
 
-@mixin flexgrid-responsive-grid($breakpoint, $settings) {
+@mixin fluxgrid-responsive-grid($breakpoint, $settings) {
   $half-gutter: map-get($settings, gutter) / 2;
 
   /* Spacing */

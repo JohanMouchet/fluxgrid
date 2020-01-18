@@ -1,4 +1,4 @@
-# Flexgrid
+# Fluxgrid
 
 _Responsive and customisable utility-based CSS grid built with Sass._
 
@@ -30,7 +30,7 @@ Responsive: \*`@xs|@sm|@md|@lg|@xl`
 
 ## Options
 
-Head over the [demo page](https://johanmouchet.github.io/flexgrid/index.html).
+Head over the [demo page](https://johanmouchet.github.io/fluxgrid/index.html).
 
 ## Getting Started
 
@@ -40,21 +40,21 @@ Choose your preferred way:
 
 ### A. With the default config
 
-- Link the files from `assets/dist/css/flexgrid/` to your document's `<head>`:
+- Link the files from `assets/dist/css/fluxgrid/` to your document's `<head>`:
 
-  - [`flexgrid.min.css`](https://github.com/JohanMouchet/flexgrid/blob/master/assets/dist/css/flexgrid.min.css)
+  - [`fluxgrid.min.css`](https://github.com/JohanMouchet/fluxgrid/blob/master/assets/dist/css/fluxgrid.min.css)
 
     ```html
-    <link rel="stylesheet" type="text/css" href="flexgrid/flexgrid.min.css" />
+    <link rel="stylesheet" type="text/css" href="fluxgrid/fluxgrid.min.css" />
     ```
 
-  - [`flexgrid-debug.min.css`](https://github.com/JohanMouchet/flexgrid/blob/master/assets/dist/css/flexgrid-debug.min.css) (optional, not recommended in production)
+  - [`fluxgrid-debug.min.css`](https://github.com/JohanMouchet/fluxgrid/blob/master/assets/dist/css/fluxgrid-debug.min.css) (optional, not recommended in production)
 
     ```html
     <link
       rel="stylesheet"
       type="text/css"
-      href="flexgrid/flexgrid-debug.min.css"
+      href="fluxgrid/fluxgrid-debug.min.css"
     />
     ```
 
@@ -63,17 +63,17 @@ Choose your preferred way:
 - Download the repo
 - Install the dependencies: `$ npm i`
 - Customise the grid variables from `_settings.scss` to your liking:
-  - `$flexgrid-division`
-  - `$flexgrid-breakpoints`
+  - `$fluxgrid-division`
+  - `$fluxgrid-breakpoints`
 - To list available tasks, try running: `$ npx gulp --tasks`
 - To build the grid, run: `$ npx gulp prod`, with the optional flags `--debug`
 - Link the output files to your document's `<head>` as above
 
 ### C. Within your own build environment (Webpack / Gulp / Grunt / any)
 
-- Add the folder `assets/src/scss/flexgrid/` to your build environment
+- Add the folder `assets/src/scss/fluxgrid/` to your build environment
 - Customise the grid variables from `_settings.scss` to your liking. It is recommended to override the `!default` ones in another file, but you can also edit them directly:
-  - `$flexgrid-division`
-  - `$flexgrid-breakpoints`
-- Run `flexgrid.scss` and optionally (not recommended in production) `flexgrid-debug.scss` through your build. It is advised to Autoprefix and minify them
+  - `$fluxgrid-division`
+  - `$fluxgrid-breakpoints`
+- Run `fluxgrid.scss` and optionally (not recommended in production) `fluxgrid-debug.scss` through your build. It is advised to Autoprefix and minify them
 - Link the output files to your document's `<head>` as above

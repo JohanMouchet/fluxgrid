@@ -1,6 +1,6 @@
 @import "settings";
 
-.flexgrid-debug {
+.fluxgrid-debug {
   /* stylelint-disable color-no-hex */
   $debug-container-color: #4f91b2;
   $debug-grid-color: #9b4dca;
@@ -73,7 +73,7 @@
     @include debug-responsive-cell($breakpoint, $settings);
   }
 
-  @each $breakpoint, $settings in $flexgrid-breakpoints {
+  @each $breakpoint, $settings in $fluxgrid-breakpoints {
     @if not map-has-key($settings, size) {
       @include debug-responsives($breakpoint, $settings);
     } @else {

@@ -1,21 +1,21 @@
 /* Settings */
 /* Tests */
-.flexgrid-debug {
+.fluxgrid-debug {
   /* stylelint-disable color-no-hex */
   /* stylelint-disable enable */
   /* Cell */
   /* Grid */
 }
 
-.flexgrid-debug .container,
-.flexgrid-debug .grid,
-.flexgrid-debug .cell {
+.fluxgrid-debug .container,
+.fluxgrid-debug .grid,
+.fluxgrid-debug .cell {
   position: relative;
 }
 
-.flexgrid-debug .container::after,
-.flexgrid-debug .grid::after,
-.flexgrid-debug .cell::after {
+.fluxgrid-debug .container::after,
+.fluxgrid-debug .grid::after,
+.fluxgrid-debug .cell::after {
   content: "";
   position: absolute;
   top: 0;
@@ -25,70 +25,70 @@
   outline-offset: -1px;
 }
 
-.flexgrid-debug .container::after {
+.fluxgrid-debug .container::after {
   outline-color: #4f91b2;
   left: 0;
   right: 0;
 }
 
-.flexgrid-debug .cell::after {
+.fluxgrid-debug .cell::after {
   outline-style: dotted;
   outline-color: #999;
 }
 
-.flexgrid-debug .grid::after {
+.fluxgrid-debug .grid::after {
   outline-color: #9b4dca;
 }
 
-.flexgrid-debug .grid::after {
+.fluxgrid-debug .grid::after {
   left: 6px;
   right: 6px;
 }
 
-.flexgrid-debug .cell::after {
+.fluxgrid-debug .cell::after {
   left: 6px;
   right: 6px;
 }
 
 @media (min-width: 768px) {
-  .flexgrid-debug .grid::after {
+  .fluxgrid-debug .grid::after {
     left: 6px;
     right: 6px;
   }
-  .flexgrid-debug .cell::after {
+  .fluxgrid-debug .cell::after {
     left: 6px;
     right: 6px;
   }
 }
 
 @media (min-width: 960px) {
-  .flexgrid-debug .grid::after {
+  .fluxgrid-debug .grid::after {
     left: 10px;
     right: 10px;
   }
-  .flexgrid-debug .cell::after {
+  .fluxgrid-debug .cell::after {
     left: 10px;
     right: 10px;
   }
 }
 
 @media (min-width: 1290px) {
-  .flexgrid-debug .grid::after {
+  .fluxgrid-debug .grid::after {
     left: 15px;
     right: 15px;
   }
-  .flexgrid-debug .cell::after {
+  .fluxgrid-debug .cell::after {
     left: 15px;
     right: 15px;
   }
 }
 
 @media (min-width: 1590px) {
-  .flexgrid-debug .grid::after {
+  .fluxgrid-debug .grid::after {
     left: 15px;
     right: 15px;
   }
-  .flexgrid-debug .cell::after {
+  .fluxgrid-debug .cell::after {
     left: 15px;
     right: 15px;
   }

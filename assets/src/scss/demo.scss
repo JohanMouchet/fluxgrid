@@ -1,17 +1,17 @@
 /* Styling for the demo page */
 
-@import "flexgrid/settings";
+@import "fluxgrid/settings";
 
 /* stylelint-disable color-no-hex */
-$flexgrid-demo-color-primary: #4f91b2;
-$flexgrid-demo-color-secondary: #9b4dca;
-$flexgrid-demo-color-grey: #e5e5e5;
-$flexgrid-demo-color-grey-lighter: #f2f2f2;
-$flexgrid-demo-color-syntax-grey: #282c35;
-$flexgrid-demo-color-syntax-w: #d7dae0;
-$flexgrid-demo-color-syntax-r: #e06c75;
-$flexgrid-demo-color-syntax-g: #98c379;
-$flexgrid-demo-color-syntax-y: #d19a66;
+$fluxgrid-demo-color-primary: #4f91b2;
+$fluxgrid-demo-color-secondary: #9b4dca;
+$fluxgrid-demo-color-grey: #e5e5e5;
+$fluxgrid-demo-color-grey-lighter: #f2f2f2;
+$fluxgrid-demo-color-syntax-grey: #282c35;
+$fluxgrid-demo-color-syntax-w: #d7dae0;
+$fluxgrid-demo-color-syntax-r: #e06c75;
+$fluxgrid-demo-color-syntax-g: #98c379;
+$fluxgrid-demo-color-syntax-y: #d19a66;
 /* stylelint-disable enable */
 
 html {
@@ -29,16 +29,16 @@ main {
 }
 
 a {
-  color: $flexgrid-demo-color-primary;
+  color: $fluxgrid-demo-color-primary;
 }
 
 h1 {
   display: inline-block;
-  color: $flexgrid-demo-color-grey;
+  color: $fluxgrid-demo-color-grey;
   background: linear-gradient(
     to right,
-    $flexgrid-demo-color-primary,
-    $flexgrid-demo-color-secondary
+    $fluxgrid-demo-color-primary,
+    $fluxgrid-demo-color-secondary
   );
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -49,7 +49,7 @@ h1 {
 code,
 pre {
   border-radius: 0.3em;
-  background-color: $flexgrid-demo-color-grey-lighter;
+  background-color: $fluxgrid-demo-color-grey-lighter;
 }
 
 /** Inline code **/
@@ -80,23 +80,23 @@ pre {
 }
 
 .syntax {
-  background-color: $flexgrid-demo-color-syntax-grey;
+  background-color: $fluxgrid-demo-color-syntax-grey;
 }
 
 .syntax--w {
-  color: $flexgrid-demo-color-syntax-w;
+  color: $fluxgrid-demo-color-syntax-w;
 }
 
 .syntax--r {
-  color: $flexgrid-demo-color-syntax-r;
+  color: $fluxgrid-demo-color-syntax-r;
 }
 
 .syntax--g {
-  color: $flexgrid-demo-color-syntax-g;
+  color: $fluxgrid-demo-color-syntax-g;
 }
 
 .syntax--y {
-  color: $flexgrid-demo-color-syntax-y;
+  color: $fluxgrid-demo-color-syntax-y;
 }
 
 /* Table */
@@ -110,7 +110,7 @@ table {
 
   /* stylelint-disable-next-line selector-max-type */
   tbody tr:not(:last-child) {
-    border-bottom: 1px solid $flexgrid-demo-color-grey;
+    border-bottom: 1px solid $fluxgrid-demo-color-grey;
   }
 
   th,
@@ -121,11 +121,11 @@ table {
 
   th {
     font-weight: 700;
-    color: $flexgrid-demo-color-grey;
+    color: $fluxgrid-demo-color-grey;
     background: linear-gradient(
       to right,
-      $flexgrid-demo-color-primary,
-      $flexgrid-demo-color-secondary
+      $fluxgrid-demo-color-primary,
+      $fluxgrid-demo-color-secondary
     );
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -133,7 +133,7 @@ table {
   }
 
   thead {
-    border-bottom: 2px solid $flexgrid-demo-color-grey;
+    border-bottom: 2px solid $fluxgrid-demo-color-grey;
   }
 
   @media screen and (max-width: 768px) {
@@ -153,7 +153,7 @@ hr {
   width: 100%;
   margin: 2.5em 0;
   border: 0;
-  border-bottom: 1px solid $flexgrid-demo-color-grey;
+  border-bottom: 1px solid $fluxgrid-demo-color-grey;
 }
 
 .box {
@@ -171,8 +171,8 @@ hr {
   right: 1em;
   background-image: linear-gradient(
     45deg,
-    $flexgrid-demo-color-primary,
-    $flexgrid-demo-color-secondary
+    $fluxgrid-demo-color-primary,
+    $fluxgrid-demo-color-secondary
   );
   color: #fff;
   white-space: nowrap;

@@ -1,8 +1,8 @@
 /* Settings */
 
-$flexgrid-division: 12 !default;
+$fluxgrid-division: 12 !default;
 
-$flexgrid-breakpoints: (
+$fluxgrid-breakpoints: (
   xs: (
     division: 6,
     gutter: 12px,
@@ -10,37 +10,37 @@ $flexgrid-breakpoints: (
   ),
   sm: (
     size: 768px,
-    division: $flexgrid-division,
+    division: $fluxgrid-division,
     gutter: 12px,
     outside-margin: 24px
   ),
   md: (
     size: 960px,
-    division: $flexgrid-division,
+    division: $fluxgrid-division,
     gutter: 20px,
     outside-margin: 40px
   ),
   lg: (
     size: 1290px,
-    division: $flexgrid-division,
+    division: $fluxgrid-division,
     gutter: 30px,
     outside-margin: 60px
   ),
   xl: (
     size: 1590px,
-    division: $flexgrid-division,
+    division: $fluxgrid-division,
     gutter: 30px,
     outside-margin: 90px
   )
 ) !default;
 
 /* Tests */
-@each $breakpoint, $settings in $flexgrid-breakpoints {
+@each $breakpoint, $settings in $fluxgrid-breakpoints {
   @if (map-get($settings, outside-margin) < (map-get($settings, gutter) / 2)) {
     @error "To avoid overflow, the 'outside-margin' (#{map-get($settings, outside-margin)}) of '#{$breakpoint}' has to be as large or larger than half the 'gutter' (#{map-get($settings, gutter)}). This is for the .container to cancel the .grid negative margins used to align the .cells.";
   }
 
-  @if $flexgrid-division % map-get($settings, division) != 0 {
-    @error "To avoid a class name containing a decimal point, the division of $flexgrid-division (#{$flexgrid-division}) by 'division' (#{map-get($settings, division)}) of '#{$breakpoint}' has to be an integer.";
+  @if $fluxgrid-division % map-get($settings, division) != 0 {
+    @error "To avoid a class name containing a decimal point, the division of $fluxgrid-division (#{$fluxgrid-division}) by 'division' (#{map-get($settings, division)}) of '#{$breakpoint}' has to be an integer.";
   }
 }

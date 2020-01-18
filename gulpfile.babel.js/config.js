@@ -9,8 +9,8 @@ const config = {
   },
   css: {
     src: {
-      flexgrid: `${dir.src}scss/flexgrid/flexgrid.scss`,
-      debug: `${dir.src}scss/flexgrid/flexgrid-debug.scss`,
+      fluxgrid: `${dir.src}scss/fluxgrid/fluxgrid.scss`,
+      debug: `${dir.src}scss/fluxgrid/fluxgrid-debug.scss`,
       demo: `${dir.src}scss/demo.scss`,
       base: `${dir.src}scss/`
     },
