@@ -17,7 +17,7 @@ $fluxgrid-breakpoints: (
 
 /* Test */
 @if ($fluxgrid-outer-margin < $fluxgrid-half-gutter) {
-  @warn 'To avoid overflow, the `$fluxgrid-outer-margin` has to be as large or larger than the `$fluxgrid-gutter`. This is for the `.container` to cancel the `.grid` negative margins used to align the `.cells`.';
+  @error "To avoid overflow, the 'outside-margin' (#{$fluxgrid-outer-margin}) has to be as large or larger than half the 'gutter' (#{$fluxgrid-half-gutter}). This is for the .container to cancel the .grid negative margins used to align the .cells.";
 }
 
 /* Debug */

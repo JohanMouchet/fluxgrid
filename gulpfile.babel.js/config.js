@@ -11,7 +11,6 @@ const config = {
     src: {
       fluxgrid: `${dir.src}scss/fluxgrid/fluxgrid.scss`,
       debug: `${dir.src}scss/fluxgrid/fluxgrid-debug.scss`,
-      split: `${dir.src}scss/fluxgrid/split/*.scss`,
       demo: `${dir.src}scss/demo.scss`,
       base: `${dir.src}scss/`
     },

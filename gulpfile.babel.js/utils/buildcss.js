@@ -7,47 +7,41 @@ import autoprefixer from "autoprefixer";
 import cssnano from "cssnano";
 import rename from "gulp-rename";
 import { server } from "./livereload";
-import { SPLIT, DEBUG } from "./flag";
+import DEBUG from "./flag";
 import { config } from "../config";
 
 /* Build Css */
 const buildcss = env => () => {
   const {
+    dev = env === "dev",
     dist = env === "dist",
-    prod = env === "prod",
-    dev = env === "dev"
+    prod = env === "prod"
   } = env;
 
-  const source = [];
+  const sources = [config.css.src.fluxgrid];
+  const postCssPlugins = [autoprefixer()];
 
-  if (dist) {
-    source.push(
-      config.css.src.fluxgrid,
-      config.css.src.debug,
-      config.css.src.split,
-      config.css.src.demo
-    );
+  if (dev) {
+    sources.push(config.css.src.debug, config.css.src.demo);
+  } else if (dist) {
+    sources.push(config.css.src.debug, config.css.src.demo);
+    postCssPlugins.push(cssnano());
   } else if (prod) {
-    source.push(
-      SPLIT ? config.css.src.split : config.css.src.fluxgrid,
-      ...(DEBUG ? [config.css.src.debug] : [])
-    );
-  } else {
-    // 'dev'
-    source.push(
-      SPLIT ? config.css.src.split : config.css.src.fluxgrid,
-      config.css.src.debug,
-      config.css.src.demo
-    );
+    sources.push(...(DEBUG ? [config.css.src.debug] : []));
+    postCssPlugins.push(cssnano());
   }
 
-  return src(source, {
+  return src(sources, {
     base: config.css.src.base,
     sourcemaps: dev
   })
-    .pipe(sass({ outputStyle: "compressed" }).on("error", sass.logError))
-    .pipe(postcss([autoprefixer()]))
-    .pipe(postcss([cssnano()]))
+    .pipe(
+      sass({ outputStyle: dev ? "expanded" : "compressed" }).on(
+        "error",
+        sass.logError
+      )
+    )
+    .pipe(postcss(postCssPlugins))
     .pipe(rename({ suffix: ".min" }))
     .pipe(size({ showFiles: true, gzip: true }))
     .pipe(dest(config.css.dest, { sourcemaps: dev }))
