@@ -28,7 +28,7 @@
     "gulp-sass": "^4.0.2",
     "gulp-size": "^3.0.0",
     "gulp-stylelint": "^7.0.0",
-    "husky": "^4.0.3",
+    "husky": "^4.0.10",
     "lint-staged": "^9.5.0",
     "node-sass": "^4.13.1",
     "prettier": "^1.18.2",
