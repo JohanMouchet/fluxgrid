@@ -5,7 +5,7 @@ _Responsive and customisable utility-based CSS grid built with Sass._
 ## Default config
 
 - Columns: `12`
-- Gutters width: `1rem`
+- Gutters width: `Responsive`
 - Nestable: Yes
 - Direction: Row
 - Breakpoints:
@@ -34,8 +34,6 @@ Head over the [demo page](https://johanmouchet.github.io/fluxgrid/index.html).
 
 ## Getting Started
 
-The grid can be linked as a standalone file `1.9 kB (gzipped)` or as individual breakpoints files `3.7 kB (gzipped)`, which allows a slightly lighter download weight on mobile at no extra cost with HTTP/2.
-
 Choose your preferred way:
 
 ### A. With the default config
@@ -60,7 +58,7 @@ Choose your preferred way:
 
 ### B. With the provided build tool
 
-- Download the repo
+- Clone the repo
 - Install the dependencies: `$ npm i`
 - Customise the grid variables from `_settings.scss` to your liking:
   - `$fluxgrid-division`
