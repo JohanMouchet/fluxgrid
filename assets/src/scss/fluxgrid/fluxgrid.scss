@@ -1,18 +1,18 @@
 /*! Fluxgrid | MIT License | https://github.com/JohanMouchet/fluxgrid */
 
 @import "settings";
-@import "responsive";
-@import "base";
+@import "container";
+@import "grid";
+@import "cell";
 
-/** Responsive **/
-@include grid-responsive("xs");
-@include cell-responsive("xs");
+@include fluxgrid-responsive-grid("xs");
+@include fluxgrid-responsive-cell("xs");
 
-@each $bp-short, $bp-size in $fluxgrid-breakpoints {
-  @include container-responsive($bp-short, $bp-size);
+@each $breakpoint, $size in $fluxgrid-breakpoints {
+  @include fluxgrid-responsive-container($breakpoint, $size);
 
-  @media (min-width: $bp-size) {
-    @include grid-responsive($bp-short);
-    @include cell-responsive($bp-short);
+  @media (min-width: $size) {
+    @include fluxgrid-responsive-grid($breakpoint);
+    @include fluxgrid-responsive-cell($breakpoint);
   }
 }

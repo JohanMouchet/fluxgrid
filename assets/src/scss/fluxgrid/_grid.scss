@@ -1,0 +1,115 @@
+/* Grid */
+.grid {
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -1 * $fluxgrid-half-gutter;
+  margin-right: -1 * $fluxgrid-half-gutter;
+}
+
+@mixin fluxgrid-responsive-grid($breakpoint) {
+  /* Direction */
+  .grid--row-\@#{$breakpoint} {
+    flex-direction: row;
+  }
+
+  .grid--rowReverse-\@#{$breakpoint} {
+    flex-direction: row-reverse;
+  }
+
+  /* Wrap */
+  .grid--wrap-\@#{$breakpoint} {
+    flex-wrap: wrap;
+  }
+
+  .grid--noWrap-\@#{$breakpoint} {
+    flex-wrap: nowrap;
+  }
+
+  /* Gutters */
+
+  /** Large **/
+  .grid--lgGutter-\@#{$breakpoint} {
+    margin-left: -1 * $fluxgrid-half-gutter-lg;
+    margin-right: -1 * $fluxgrid-half-gutter-lg;
+
+    > .cell {
+      padding-left: $fluxgrid-half-gutter-lg;
+      padding-right: $fluxgrid-half-gutter-lg;
+    }
+  }
+
+  /* None */
+  .grid--noGutter-\@#{$breakpoint} {
+    margin-left: 0;
+    margin-right: 0;
+
+    > .cell {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+
+  /* Justification X axis */
+  .grid--xStart-\@#{$breakpoint} {
+    justify-content: flex-start;
+  }
+
+  .grid--xCenter-\@#{$breakpoint} {
+    justify-content: center;
+  }
+
+  .grid--xEnd-\@#{$breakpoint} {
+    justify-content: flex-end;
+  }
+
+  .grid--xAround-\@#{$breakpoint} {
+    justify-content: space-around;
+  }
+
+  .grid--xBetween-\@#{$breakpoint} {
+    justify-content: space-between;
+  }
+
+  /* Justification Y axis */
+  .grid--yStretch-\@#{$breakpoint} {
+    align-items: stretch;
+  }
+
+  .grid--yStart-\@#{$breakpoint} {
+    align-items: flex-start;
+  }
+
+  .grid--yCenter-\@#{$breakpoint} {
+    align-items: center;
+  }
+
+  .grid--yEnd-\@#{$breakpoint} {
+    align-items: flex-end;
+  }
+
+  /* Justification Y axis when wrapped: Z */
+  .grid--zStretch-\@#{$breakpoint} {
+    align-content: stretch;
+  }
+
+  .grid--zStart-\@#{$breakpoint} {
+    align-content: flex-start;
+  }
+
+  .grid--zCenter-\@#{$breakpoint} {
+    align-content: center;
+  }
+
+  .grid--zEnd-\@#{$breakpoint} {
+    align-content: flex-end;
+  }
+
+  .grid--zAround-\@#{$breakpoint} {
+    align-content: space-around;
+  }
+
+  .grid--zBetween-\@#{$breakpoint} {
+    align-content: space-between;
+  }
+}

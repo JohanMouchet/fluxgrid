@@ -45,11 +45,11 @@
     }
   }
 
-  @mixin grid-debug($bp-short) {
+  @mixin grid-debug($breakpoint) {
     /* Grid */
     .grid {
       /** Grid large gutters **/
-      &.grid--lgGutter-\@#{$bp-short} {
+      &.grid--lgGutter-\@#{$breakpoint} {
         /* stylelint-disable-next-line */
         &::after,
         > .cell::after {
@@ -59,7 +59,7 @@
       }
 
       /** Grid no gutters **/
-      &.grid--noGutter-\@#{$bp-short} {
+      &.grid--noGutter-\@#{$breakpoint} {
         /* stylelint-disable-next-line */
         &::after,
         > .cell::after {
@@ -70,7 +70,7 @@
     }
 
     /* Cell */
-    .cell--noGutter-\@#{$bp-short} {
+    .cell--noGutter-\@#{$breakpoint} {
       &::after {
         left: 0;
         right: 0;
@@ -80,9 +80,9 @@
 
   @include grid-debug("xs");
 
-  @each $bp-short, $bp-size in $fluxgrid-breakpoints {
-    @media (min-width: $bp-size) {
-      @include grid-debug($bp-short);
+  @each $breakpoint, $size in $fluxgrid-breakpoints {
+    @media (min-width: $size) {
+      @include grid-debug($breakpoint);
     }
   }
 }
