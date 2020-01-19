@@ -22,6 +22,6 @@
 
 @mixin fluxgrid-responsive-container($breakpoint, $size) {
   .container--#{$breakpoint} {
-    max-width: #{$size};
+    max-width: $size;
   }
 }
