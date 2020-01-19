@@ -45,7 +45,7 @@
     }
   }
 
-  @mixin grid-debug($breakpoint) {
+  @mixin debug-responsive-grid($breakpoint) {
     /* Grid */
     .grid {
       /** Grid large gutters **/
@@ -78,11 +78,11 @@
     }
   }
 
-  @include grid-debug("xs");
+  @include debug-responsive-grid("xs");
 
   @each $breakpoint, $size in $fluxgrid-breakpoints {
     @media (min-width: $size) {
-      @include grid-debug($breakpoint);
+      @include debug-responsive-grid($breakpoint);
     }
   }
 }
