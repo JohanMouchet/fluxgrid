@@ -76,7 +76,7 @@ Choose your preferred way:
   $fluxgrid-outside-margin
   $fluxgrid-breakpoints
   ```
-- Import Fluxgrid: `@import "node_modules/assets/src/scss/fluxgrid/fluxgrid.scss"`
+- Import Fluxgrid: `@import "node_modules/fluxgrid/assets/src/scss/fluxgrid/fluxgrid.scss"`
 - Optionally (not recommended in production) import `fluxgrid-debug.scss` the same way
 - Run these through your Sass pipeline. It is advised to Autoprefix and minify them
 - Link the output files to your document's `<head>` as shown above
