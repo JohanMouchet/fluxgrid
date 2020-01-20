@@ -3,7 +3,7 @@
 @import "settings";
 
 /* Debug */
-.fluxgrid-debug {
+.#{$fluxgrid-namespace}fluxgrid-debug {
   .#{$fluxgrid-namespace}container,
   .#{$fluxgrid-namespace}grid,
   .#{$fluxgrid-namespace}cell {
@@ -83,6 +83,22 @@
   @each $breakpoint, $size in $fluxgrid-breakpoints {
     @media (min-width: $size) {
       @include debug-responsive-grid($breakpoint);
+    }
+  }
+
+  /* stylelint-disable-next-line */
+  .#{$fluxgrid-namespace}grid {
+    &--hide-debug {
+      &::after {
+        outline: none;
+      }
+
+      > .#{$fluxgrid-namespace}cell {
+        /* stylelint-disable-next-line */
+        &::after {
+          outline: none;
+        }
+      }
     }
   }
 }

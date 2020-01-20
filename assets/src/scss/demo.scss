@@ -207,19 +207,6 @@ hr {
   vertical-align: middle;
 }
 
-.hide-grid-debug.hide-grid-debug {
-  &::after {
-    outline: none;
-  }
-
-  > .#{$fluxgrid-namespace}cell {
-    /* stylelint-disable-next-line */
-    &::after {
-      outline: none;
-    }
-  }
-}
-
 /* Anchor */
 .anchor {
   position: relative;
