@@ -1,5 +1,5 @@
 /* Grid */
-.grid {
+.#{$fluxgrid-namespace}grid {
   box-sizing: border-box;
   display: flex;
   flex-wrap: wrap;
@@ -9,107 +9,107 @@
 
 @mixin fluxgrid-responsive-grid($breakpoint) {
   /* Direction */
-  .grid--row-\@#{$breakpoint} {
+  .#{$fluxgrid-namespace}grid--row-\@#{$breakpoint} {
     flex-direction: row;
   }
 
-  .grid--rowReverse-\@#{$breakpoint} {
+  .#{$fluxgrid-namespace}grid--rowReverse-\@#{$breakpoint} {
     flex-direction: row-reverse;
   }
 
   /* Wrap */
-  .grid--wrap-\@#{$breakpoint} {
+  .#{$fluxgrid-namespace}grid--wrap-\@#{$breakpoint} {
     flex-wrap: wrap;
   }
 
-  .grid--noWrap-\@#{$breakpoint} {
+  .#{$fluxgrid-namespace}grid--noWrap-\@#{$breakpoint} {
     flex-wrap: nowrap;
   }
 
   /* Gutters */
 
   /** Large **/
-  .grid--lgGutter-\@#{$breakpoint} {
+  .#{$fluxgrid-namespace}grid--lgGutter-\@#{$breakpoint} {
     margin-left: -1 * $fluxgrid-half-gutter-lg;
     margin-right: -1 * $fluxgrid-half-gutter-lg;
 
-    > .cell {
+    > .#{$fluxgrid-namespace}cell {
       padding-left: $fluxgrid-half-gutter-lg;
       padding-right: $fluxgrid-half-gutter-lg;
     }
   }
 
   /** None **/
-  .grid--noGutter-\@#{$breakpoint} {
+  .#{$fluxgrid-namespace}grid--noGutter-\@#{$breakpoint} {
     margin-left: 0;
     margin-right: 0;
 
-    > .cell {
+    > .#{$fluxgrid-namespace}cell {
       padding-left: 0;
       padding-right: 0;
     }
   }
 
   /* Justification X axis */
-  .grid--xStart-\@#{$breakpoint} {
+  .#{$fluxgrid-namespace}grid--xStart-\@#{$breakpoint} {
     justify-content: flex-start;
   }
 
-  .grid--xCenter-\@#{$breakpoint} {
+  .#{$fluxgrid-namespace}grid--xCenter-\@#{$breakpoint} {
     justify-content: center;
   }
 
-  .grid--xEnd-\@#{$breakpoint} {
+  .#{$fluxgrid-namespace}grid--xEnd-\@#{$breakpoint} {
     justify-content: flex-end;
   }
 
-  .grid--xAround-\@#{$breakpoint} {
+  .#{$fluxgrid-namespace}grid--xAround-\@#{$breakpoint} {
     justify-content: space-around;
   }
 
-  .grid--xBetween-\@#{$breakpoint} {
+  .#{$fluxgrid-namespace}grid--xBetween-\@#{$breakpoint} {
     justify-content: space-between;
   }
 
   /* Justification Y axis */
-  .grid--yStretch-\@#{$breakpoint} {
+  .#{$fluxgrid-namespace}grid--yStretch-\@#{$breakpoint} {
     align-items: stretch;
   }
 
-  .grid--yStart-\@#{$breakpoint} {
+  .#{$fluxgrid-namespace}grid--yStart-\@#{$breakpoint} {
     align-items: flex-start;
   }
 
-  .grid--yCenter-\@#{$breakpoint} {
+  .#{$fluxgrid-namespace}grid--yCenter-\@#{$breakpoint} {
     align-items: center;
   }
 
-  .grid--yEnd-\@#{$breakpoint} {
+  .#{$fluxgrid-namespace}grid--yEnd-\@#{$breakpoint} {
     align-items: flex-end;
   }
 
   /* Justification Y axis when wrapped: Z */
-  .grid--zStretch-\@#{$breakpoint} {
+  .#{$fluxgrid-namespace}grid--zStretch-\@#{$breakpoint} {
     align-content: stretch;
   }
 
-  .grid--zStart-\@#{$breakpoint} {
+  .#{$fluxgrid-namespace}grid--zStart-\@#{$breakpoint} {
     align-content: flex-start;
   }
 
-  .grid--zCenter-\@#{$breakpoint} {
+  .#{$fluxgrid-namespace}grid--zCenter-\@#{$breakpoint} {
     align-content: center;
   }
 
-  .grid--zEnd-\@#{$breakpoint} {
+  .#{$fluxgrid-namespace}grid--zEnd-\@#{$breakpoint} {
     align-content: flex-end;
   }
 
-  .grid--zAround-\@#{$breakpoint} {
+  .#{$fluxgrid-namespace}grid--zAround-\@#{$breakpoint} {
     align-content: space-around;
   }
 
-  .grid--zBetween-\@#{$breakpoint} {
+  .#{$fluxgrid-namespace}grid--zBetween-\@#{$breakpoint} {
     align-content: space-between;
   }
 }

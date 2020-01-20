@@ -212,7 +212,7 @@ hr {
     outline: none;
   }
 
-  > .cell {
+  > .#{$fluxgrid-namespace}cell {
     /* stylelint-disable-next-line */
     &::after {
       outline: none;

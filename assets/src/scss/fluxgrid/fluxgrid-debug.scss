@@ -4,9 +4,9 @@
 
 /* Debug */
 .fluxgrid-debug {
-  .container,
-  .grid,
-  .cell {
+  .#{$fluxgrid-namespace}container,
+  .#{$fluxgrid-namespace}grid,
+  .#{$fluxgrid-namespace}cell {
     position: relative;
 
     &::after {
@@ -20,7 +20,7 @@
     }
   }
 
-  .container {
+  .#{$fluxgrid-namespace}container {
     &::after {
       outline-color: $fluxgrid-debug-container-color;
       left: 0;
@@ -28,7 +28,7 @@
     }
   }
 
-  .grid {
+  .#{$fluxgrid-namespace}grid {
     &::after {
       outline-color: $fluxgrid-debug-grid-color;
       left: $fluxgrid-half-gutter;
@@ -36,7 +36,7 @@
     }
   }
 
-  .cell {
+  .#{$fluxgrid-namespace}cell {
     &::after {
       outline-style: dotted;
       outline-color: $fluxgrid-debug-cell-color;
@@ -47,22 +47,22 @@
 
   @mixin debug-responsive-grid($breakpoint) {
     /* Grid */
-    .grid {
+    .#{$fluxgrid-namespace}grid {
       /** Grid large gutters **/
-      &.grid--lgGutter-\@#{$breakpoint} {
+      &.#{$fluxgrid-namespace}grid--lgGutter-\@#{$breakpoint} {
         /* stylelint-disable-next-line */
         &::after,
-        > .cell::after {
+        > .#{$fluxgrid-namespace}cell::after {
           left: $fluxgrid-half-gutter-lg;
           right: $fluxgrid-half-gutter-lg;
         }
       }
 
       /** Grid no gutters **/
-      &.grid--noGutter-\@#{$breakpoint} {
+      &.#{$fluxgrid-namespace}grid--noGutter-\@#{$breakpoint} {
         /* stylelint-disable-next-line */
         &::after,
-        > .cell::after {
+        > .#{$fluxgrid-namespace}cell::after {
           left: 0;
           right: 0;
         }
@@ -70,7 +70,7 @@
     }
 
     /* Cell */
-    .cell--noGutter-\@#{$breakpoint} {
+    .#{$fluxgrid-namespace}cell--noGutter-\@#{$breakpoint} {
       &::after {
         left: 0;
         right: 0;

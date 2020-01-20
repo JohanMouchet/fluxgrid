@@ -66,10 +66,11 @@ Choose your preferred way:
     />
     ```
 
-### B. [Recommended] Within your own build environment (Webpack / Gulp / Grunt / any)
+### B. [Recommended] With a custom config - within your own build environment (Webpack / Gulp / Grunt / any)
 
 - To overwrite the default config, redefine any of the `!default` Sass variables from `_settings.scss`:
   ```scss
+  $fluxgrid-namespace
   $fluxgrid-division
   $fluxgrid-gutter
   $fluxgrid-outside-margin
@@ -80,12 +81,13 @@ Choose your preferred way:
 - Run these through your Sass pipeline. It is advised to Autoprefix and minify them
 - Link the output files to your document's `<head>` as shown above
 
-### C. With the provided build tool
+### C. With a custom config - with the provided build tool
 
 - Clone the repo
 - Install the dependencies: `$ npm i`
 - Customise the Sass variables from `_settings.scss` to your liking:
   ```scss
+  $fluxgrid-namespace
   $fluxgrid-division
   $fluxgrid-gutter
   $fluxgrid-outside-margin
