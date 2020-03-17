@@ -1,0 +1,19 @@
+name: Node Continuous Integration
+
+on:
+  push:
+    branches: [master]
+    paths:
+      - "src/scss/**/*.scss"
+
+jobs:
+  lint-and-build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 12
+      - run: npm ci
+      - run: npx gulp lint:css
+      - run: npx gulp dist
