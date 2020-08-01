@@ -17,6 +17,7 @@ $fluxgrid-demo-color-syntax-y: #d19a66;
 html {
   font-size: 14px;
   font-family: Helvetica, sans-serif;
+  display: grid;
 }
 
 body {
@@ -30,19 +31,21 @@ main {
 
 a {
   color: $fluxgrid-demo-color-primary;
+  text-decoration: none;
+
+  &:focus {
+    outline: none;
+  }
+
+  &:hover,
+  &:focus {
+    text-decoration: underline;
+  }
 }
 
 h1 {
   display: inline-block;
-  color: $fluxgrid-demo-color-grey;
-  background: linear-gradient(
-    to right,
-    $fluxgrid-demo-color-primary,
-    $fluxgrid-demo-color-secondary
-  );
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  box-decoration-break: clone;
+  color: $fluxgrid-demo-color-primary;
 }
 
 /* Code */
@@ -121,15 +124,7 @@ table {
 
   th {
     font-weight: 700;
-    color: $fluxgrid-demo-color-grey;
-    background: linear-gradient(
-      to right,
-      $fluxgrid-demo-color-primary,
-      $fluxgrid-demo-color-secondary
-    );
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    box-decoration-break: clone;
+    color: $fluxgrid-demo-color-primary;
   }
 
   thead {

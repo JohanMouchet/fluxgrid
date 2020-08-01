@@ -1,9 +1,9 @@
 {
   "name": "fluxgrid",
-  "version": "4.2.0",
+  "version": "5.0.0",
   "description": "Responsive and customisable utility-based CSS grid built with Sass",
-  "main": "assets/src/scss/fluxgrid/fluxgrid.scss",
-  "style": "assets/src/scss/fluxgrid/fluxgrid.scss",
+  "main": "src/scss/fluxgrid/fluxgrid.scss",
+  "style": "src/scss/fluxgrid/fluxgrid.scss",
   "author": "Johan Mouchet <mouchet-johan@gmail.com> (https://johan-mouchet.com)",
   "license": "MIT",
   "repository": {
@@ -18,38 +18,34 @@
     "sass"
   ],
   "files": [
-    "assets/src/scss/fluxgrid/*.scss",
-    "assets/dist/css/fluxgrid/*.css"
+    "src/scss/fluxgrid/*.scss",
+    "dist/fluxgrid/*.css"
   ],
+  "scripts": {
+    "dev": "parcel index.html --open",
+    "build": "parcel build src/scss/fluxgrid/fluxgrid.scss --no-source-maps",
+    "build:debug": "parcel build src/scss/fluxgrid/fluxgrid-debug.scss --no-source-maps",
+    "build:all": "parcel build src/scss/fluxgrid/{fluxgrid,fluxgrid-debug}.scss --no-source-maps",
+    "docs": "parcel build index.html --out-dir docs/",
+    "lint:css": "stylelint src/**/*.scss",
+    "format": "npm run lint:css -- --fix && prettier --write **/*.md"
+  },
   "devDependencies": {
-    "@babel/core": "^7.8.3",
-    "@babel/preset-env": "^7.8.3",
-    "@babel/register": "^7.8.3",
-    "autoprefixer": "^9.7.4",
-    "browser-sync": "^2.26.7",
-    "cssnano": "^4.1.10",
-    "eslint": "^5.16.0",
-    "eslint-config-airbnb-base": "^13.2.0",
-    "eslint-config-prettier": "^6.3.0",
-    "eslint-plugin-import": "^2.20.0",
-    "eslint-plugin-prettier": "^3.1.1",
-    "gulp": "^4.0.2",
-    "gulp-noop": "^1.0.0",
-    "gulp-postcss": "^8.0.0",
-    "gulp-rename": "^1.4.0",
-    "gulp-sass": "^4.0.2",
-    "gulp-size": "^3.0.0",
-    "gulp-stylelint": "^7.0.0",
-    "husky": "^4.0.10",
+    "husky": "^4.2.5",
     "lint-staged": "^9.5.0",
-    "node-sass": "^4.13.1",
-    "prettier": "^1.18.2",
-    "stylelint": "^11.0.0",
+    "parcel-bundler": "^1.12.4",
+    "prettier": "^1.19.1",
+    "sass": "^1.26.10",
+    "stylelint": "^11.1.1",
     "stylelint-config-prettier": "^6.0.0",
     "stylelint-config-standard": "^19.0.0",
-    "stylelint-prettier": "^1.1.1",
-    "stylelint-scss": "^3.11.1",
-    "yargs": "^13.3.0"
+    "stylelint-prettier": "^1.1.2",
+    "stylelint-scss": "^3.18.0"
+  },
+  "postcss": {
+    "plugins": {
+      "autoprefixer": true
+    }
   },
   "browserslist": [
     "defaults"
@@ -60,17 +56,15 @@
     }
   },
   "lint-staged": {
-    "**/*.js": [
-      "eslint --fix",
-      "git add"
-    ],
-    "assets/src/**/*.scss": [
-      "stylelint --fix",
-      "git add"
+    "src/**/*.scss": [
+      "stylelint --fix"
     ],
     "**/*.md": [
-      "prettier --write",
-      "git add"
+      "prettier --write"
+    ],
+    "[src/*, index.html]": [
+      "npm run docs"
     ]
-  }
+  },
+  "dependencies": {}
 }

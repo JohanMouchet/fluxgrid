@@ -46,23 +46,23 @@ Choose your preferred way:
 
 - Link the pre-compiled files to your document's `<head>`:
 
-  - [`fluxgrid.min.css`](https://github.com/JohanMouchet/fluxgrid/blob/master/assets/dist/css/fluxgrid.min.css)
+  - [`fluxgrid.min.css`](https://github.com/JohanMouchet/fluxgrid/blob/master/dist/fluxgrid.min.css)
 
     ```html
     <link
       rel="stylesheet"
       type="text/css"
-      href="node_modules/fluxgrid/assets/dist/css/fluxgrid/fluxgrid.min.css"
+      href="node_modules/fluxgrid/dist/fluxgrid/fluxgrid.min.css"
     />
     ```
 
-  - [`fluxgrid-debug.min.css`](https://github.com/JohanMouchet/fluxgrid/blob/master/assets/dist/css/fluxgrid-debug.min.css) (optional, not recommended in production)
+  - [`fluxgrid-debug.min.css`](https://github.com/JohanMouchet/fluxgrid/blob/master/dist/fluxgrid-debug.min.css) (optional, not recommended in production)
 
     ```html
     <link
       rel="stylesheet"
       type="text/css"
-      href="node_modules/fluxgrid/assets/dist/css/fluxgrid/fluxgrid-debug.min.css"
+      href="node_modules/fluxgrid/dist/fluxgrid/fluxgrid-debug.min.css"
     />
     ```
 
@@ -76,7 +76,7 @@ Choose your preferred way:
   $fluxgrid-outside-margin
   $fluxgrid-breakpoints
   ```
-- Import Fluxgrid: `@import "node_modules/fluxgrid/assets/src/scss/fluxgrid/fluxgrid.scss"`
+- Import Fluxgrid: `@import "node_modules/fluxgrid/src/scss/fluxgrid/fluxgrid.scss"`
 - Optionally (not recommended in production) import `fluxgrid-debug.scss` the same way
 - Run these through your Sass pipeline. It is advised to Autoprefix and minify them
 - Link the output files to your document's `<head>` as shown above
