@@ -3,10 +3,9 @@
 @import "fluxgrid/settings";
 
 /* stylelint-disable color-no-hex */
-$fluxgrid-demo-color-primary: $fluxgrid-debug-container-color;
-$fluxgrid-demo-color-secondary: $fluxgrid-debug-grid-color;
-$fluxgrid-demo-color-grey: #e5e5e5;
-$fluxgrid-demo-color-grey-lighter: #f2f2f2;
+$fluxgrid-demo-color-primary: $fluxgrid-debug-grid-color;
+$fluxgrid-demo-color-secondary: $fluxgrid-debug-cell-color;
+$fluxgrid-demo-color-grey: rgba(27, 31, 35, 0.05);
 $fluxgrid-demo-color-syntax-grey: #282c35;
 $fluxgrid-demo-color-syntax-w: #d7dae0;
 $fluxgrid-demo-color-syntax-r: #e06c75;
@@ -15,14 +14,22 @@ $fluxgrid-demo-color-syntax-y: #d19a66;
 /* stylelint-disable enable */
 
 html {
-  font-size: 14px;
-  font-family: Helvetica, sans-serif;
-  display: grid;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial,
+    sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  font-size: 16px;
+  line-height: 1.5;
+  color: #24292e;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
 }
 
 body {
   margin: 0;
-  line-height: 1.5;
 }
 
 main {
@@ -30,7 +37,7 @@ main {
 }
 
 a {
-  color: $fluxgrid-demo-color-primary;
+  color: $fluxgrid-demo-color-secondary;
   text-decoration: none;
 
   &:focus {
@@ -43,16 +50,30 @@ a {
   }
 }
 
-h1 {
-  display: inline-block;
-  color: $fluxgrid-demo-color-primary;
+.logo {
+  display: inline-flex;
+  font-size: 4rem;
+  line-height: 1.5;
+  font-family: "Lexend Deca", Helvetica, sans-serif;
+  border: 1.99px dashed $fluxgrid-demo-color-primary;
+
+  &__square {
+    height: 4rem * 1.5;
+    width: 4rem * 1.5;
+    border-right: inherit;
+  }
+
+  &__title {
+    padding: 0 0.5em;
+    white-space: nowrap;
+  }
 }
 
 /* Code */
 code,
 pre {
   border-radius: 0.3em;
-  background-color: $fluxgrid-demo-color-grey-lighter;
+  background-color: $fluxgrid-demo-color-grey;
 }
 
 /** Inline code **/
@@ -61,6 +82,7 @@ code {
   font-size: 0.85rem;
   font-weight: 300;
   text-transform: none;
+  font-family: sfmono-regular, consolas, "Liberation Mono", menlo, monospace;
 }
 
 /** Block of code **/
@@ -155,7 +177,7 @@ hr {
   display: inline-block;
   height: 100%;
   width: 100%;
-  box-sizing: border-box;
+  padding: 0.5em;
 }
 
 /* Grid */

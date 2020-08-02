@@ -2,17 +2,19 @@
 
 _Responsive and customisable utility-based CSS grid built with Sass._
 
+![Fluxgrid](src/img/fluxgrid.png)
+
 ## Install
 
 ```
-npm i fluxgrid --save
+npm i fluxgrid
 ```
 
 ## Default config
 
 - Columns: `12`
 - Gutters width: `1rem`
-- Nestable: Yes
+- Nestable: Yes, flushed with parent
 - Direction: Row
 - Breakpoints:
 
@@ -42,56 +44,35 @@ Head over the [demo page](https://johanmouchet.github.io/fluxgrid/index.html).
 
 Choose your preferred way:
 
-### A. With the default config
+### A. Quick start, with the default config
 
-- Link the pre-compiled files to your document's `<head>`:
+- [Install](#install) Fluxgrid
+- Import it to your build environment, either with:
+  - Sass: `@import "~fluxgrid/dist/fluxgrid.css";`
+  - JS: `import "fluxgrid/dist/fluxgrid.css";`
+- Optionally (not recommended in production) import `fluxgrid-debug.css` the same way
 
-  - [`fluxgrid.min.css`](https://github.com/JohanMouchet/fluxgrid/blob/master/dist/fluxgrid.min.css)
+### B. With a custom config
 
-    ```html
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="node_modules/fluxgrid/dist/fluxgrid/fluxgrid.min.css"
-    />
-    ```
-
-  - [`fluxgrid-debug.min.css`](https://github.com/JohanMouchet/fluxgrid/blob/master/dist/fluxgrid-debug.min.css) (optional, not recommended in production)
-
-    ```html
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="node_modules/fluxgrid/dist/fluxgrid/fluxgrid-debug.min.css"
-    />
-    ```
-
-### B. [Recommended] With a custom config - within your own build environment (Webpack / Gulp / Grunt / any)
-
-- To overwrite the default config, redefine any of the `!default` Sass variables from `_settings.scss`:
+- [Install](#install) Fluxgrid
+- Overwrite the default config by redefine any of the `!default` Sass variables from `_settings.scss`:
   ```scss
-  $fluxgrid-namespace
-  $fluxgrid-division
-  $fluxgrid-gutter
-  $fluxgrid-outside-margin
-  $fluxgrid-breakpoints
+  $fluxgrid-division;
+  $fluxgrid-gutter;
+  $fluxgrid-gutter-lg;
+  $fluxgrid-outside-margin;
+  $fluxgrid-breakpoints;
   ```
-- Import Fluxgrid: `@import "node_modules/fluxgrid/src/scss/fluxgrid/fluxgrid.scss"`
+- Import it to your build environment, either with:
+  - Sass: `@import "~fluxgrid/src/fluxgrid.scss";`
+  - JS: `import "fluxgrid/src/fluxgrid.scss";`
 - Optionally (not recommended in production) import `fluxgrid-debug.scss` the same way
-- Run these through your Sass pipeline. It is advised to Autoprefix and minify them
-- Link the output files to your document's `<head>` as shown above
+- Run these through your build pipeline. It is advised to Autoprefix and minify them
 
-### C. With a custom config - with the provided build tool
+## Development
 
-- Clone the repo
-- Install the dependencies: `$ npm i`
-- Customise the Sass variables from `_settings.scss` to your liking:
-  ```scss
-  $fluxgrid-namespace
-  $fluxgrid-division
-  $fluxgrid-gutter
-  $fluxgrid-outside-margin
-  $fluxgrid-breakpoints
-  ```
-- To build the grid, run: `$ npx gulp prod`, with the optional flag `--debug`
-- Link the output files to your document's `<head>` as shown above
+### Scripts
+
+### Deployment
+
+### Contribution

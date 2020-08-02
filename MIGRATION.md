@@ -1,4 +1,3 @@
-
 - gitignore dist/fluxgrid.css
 - Verify that output is identical
 - Update README
@@ -9,3 +8,4 @@
 - Publish to npm
 - Set git tag
 - check Stylelint rules
+- Document Offsets

@@ -1,5 +1,5 @@
 /* Container */
-.#{$fluxgrid-namespace}container {
+.container {
   box-sizing: border-box;
   width: 100%;
   margin-left: auto;
@@ -9,19 +9,19 @@
 }
 
 /** No gutters **/
-.#{$fluxgrid-namespace}container--noGutter {
+.container--noGutter {
   padding-left: $fluxgrid-half-gutter;
   padding-right: $fluxgrid-half-gutter;
 }
 
 /** No gutters large grid **/
-.#{$fluxgrid-namespace}container--noGutter-lgGrid {
+.container--noGutter-lgGrid {
   padding-left: $fluxgrid-half-gutter-lg;
   padding-right: $fluxgrid-half-gutter-lg;
 }
 
 @mixin fluxgrid-responsive-container($breakpoint, $size) {
-  .#{$fluxgrid-namespace}container--#{$breakpoint} {
+  .container--#{$breakpoint} {
     max-width: $size;
   }
 }

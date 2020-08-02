@@ -1,5 +1,4 @@
 /* Settings */
-$fluxgrid-namespace: "" !default;
 $fluxgrid-division: 12 !default;
 $fluxgrid-gutter: 1rem !default;
 $fluxgrid-gutter-lg: $fluxgrid-gutter * 3 !default;
@@ -22,6 +21,6 @@ $fluxgrid-breakpoints: (
 
 /* Debug */
 /* stylelint-disable color-no-hex */
-$fluxgrid-debug-container-color: #4f91b2;
-$fluxgrid-debug-grid-color: #9b4dca;
-$fluxgrid-debug-cell-color: #999;
+$fluxgrid-debug-container-color: #4fd1c5;
+$fluxgrid-debug-grid-color: #9f7aea;
+$fluxgrid-debug-cell-color: #63b3ed;

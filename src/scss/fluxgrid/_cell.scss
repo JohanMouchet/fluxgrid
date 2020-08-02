@@ -1,5 +1,5 @@
 /* Cell */
-.#{$fluxgrid-namespace}cell {
+.cell {
   box-sizing: border-box;
   flex: 0 1 auto;
   padding-left: $fluxgrid-half-gutter;
@@ -9,94 +9,93 @@
 @mixin fluxgrid-responsive-cell($breakpoint) {
   /* Sizes */
   @for $i from 1 through $fluxgrid-division {
-    .#{$fluxgrid-namespace}cell--#{$i}-\@#{$breakpoint} {
+    .cell--#{$i}-\@#{$breakpoint} {
       flex-basis: percentage($i / $fluxgrid-division);
       max-width: percentage($i / $fluxgrid-division);
     }
   }
 
   /* Collapsed */
-  .#{$fluxgrid-namespace}cell--0-\@#{$breakpoint} {
+  .cell--0-\@#{$breakpoint} {
     flex-grow: 0;
     flex-basis: auto;
     max-width: none;
   }
 
   /* Expended */
-  .#{$fluxgrid-namespace}cell--\@#{$breakpoint} {
+  .cell--\@#{$breakpoint} {
     flex-grow: 1;
     flex-basis: auto;
     max-width: none;
   }
 
   /* No gutters */
-  .#{$fluxgrid-namespace}cell--noGutter-\@#{$breakpoint} {
+  .cell--noGutter-\@#{$breakpoint} {
     padding-left: 0;
     padding-right: 0;
   }
 
   /* Gutters */
-  .#{$fluxgrid-namespace}cell--gutter-\@#{$breakpoint} {
+  .cell--gutter-\@#{$breakpoint} {
     padding-left: $fluxgrid-half-gutter;
     padding-right: $fluxgrid-half-gutter;
   }
 
-  [class*="#{$fluxgrid-namespace}grid--lgGutter"]
-    > .#{$fluxgrid-namespace}cell--gutter-\@#{$breakpoint} {
+  [class*="grid--lgGutter"] > .cell--gutter-\@#{$breakpoint} {
     padding-left: $fluxgrid-half-gutter-lg;
     padding-right: $fluxgrid-half-gutter-lg;
   }
 
   /* Visibility */
-  .#{$fluxgrid-namespace}cell--hidden-\@#{$breakpoint} {
+  .cell--hidden-\@#{$breakpoint} {
     display: none;
   }
 
-  .#{$fluxgrid-namespace}cell--visible-\@#{$breakpoint} {
+  .cell--visible-\@#{$breakpoint} {
     display: block;
   }
 
   /* Self justification Y axis */
-  .#{$fluxgrid-namespace}cell--yStretch-\@#{$breakpoint} {
+  .cell--yStretch-\@#{$breakpoint} {
     align-self: stretch;
   }
 
-  .#{$fluxgrid-namespace}cell--yStart-\@#{$breakpoint} {
+  .cell--yStart-\@#{$breakpoint} {
     align-self: flex-start;
   }
 
-  .#{$fluxgrid-namespace}cell--yCenter-\@#{$breakpoint} {
+  .cell--yCenter-\@#{$breakpoint} {
     align-self: center;
   }
 
-  .#{$fluxgrid-namespace}cell--yEnd-\@#{$breakpoint} {
+  .cell--yEnd-\@#{$breakpoint} {
     align-self: flex-end;
   }
 
   /* Self justification X axis */
-  .#{$fluxgrid-namespace}cell--xCenter-\@#{$breakpoint} {
+  .cell--xCenter-\@#{$breakpoint} {
     margin-left: auto;
     margin-right: auto;
   }
 
-  .#{$fluxgrid-namespace}cell--xStart-\@#{$breakpoint} {
+  .cell--xStart-\@#{$breakpoint} {
     margin-right: auto;
   }
 
-  .#{$fluxgrid-namespace}cell--xEnd-\@#{$breakpoint} {
+  .cell--xEnd-\@#{$breakpoint} {
     margin-left: auto;
   }
 
   /* Order */
-  .#{$fluxgrid-namespace}cell--first-\@#{$breakpoint} {
+  .cell--first-\@#{$breakpoint} {
     order: -1;
   }
 
-  .#{$fluxgrid-namespace}cell--last-\@#{$breakpoint} {
+  .cell--last-\@#{$breakpoint} {
     order: 1;
   }
 
-  .#{$fluxgrid-namespace}cell--ordered-\@#{$breakpoint} {
+  .cell--ordered-\@#{$breakpoint} {
     order: 0;
   }
 }
