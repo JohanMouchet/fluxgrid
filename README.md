@@ -1,8 +1,6 @@
-# Fluxgrid
+# ![Fluxgrid](src/img/fluxgrid.png)
 
 _Responsive and customisable utility-based CSS grid built with Sass._
-
-![Fluxgrid](src/img/fluxgrid.png)
 
 ## Install
 
@@ -12,6 +10,7 @@ npm i fluxgrid
 
 ## Default config
 
+- Browser support: [browserslist](https://github.com/browserslist/browserslist) _defaults_ (IE 11 safe)
 - Columns: `12`
 - Gutters width: `1rem`
 - Nestable: Yes, flushed with parent
