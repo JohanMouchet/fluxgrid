@@ -1,4 +1,3 @@
-- gitignore dist/fluxgrid.css
 - Verify that output is identical
 - Update README
   - scripts
