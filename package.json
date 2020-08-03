@@ -61,9 +61,6 @@
     ],
     "**/*.md": [
       "prettier --write"
-    ],
-    "[src/*, index.html]": [
-      "npm run docs"
     ]
   }
 }
