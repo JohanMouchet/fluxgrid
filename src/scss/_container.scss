@@ -25,3 +25,7 @@
     max-width: $size;
   }
 }
+
+@each $breakpoint, $size in $fluxgrid-breakpoints {
+  @include fluxgrid-responsive-container($breakpoint, $size);
+}

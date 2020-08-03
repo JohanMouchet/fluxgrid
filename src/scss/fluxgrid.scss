@@ -4,15 +4,3 @@
 @import "container";
 @import "grid";
 @import "cell";
-
-@include fluxgrid-responsive-grid("xs");
-@include fluxgrid-responsive-cell("xs");
-
-@each $breakpoint, $size in $fluxgrid-breakpoints {
-  @include fluxgrid-responsive-container($breakpoint, $size);
-
-  @media (min-width: $size) {
-    @include fluxgrid-responsive-grid($breakpoint);
-    @include fluxgrid-responsive-cell($breakpoint);
-  }
-}

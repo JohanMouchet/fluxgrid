@@ -99,3 +99,11 @@
     order: 0;
   }
 }
+
+@include fluxgrid-responsive-cell("xs");
+
+@each $breakpoint, $size in $fluxgrid-breakpoints {
+  @media (min-width: $size) {
+    @include fluxgrid-responsive-cell($breakpoint);
+  }
+}
