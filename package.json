@@ -23,12 +23,11 @@
   ],
   "scripts": {
     "dev": "parcel index.html --open --out-dir dev/",
-    "build": "parcel build src/scss/fluxgrid.scss --no-source-maps",
-    "build:debug": "parcel build src/scss/fluxgrid-debug.scss --no-source-maps",
-    "build:all": "parcel build src/scss/{fluxgrid,fluxgrid-debug}.scss --no-source-maps",
+    "build": "parcel build src/scss/{fluxgrid,fluxgrid-debug}.scss --no-source-maps",
     "docs": "parcel build index.html --out-dir docs/",
-    "lint:css": "stylelint src/**/*.scss",
-    "format": "npm run lint:css -- --fix && prettier --write **/*.md"
+    "lint": "stylelint src/**/*.scss",
+    "format": "npm run lint -- --fix && prettier --write **/*.md",
+    "deploy": "npm run format && npm run build && npm run docs"
   },
   "devDependencies": {
     "husky": "^4.2.5",
@@ -48,7 +47,7 @@
     }
   },
   "browserslist": [
-    "defaults"
+    "defaults", "ie 11"
   ],
   "husky": {
     "hooks": {
