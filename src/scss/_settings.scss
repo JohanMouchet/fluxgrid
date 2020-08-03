@@ -11,7 +11,7 @@ $fluxgrid-breakpoints: (
   sm: 425px + 1,
   md: 768px + 1,
   lg: 1024px + 1,
-  xl: 1366px + 1
+  xl: 1366px + 1,
 ) !default;
 
 /* Test */
@@ -24,3 +24,4 @@ $fluxgrid-breakpoints: (
 $fluxgrid-debug-container-color: #4fd1c5;
 $fluxgrid-debug-grid-color: #9f7aea;
 $fluxgrid-debug-cell-color: #63b3ed;
+/* stylelint-enable color-no-hex */

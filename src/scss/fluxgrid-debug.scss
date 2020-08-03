@@ -50,7 +50,7 @@
     .grid {
       /** Grid large gutters **/
       &.grid--lgGutter-\@#{$breakpoint} {
-        /* stylelint-disable-next-line */
+        /* stylelint-disable-next-line max-nesting-depth, selector-max-class */
         &::after,
         > .cell::after {
           left: $fluxgrid-half-gutter-lg;
@@ -60,7 +60,7 @@
 
       /** Grid no gutters **/
       &.grid--noGutter-\@#{$breakpoint} {
-        /* stylelint-disable-next-line */
+        /* stylelint-disable-next-line max-nesting-depth, selector-max-class */
         &::after,
         > .cell::after {
           left: 0;
@@ -86,15 +86,16 @@
     }
   }
 
-  /* stylelint-disable-next-line */
+  /* stylelint-disable-next-line no-duplicate-selectors */
   .grid {
     &--hide-debug {
       &::after {
         outline: none;
       }
 
+      /* stylelint-disable-next-line selector-max-class */
       > .cell {
-        /* stylelint-disable-next-line */
+        /* stylelint-disable-next-line max-nesting-depth, selector-max-class */
         &::after {
           outline: none;
         }

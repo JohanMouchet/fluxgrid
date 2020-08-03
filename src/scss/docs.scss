@@ -5,13 +5,15 @@
 /* stylelint-disable color-no-hex */
 $fluxgrid-doc-color-primary: $fluxgrid-debug-grid-color;
 $fluxgrid-doc-color-secondary: $fluxgrid-debug-cell-color;
+$fluxgrid-doc-color-white: #fff;
 $fluxgrid-doc-color-grey: rgba(27, 31, 35, 0.05);
+$fluxgrid-doc-color-grey-dark: #24292e;
 $fluxgrid-doc-color-syntax-grey: #282c35;
 $fluxgrid-doc-color-syntax-w: #d7dae0;
 $fluxgrid-doc-color-syntax-r: #e06c75;
 $fluxgrid-doc-color-syntax-g: #98c379;
 $fluxgrid-doc-color-syntax-y: #d19a66;
-/* stylelint-disable enable */
+/* stylelint-enable color-no-hex */
 
 html {
   box-sizing: border-box;
@@ -19,7 +21,7 @@ html {
     sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
   font-size: 16px;
   line-height: 1.5;
-  color: #24292e;
+  color: $fluxgrid-doc-color-grey-dark;
 }
 
 *,
@@ -156,7 +158,7 @@ hr {
     $fluxgrid-doc-color-primary,
     $fluxgrid-doc-color-secondary
   );
-  color: #fff;
+  color: $fluxgrid-doc-color-white;
   white-space: nowrap;
   cursor: pointer;
   padding: 1em;
