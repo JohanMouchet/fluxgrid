@@ -1,6 +1,6 @@
-- Verify that output is identical
+
 - Update README
-  - scripts
+
   - release note, breaking change: export path changed
 - Try import from "~/fluxgrid" ?
 - Ensure lint-staged docs works

@@ -1,16 +1,16 @@
-/* Styling for the demo page */
+/* Styling for the doc page */
 
 @import "settings";
 
 /* stylelint-disable color-no-hex */
-$fluxgrid-demo-color-primary: $fluxgrid-debug-grid-color;
-$fluxgrid-demo-color-secondary: $fluxgrid-debug-cell-color;
-$fluxgrid-demo-color-grey: rgba(27, 31, 35, 0.05);
-$fluxgrid-demo-color-syntax-grey: #282c35;
-$fluxgrid-demo-color-syntax-w: #d7dae0;
-$fluxgrid-demo-color-syntax-r: #e06c75;
-$fluxgrid-demo-color-syntax-g: #98c379;
-$fluxgrid-demo-color-syntax-y: #d19a66;
+$fluxgrid-doc-color-primary: $fluxgrid-debug-grid-color;
+$fluxgrid-doc-color-secondary: $fluxgrid-debug-cell-color;
+$fluxgrid-doc-color-grey: rgba(27, 31, 35, 0.05);
+$fluxgrid-doc-color-syntax-grey: #282c35;
+$fluxgrid-doc-color-syntax-w: #d7dae0;
+$fluxgrid-doc-color-syntax-r: #e06c75;
+$fluxgrid-doc-color-syntax-g: #98c379;
+$fluxgrid-doc-color-syntax-y: #d19a66;
 /* stylelint-disable enable */
 
 html {
@@ -37,7 +37,7 @@ main {
 }
 
 a {
-  color: $fluxgrid-demo-color-secondary;
+  color: $fluxgrid-doc-color-secondary;
   text-decoration: none;
 
   &:focus {
@@ -55,13 +55,13 @@ a {
   font-size: 2rem;
   line-height: 1.5;
   font-family: "Lexend Deca", Helvetica, sans-serif;
-  border: 2px dashed $fluxgrid-demo-color-primary;
+  border: 2px dashed $fluxgrid-doc-color-primary;
   margin-bottom: 0;
 
   &__square {
     height: 1.5em;
     width: 1.5em;
-    border-right: 2px dashed $fluxgrid-demo-color-secondary;
+    border-right: 2px dashed $fluxgrid-doc-color-secondary;
   }
 
   &__title {
@@ -78,7 +78,7 @@ a {
 code,
 pre {
   border-radius: 0.3em;
-  background-color: $fluxgrid-demo-color-grey;
+  background-color: $fluxgrid-doc-color-grey;
 }
 
 /** Inline code **/
@@ -110,23 +110,23 @@ pre {
 }
 
 .syntax {
-  background-color: $fluxgrid-demo-color-syntax-grey;
+  background-color: $fluxgrid-doc-color-syntax-grey;
 }
 
 .syntax--w {
-  color: $fluxgrid-demo-color-syntax-w;
+  color: $fluxgrid-doc-color-syntax-w;
 }
 
 .syntax--r {
-  color: $fluxgrid-demo-color-syntax-r;
+  color: $fluxgrid-doc-color-syntax-r;
 }
 
 .syntax--g {
-  color: $fluxgrid-demo-color-syntax-g;
+  color: $fluxgrid-doc-color-syntax-g;
 }
 
 .syntax--y {
-  color: $fluxgrid-demo-color-syntax-y;
+  color: $fluxgrid-doc-color-syntax-y;
 }
 
 /* hr */
@@ -135,7 +135,7 @@ hr {
   width: 100%;
   margin: 2.5em 0;
   border: 0;
-  border-bottom: 1px solid $fluxgrid-demo-color-grey;
+  border-bottom: 1px solid $fluxgrid-doc-color-grey;
 }
 
 .box {
@@ -153,8 +153,8 @@ hr {
   right: 1em;
   background-image: linear-gradient(
     45deg,
-    $fluxgrid-demo-color-primary,
-    $fluxgrid-demo-color-secondary
+    $fluxgrid-doc-color-primary,
+    $fluxgrid-doc-color-secondary
   );
   color: #fff;
   white-space: nowrap;
