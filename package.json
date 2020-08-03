@@ -31,7 +31,7 @@
   },
   "devDependencies": {
     "husky": "^4.2.5",
-    "lint-staged": "^9.5.0",
+    "lint-staged": "^10.2.11",
     "parcel-bundler": "^1.12.4",
     "prettier": "^1.19.1",
     "sass": "^1.26.10",
@@ -47,7 +47,8 @@
     }
   },
   "browserslist": [
-    "defaults", "ie 11"
+    "defaults",
+    "ie 11"
   ],
   "husky": {
     "hooks": {
@@ -64,6 +65,5 @@
     "[src/*, index.html]": [
       "npm run docs"
     ]
-  },
-  "dependencies": {}
+  }
 }
