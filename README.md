@@ -1,4 +1,4 @@
-# ![Fluxgrid](src/img/fluxgrid.png)
+# ![Fluxgrid](assets/img/fluxgrid.png)
 
 _Responsive and customisable utility-based CSS grid built with Sass._
 
