@@ -68,19 +68,24 @@ Choose your preferred way:
 - Optionally (not recommended in production) import `fluxgrid-debug.scss` the same way
 - Run these through your build pipeline. It is advised to Autoprefix and minify them
 
-## Development
+# Development
 
-### Scripts
+## Scripts
 
-- dev: Starts up a development server with hot module replacement
-- build: Build Fluxgrid and Fluxgrid Debug, ready for deployment
-- docs: Build the documentation
-- lint: Runs the stylelint linter, _a mighty, modern linter that helps you avoid errors and enforce conventions in your styles_
-- format: Runs stylelint with the --fix option, as well as Prettier with the --write option to automatically fix problems
-- deploy: Run format, build and docs scripts
+- **dev**: Starts up a development server with hot module replacement
+- **build**: Build Fluxgrid and Fluxgrid Debug, ready for deployment
+- **docs**: Build the documentation
+- **lint**: Runs the stylelint linter, _a mighty, modern linter that helps you avoid errors and enforce conventions in your styles_
+- **format**: Runs stylelint with the --fix option, as well as Prettier with the --write option to automatically fix problems
+- **deploy**: Run format, build and docs scripts
 
-### Deployment
+## Deployment
 
-### Contribution
+1. Run `npm run deploy`
+2. Update `package.json` and `package-lock.json` using [semver](https://semver.org/): `"version": "<semver>"`
+3. Once merged / commited to `master`, tag: `git tag <semver>`
+4. Publish to npm: `npm publish`
+
+## Contribution
 
 Contribution is welcomed, feel free to raise an issue or PR.
