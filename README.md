@@ -79,8 +79,8 @@ In the project directory, you can `npm run`:
 - `dev`: Starts up a development server with hot module replacement
 - `build`: Build Fluxgrid and Fluxgrid Debug, ready for deployment
 - `docs`: Build the documentation
-- `lint`: Runs the stylelint linter, _a mighty, modern linter that helps you avoid errors and enforce conventions in your styles_
-- `format`: Runs stylelint with the --fix option, as well as Prettier with the --write option to automatically fix problems
+- `lint`: Runs the [stylelint](https://stylelint.io/) linter, _a mighty, modern linter that helps you avoid errors and enforce conventions in your styles_
+- `format`: Runs stylelint with the `--fix` option, as well as [Prettier](https://prettier.io/) with the `--write` option to automatically fix problems
 - `deploy`: Run format, build and docs scripts
 
 ## Deployment
