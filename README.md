@@ -49,8 +49,9 @@ Choose your preferred way:
 
 - [Install](#install) Fluxgrid
 - Import it to your build environment, either with:
-  - Sass: `@import "~fluxgrid/dist/fluxgrid.css";`
+  - Sass: `@import "~fluxgrid/dist/fluxgrid";`\*
   - JS: `import "fluxgrid/dist/fluxgrid.css";`
+  - HTML: `<link rel="stylesheet" type="text/css" href="node_modules/fluxgrid/dist/fluxgrid.css"/>`
 - Optionally (not recommended in production) import `fluxgrid-debug.css` the same way
 
 ### B. With a custom config
@@ -65,10 +66,12 @@ Choose your preferred way:
   $fluxgrid-breakpoints;
   ```
 - Import it to your build environment, either with:
-  - Sass: `@import "~fluxgrid/src/fluxgrid.scss";`
+  - Sass: `@import "~fluxgrid/src/fluxgrid";`\*
   - JS: `import "fluxgrid/src/fluxgrid.scss";`
 - Optionally (not recommended in production) import `fluxgrid-debug.scss` the same way
 - Run these through your build pipeline. It is advised to Autoprefix and minify them
+
+\*: `~` is a Webpack [feature](https://webpack.js.org/loaders/css-loader/#url), replace with `node_modules/` if needed
 
 # Development
 

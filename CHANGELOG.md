@@ -7,7 +7,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-- Try import from "~/fluxgrid"
 - Classes a la Tailwind?
   - Provide migration Regex
 - Document Offsets
@@ -21,9 +20,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Development build tool from Gulp to Parcel
 - [Breaking] Dropped support of IE 10, still support IE 11
-- [Breaking] Imports:
-  - Pre-compiled: from `"~fluxgrid/assets/src/scss/fluxgrid/fluxgrid.scss"` to `"~fluxgrid/src/fluxgrid.scss"`
-  - Compiled: from `"~fluxgrid/assets/dist/css/fluxgrid/fluxgrid.min.css"` to `"~fluxgrid/dist/fluxgrid.css"`
+- [Breaking] Import paths:
+  - Sass: `"~fluxgrid/assets/src/scss/fluxgrid/fluxgrid"` to `"~fluxgrid/src/fluxgrid"`
+  - JS: `"fluxgrid/assets/src/scss/fluxgrid/fluxgrid.scss"` to `"fluxgrid/src/fluxgrid.scss"`
 
 ### Removed
 
