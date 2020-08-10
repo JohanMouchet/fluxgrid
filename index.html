@@ -3,27 +3,19 @@
   <head>
     <title>Fluxgrid</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="src/fluxgrid.scss" />
+    <link rel="stylesheet" type="text/css" href="src/fluxgrid-debug.scss" />
+    <link rel="stylesheet" type="text/css" href="assets/scss/docs.scss" />
     <link
+      href="https://fonts.googleapis.com/css2?family=Lexend+Deca&text=Fluxgrid"
+      crossorigin
       rel="stylesheet"
-      type="text/css"
-      href="src/fluxgrid.scss"
     />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="src/fluxgrid-debug.scss"
-    />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="assets/scss/docs.scss"
-    />
-    <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca&text=Fluxgrid" crossorigin rel="stylesheet">
   </head>
 
   <body class="fluxgrid-debug counter">
     <main>
-      <div class="container container--xl">
+      <div class="container container-xl">
         <h1 class="logo">
           <span class="logo__square">&nbsp;</span>
           <span class="logo__title">Fluxgrid</span>
@@ -36,52 +28,58 @@
         </p>
 
         <p>
-          See on
-          <a href="https://github.com/JohanMouchet/fluxgrid">GitHub</a>
+          Look for installation and getting started instructions on
+          <a href="https://github.com/JohanMouchet/fluxgrid">GitHub</a>.
         </p>
 
         <h2 class="counter-index-1 anchor">
           <a id="syntax" href="#syntax" class="anchor-link">#</a>Syntax
         </h2>
-        <pre class="syntax">
-<code><u class="syntax--w">&lt;</u><u class="syntax--r">div</u> <u class="syntax--y">class</u><u class="syntax--w">=</u><u class="syntax--g">"container <i>container--modifier</i>"</u><u class="syntax--w">&gt;</u>
-	<u class="syntax--w">&lt;</u><u class="syntax--r">div</u> <u class="syntax--y">class</u><u class="syntax--w">=</u><u class="syntax--g">"grid <i>grid--modifier-*</i>"</u><u class="syntax--w">&gt;</u>
-		<u class="syntax--w">&lt;</u><u class="syntax--r">div</u> <u class="syntax--y">class</u><u class="syntax--w">=</u><u class="syntax--g">"cell <i>cell--modifier-*</i>"</u><u class="syntax--w">&gt;</u><u class="syntax--w">&lt;</u><u class="syntax--w">/</u><u class="syntax--r">div</u><u class="syntax--w">&gt;</u>
-	<u class="syntax--w">&lt;</u><u class="syntax--w">/</u><u class="syntax--r">div</u><u class="syntax--w">&gt;</u>
-<u class="syntax--w">&lt;</u><u class="syntax--w">/</u><u class="syntax--r">div</u><u class="syntax--w">&gt;</u></code>
+        <div class="grid grid-hide-debug">
+          <div class="cell cell-12 md:cell-7">
+            <pre class="code-block">
+<code>&lt;<u class="color-r">div</u> <u class="color-y">class</u>=<u class="color-g">"container *container-modifier"</u>&gt;
+	&lt;<u class="color-r">div</u> <u class="color-y">class</u>=<u class="color-g">"grid *grid-modifier"</u>&gt;
+		&lt;<u class="color-r">div</u> <u class="color-y">class</u>=<u class="color-g">"cell *cell-modifier"</u>&gt;&lt;/<u class="color-r">div</u>&gt;
+	&lt;/<u class="color-r">div</u>&gt;
+&lt;/<u class="color-r">div</u>&gt;</code>
 </pre>
+          </div>
+        </div>
 
-        <em>Responsive:</em>
-        <code class="syntax syntax--g">*@xs|@sm|@md|@lg|@xl</code>
+        <code class="code-block color-g">*</code> <em>Responsive prefix:</em>
+        <code class="code-block color-g">xs:|sm:|md:|lg:|xl:</code>
 
         <hr />
 
-        <h2 class="counter-index-1 anchor">
+        <h2 class="title-container counter-index-1 anchor color-tertiary">
           <a id="container" href="#container" class="anchor-link">#</a>Container
         </h2>
         <p>
-          A <code>.container</code> is required to cancel the
-          <code>.grid</code> negative margins used to align the
-          <code>.cell</code>s. It can be extended with modifiers throughout
-          breakpoints:
+          A <code>container</code> is required to cancel the
+          <code>grid</code> negative margins used to align the
+          <code>cell</code>s.
         </p>
-        <code>.container--*</code> <code>&amp;.container--noGutter</code>
+        <p>
+          It can be extended with modifiers:<br />
+          <code>container-sm|md|lg|xl</code> <code>container-no-gutter</code>
+        </p>
 
         <hr />
 
-        <h2 class="counter-index-1 anchor">
+        <h2 class="title-grid counter-index-1 anchor color-primary">
           <a id="grid" href="#grid" class="anchor-link">#</a>Grid
         </h2>
         <p>
-          A <code>.grid</code> can be extended with modifiers throughout
+          A <code>grid</code> can be extended with modifiers throughout
           breakpoints:
         </p>
         <h3 class="counter-index-2 anchor">
           <a id="grid-direction" href="#grid-direction" class="anchor-link">#</a
           >Direction
         </h3>
-        <div class="grid grid--hide-debug">
-          <div class="cell cell--12-@xs cell--5-@md">
+        <div class="grid grid-hide-debug">
+          <div class="cell cell-12 md:cell-5">
             <h4 class="anchor">
               <a
                 id="grid-direction-row"
@@ -89,18 +87,18 @@
                 class="anchor-link"
                 >#</a
               >Row (default)
-              <code>&amp;.grid--row-*</code>
+              <code>grid-row</code>
             </h4>
-            <div class="grid grid--row-@xs">
-              <div class="cell cell--@xs"><code class="box">A</code></div>
-              <div class="cell cell--@xs"><code class="box">B</code></div>
-              <div class="cell cell--@xs"><code class="box">C</code></div>
+            <div class="grid grid-row">
+              <div class="cell cell-grow"><code class="box">A</code></div>
+              <div class="cell cell-grow"><code class="box">B</code></div>
+              <div class="cell cell-grow"><code class="box">C</code></div>
             </div>
           </div>
 
-          <div class="cell cell--12-@xs cell--2-@md">&nbsp;</div>
+          <div class="cell cell-12 md:cell-2">&nbsp;</div>
 
-          <div class="cell cell--12-@xs cell--5-@md">
+          <div class="cell cell-12 md:cell-5">
             <h4 class="anchor">
               <a
                 id="grid-direction-reversed"
@@ -108,12 +106,12 @@
                 class="anchor-link"
                 >#</a
               >Reversed row
-              <code>&amp;.grid--rowReverse-*</code>
+              <code>grid-row-reverse</code>
             </h4>
-            <div class="grid grid--rowReverse-@xs">
-              <div class="cell cell--@xs"><code class="box">A</code></div>
-              <div class="cell cell--@xs"><code class="box">B</code></div>
-              <div class="cell cell--@xs"><code class="box">C</code></div>
+            <div class="grid grid-row-reverse">
+              <div class="cell cell-grow"><code class="box">A</code></div>
+              <div class="cell cell-grow"><code class="box">B</code></div>
+              <div class="cell cell-grow"><code class="box">C</code></div>
             </div>
           </div>
         </div>
@@ -123,8 +121,8 @@
         <h3 class="counter-index-2 anchor">
           <a id="grid-wrap" href="#grid-wrap" class="anchor-link">#</a>Wrap
         </h3>
-        <div class="grid grid--hide-debug">
-          <div class="cell cell--12-@xs cell--5-@md">
+        <div class="grid grid-hide-debug">
+          <div class="cell cell-12 md:cell-5">
             <h4 class="anchor">
               <a
                 id="grid-wrap-default"
@@ -132,21 +130,21 @@
                 class="anchor-link"
                 >#</a
               >Wrap (default)
-              <code>&amp;.grid--wrap-*</code>
+              <code>grid-wrap</code>
             </h4>
-            <div class="grid grid--wrap-@xs">
-              <div class="cell cell--8-@xs">
-                <code class="box">.cell--8-@xs</code>
+            <div class="grid grid-wrap">
+              <div class="cell cell-6">
+                <code class="box">cell-6</code>
               </div>
-              <div class="cell cell--6-@xs">
-                <code class="box">.cell--6-@xs</code>
+              <div class="cell cell-8">
+                <code class="box">cell-8</code>
               </div>
             </div>
           </div>
 
-          <div class="cell cell--12-@xs cell--2-@md">&nbsp;</div>
+          <div class="cell cell-12 md:cell-2">&nbsp;</div>
 
-          <div class="cell cell--12-@xs cell--5-@md">
+          <div class="cell cell-12 md:cell-5">
             <h4 class="anchor">
               <a
                 id="grid-wrap-no-wrap"
@@ -154,14 +152,14 @@
                 class="anchor-link"
                 >#</a
               >No wrap
-              <code>&amp;.grid--noWrap-*</code>
+              <code>grid-no-wrap</code>
             </h4>
-            <div class="grid grid--noWrap-@xs">
-              <div class="cell cell--8-@xs">
-                <code class="box">.cell--8-@xs</code>
+            <div class="grid grid-no-wrap">
+              <div class="cell cell-6">
+                <code class="box">cell-6</code>
               </div>
-              <div class="cell cell--6-@xs">
-                <code class="box">.cell--6-@xs</code>
+              <div class="cell cell-8">
+                <code class="box">cell-8</code>
               </div>
             </div>
           </div>
@@ -173,8 +171,8 @@
           <a id="grid-gutters" href="#grid-gutters" class="anchor-link">#</a
           >Gutters
         </h3>
-        <div class="grid grid--hide-debug">
-          <div class="cell cell--12-@xs cell--5-@md">
+        <div class="grid grid-hide-debug">
+          <div class="cell cell-12 md:cell-5">
             <h4 class="anchor">
               <a
                 id="grid-gutter-large"
@@ -182,18 +180,18 @@
                 class="anchor-link"
                 >#</a
               >Large
-              <code>&amp;.grid--lgGutter-*</code>
+              <code>grid-lg-gutter</code>
             </h4>
-            <div class="grid grid--lgGutter-@xs">
-              <div class="cell cell--@xs"><code class="box">.cell</code></div>
-              <div class="cell cell--@xs"><code class="box">.cell</code></div>
-              <div class="cell cell--@xs"><code class="box">.cell</code></div>
+            <div class="grid grid-lg-gutter">
+              <div class="cell cell-grow"><code class="box">&nbsp;</code></div>
+              <div class="cell cell-grow"><code class="box">&nbsp;</code></div>
+              <div class="cell cell-grow"><code class="box">&nbsp;</code></div>
             </div>
           </div>
 
-          <div class="cell cell--12-@xs cell--2-@md">&nbsp;</div>
+          <div class="cell cell-12 md:cell-2">&nbsp;</div>
 
-          <div class="cell cell--12-@xs cell--5-@md">
+          <div class="cell cell-12 md:cell-5">
             <h4 class="anchor">
               <a
                 id="grid-gutter-none"
@@ -201,12 +199,12 @@
                 class="anchor-link"
                 >#</a
               >None
-              <code>&amp;.grid--noGutter-*</code>
+              <code>grid-no-gutter</code>
             </h4>
-            <div class="grid grid--noGutter-@xs">
-              <div class="cell cell--@xs"><code class="box">.cell</code></div>
-              <div class="cell cell--@xs"><code class="box">.cell</code></div>
-              <div class="cell cell--@xs"><code class="box">.cell</code></div>
+            <div class="grid grid-no-gutter">
+              <div class="cell cell-grow"><code class="box">&nbsp;</code></div>
+              <div class="cell cell-grow"><code class="box">&nbsp;</code></div>
+              <div class="cell cell-grow"><code class="box">&nbsp;</code></div>
             </div>
           </div>
         </div>
@@ -221,8 +219,8 @@
             >#</a
           >Justification
         </h3>
-        <div class="grid grid--lgGutter-@md grid--hide-debug">
-          <div class="cell cell--12-@xs cell--4-@md">
+        <div class="grid md:grid-lg-gutter grid-hide-debug">
+          <div class="cell cell-12 md:cell-4">
             <h4 class="anchor">
               <a
                 id="grid-justification-x"
@@ -231,47 +229,47 @@
                 >#</a
               >X axis
             </h4>
-            <h5>Start (default) <code>&amp;.grid--xStart-*</code></h5>
-            <div class="grid grid--xStart-@xs">
-              <div class="cell cell--3-@xs"><code class="box">.cell</code></div>
-              <div class="cell cell--3-@xs"><code class="box">.cell</code></div>
-              <div class="cell cell--3-@xs"><code class="box">.cell</code></div>
+            <h5>Start (default) <code>grid-x-start</code></h5>
+            <div class="grid grid-x-start">
+              <div class="cell cell-3"><code class="box">&nbsp;</code></div>
+              <div class="cell cell-3"><code class="box">&nbsp;</code></div>
+              <div class="cell cell-3"><code class="box">&nbsp;</code></div>
             </div>
 
-            <h5>Center <code>&amp;.grid--xCenter-*</code></h5>
-            <div class="grid grid--xCenter-@xs">
-              <div class="cell cell--3-@xs"><code class="box">.cell</code></div>
-              <div class="cell cell--3-@xs"><code class="box">.cell</code></div>
-              <div class="cell cell--3-@xs"><code class="box">.cell</code></div>
+            <h5>Center <code>grid-x-center</code></h5>
+            <div class="grid grid-x-center">
+              <div class="cell cell-3"><code class="box">&nbsp;</code></div>
+              <div class="cell cell-3"><code class="box">&nbsp;</code></div>
+              <div class="cell cell-3"><code class="box">&nbsp;</code></div>
             </div>
 
-            <h5>End <code>&amp;.grid--xEnd-*</code></h5>
-            <div class="grid grid--xEnd-@xs">
-              <div class="cell cell--3-@xs"><code class="box">.cell</code></div>
-              <div class="cell cell--3-@xs"><code class="box">.cell</code></div>
-              <div class="cell cell--3-@xs"><code class="box">.cell</code></div>
+            <h5>End <code>grid-x-end</code></h5>
+            <div class="grid grid-x-end">
+              <div class="cell cell-3"><code class="box">&nbsp;</code></div>
+              <div class="cell cell-3"><code class="box">&nbsp;</code></div>
+              <div class="cell cell-3"><code class="box">&nbsp;</code></div>
             </div>
 
-            <h5>Around <code>&amp;.grid--xAround-*</code></h5>
-            <div class="grid grid--xAround-@xs">
-              <div class="cell cell--3-@xs"><code class="box">.cell</code></div>
-              <div class="cell cell--3-@xs"><code class="box">.cell</code></div>
-              <div class="cell cell--3-@xs"><code class="box">.cell</code></div>
+            <h5>Around <code>grid-x-around</code></h5>
+            <div class="grid grid-x-around">
+              <div class="cell cell-3"><code class="box">&nbsp;</code></div>
+              <div class="cell cell-3"><code class="box">&nbsp;</code></div>
+              <div class="cell cell-3"><code class="box">&nbsp;</code></div>
             </div>
 
-            <h5>Between <code>&amp;.grid--xBetween-*</code></h5>
-            <div class="grid grid--xBetween-@xs">
-              <div class="cell cell--3-@xs"><code class="box">.cell</code></div>
-              <div class="cell cell--3-@xs"><code class="box">.cell</code></div>
-              <div class="cell cell--3-@xs"><code class="box">.cell</code></div>
+            <h5>Between <code>grid-x-between</code></h5>
+            <div class="grid grid-x-between">
+              <div class="cell cell-3"><code class="box">&nbsp;</code></div>
+              <div class="cell cell-3"><code class="box">&nbsp;</code></div>
+              <div class="cell cell-3"><code class="box">&nbsp;</code></div>
             </div>
           </div>
 
-          <div class="cell cell--12-@xs cell--visible-@xs cell--hidden-@md">
+          <div class="cell cell-12 cell-visible md:cell-hidden">
             &nbsp;
           </div>
 
-          <div class="cell cell--12-@xs cell--4-@md">
+          <div class="cell cell-12 md:cell-4">
             <h4 class="anchor">
               <a
                 id="grid-justification-y"
@@ -280,40 +278,40 @@
                 >#</a
               >Y axis
             </h4>
-            <h5>Stretch (default) <code>&amp;.grid--yStretch-*</code></h5>
-            <div class="grid grid--yStretch-@xs" style="height: 90px">
-              <div class="cell cell--@xs"><code class="box">.cell</code></div>
-              <div class="cell cell--@xs"><code class="box">.cell</code></div>
-              <div class="cell cell--@xs"><code class="box">.cell</code></div>
+            <h5>Stretch (default) <code>grid-y-stretch</code></h5>
+            <div class="grid grid-y-stretch" style="height: 90px;">
+              <div class="cell cell-grow"><code class="box">&nbsp;</code></div>
+              <div class="cell cell-grow"><code class="box">&nbsp;</code></div>
+              <div class="cell cell-grow"><code class="box">&nbsp;</code></div>
             </div>
 
-            <h5>Start <code>&amp;.grid--yStart-*</code></h5>
-            <div class="grid grid--yStart-@xs" style="height: 90px">
-              <div class="cell cell--@xs"><code class="box">.cell</code></div>
-              <div class="cell cell--@xs"><code class="box">.cell</code></div>
-              <div class="cell cell--@xs"><code class="box">.cell</code></div>
+            <h5>Start <code>grid-y-start</code></h5>
+            <div class="grid grid-y-start" style="height: 90px;">
+              <div class="cell cell-grow"><code class="box">&nbsp;</code></div>
+              <div class="cell cell-grow"><code class="box">&nbsp;</code></div>
+              <div class="cell cell-grow"><code class="box">&nbsp;</code></div>
             </div>
 
-            <h5>Center <code>&amp;.grid--yCenter-*</code></h5>
-            <div class="grid grid--yCenter-@xs" style="height: 90px">
-              <div class="cell cell--@xs"><code class="box">.cell</code></div>
-              <div class="cell cell--@xs"><code class="box">.cell</code></div>
-              <div class="cell cell--@xs"><code class="box">.cell</code></div>
+            <h5>Center <code>grid-y-center</code></h5>
+            <div class="grid grid-y-center" style="height: 90px;">
+              <div class="cell cell-grow"><code class="box">&nbsp;</code></div>
+              <div class="cell cell-grow"><code class="box">&nbsp;</code></div>
+              <div class="cell cell-grow"><code class="box">&nbsp;</code></div>
             </div>
 
-            <h5>End <code>&amp;.grid--yEnd-*</code></h5>
-            <div class="grid grid--yEnd-@xs" style="height: 90px">
-              <div class="cell cell--@xs"><code class="box">.cell</code></div>
-              <div class="cell cell--@xs"><code class="box">.cell</code></div>
-              <div class="cell cell--@xs"><code class="box">.cell</code></div>
+            <h5>End <code>grid-y-end</code></h5>
+            <div class="grid grid-y-end" style="height: 90px;">
+              <div class="cell cell-grow"><code class="box">&nbsp;</code></div>
+              <div class="cell cell-grow"><code class="box">&nbsp;</code></div>
+              <div class="cell cell-grow"><code class="box">&nbsp;</code></div>
             </div>
           </div>
 
-          <div class="cell cell--12-@xs cell--visible-@xs cell--hidden-@md">
+          <div class="cell cell-12 cell-visible md:cell-hidden">
             &nbsp;
           </div>
 
-          <div class="cell cell--12-@xs cell--4-@md">
+          <div class="cell cell-12 md:cell-4">
             <h4 class="anchor">
               <a
                 id="grid-justification-z"
@@ -322,63 +320,63 @@
                 >#</a
               >"Z": Y axis when wrapped
             </h4>
-            <h5>Stretch (default) <code>&amp;.grid--zStretch-*</code></h5>
-            <div class="grid grid--zStretch-@xs" style="height: 90px">
-              <div class="cell cell--12-@xs">
-                <code class="box">.cell</code>
+            <h5>Stretch (default) <code>grid-z-stretch</code></h5>
+            <div class="grid grid-z-stretch" style="height: 90px;">
+              <div class="cell cell-12">
+                <code class="box">cell-12</code>
               </div>
-              <div class="cell cell--12-@xs">
-                <code class="box">.cell</code>
-              </div>
-            </div>
-
-            <h5>Start <code>&amp;.grid--zStart-*</code></h5>
-            <div class="grid grid--zStart-@xs" style="height: 90px">
-              <div class="cell cell--12-@xs">
-                <code class="box">.cell</code>
-              </div>
-              <div class="cell cell--12-@xs">
-                <code class="box">.cell</code>
+              <div class="cell cell-12">
+                <code class="box">cell-12</code>
               </div>
             </div>
 
-            <h5>Center <code>&amp;.grid--zCenter-*</code></h5>
-            <div class="grid grid--zCenter-@xs" style="height: 90px">
-              <div class="cell cell--12-@xs">
-                <code class="box">.cell</code>
+            <h5>Start <code>grid-z-start</code></h5>
+            <div class="grid grid-z-start" style="height: 90px;">
+              <div class="cell cell-12">
+                <code class="box">cell-12</code>
               </div>
-              <div class="cell cell--12-@xs">
-                <code class="box">.cell</code>
-              </div>
-            </div>
-
-            <h5>End <code>&amp;.grid--zEnd-*</code></h5>
-            <div class="grid grid--zEnd-@xs" style="height: 90px">
-              <div class="cell cell--12-@xs">
-                <code class="box">.cell</code>
-              </div>
-              <div class="cell cell--12-@xs">
-                <code class="box">.cell</code>
+              <div class="cell cell-12">
+                <code class="box">cell-12</code>
               </div>
             </div>
 
-            <h5>Around <code>&amp;.grid--zAround-*</code></h5>
-            <div class="grid grid--zAround-@xs" style="height: 90px">
-              <div class="cell cell--12-@xs">
-                <code class="box">.cell</code>
+            <h5>Center <code>grid-z-center</code></h5>
+            <div class="grid grid-z-center" style="height: 90px;">
+              <div class="cell cell-12">
+                <code class="box">cell-12</code>
               </div>
-              <div class="cell cell--12-@xs">
-                <code class="box">.cell</code>
+              <div class="cell cell-12">
+                <code class="box">cell-12</code>
               </div>
             </div>
 
-            <h5>Between <code>&amp;.grid--zBetween-*</code></h5>
-            <div class="grid grid--zBetween-@xs" style="height: 90px">
-              <div class="cell cell--12-@xs">
-                <code class="box">.cell</code>
+            <h5>End <code>grid-z-end</code></h5>
+            <div class="grid grid-z-end" style="height: 90px;">
+              <div class="cell cell-12">
+                <code class="box">cell-12</code>
               </div>
-              <div class="cell cell--12-@xs">
-                <code class="box">.cell</code>
+              <div class="cell cell-12">
+                <code class="box">cell-12</code>
+              </div>
+            </div>
+
+            <h5>Around <code>grid-z-around</code></h5>
+            <div class="grid grid-z-around" style="height: 90px;">
+              <div class="cell cell-12">
+                <code class="box">cell-12</code>
+              </div>
+              <div class="cell cell-12">
+                <code class="box">cell-12</code>
+              </div>
+            </div>
+
+            <h5>Between <code>grid-z-between</code></h5>
+            <div class="grid grid-z-between" style="height: 90px;">
+              <div class="cell cell-12">
+                <code class="box">cell-12</code>
+              </div>
+              <div class="cell cell-12">
+                <code class="box">cell-12</code>
               </div>
             </div>
           </div>
@@ -386,16 +384,15 @@
 
         <hr />
 
-        <h2 class="counter-index-1 anchor">
+        <h2 class="title-cells counter-index-1 anchor color-secondary">
           <a id="cells" href="#cells" class="anchor-link">#</a>Cells
         </h2>
         <p>
-          A <code>.cell</code> can be extended with modifiers throughout
+          A <code>cell</code> can be extended with modifiers throughout
           breakpoints:
         </p>
         <h3 class="counter-index-2 anchor">
           <a id="cell-size" href="#cell-size" class="anchor-link">#</a>Size
-          <code>&amp;.cell--[1-12]-*</code>
         </h3>
         <h4 class="anchor">
           <a
@@ -406,44 +403,44 @@
           >Defined
         </h4>
         <div class="grid">
-          <div class="cell cell--1-@xs">
-            <code class="box">.cell--1-*</code>
+          <div class="cell cell-1">
+            <code class="box">cell-1</code>
           </div>
-          <div class="cell cell--11-@xs">
-            <code class="box">.cell--11-*</code>
+          <div class="cell cell-11">
+            <code class="box">cell-11</code>
           </div>
-          <div class="cell cell--2-@xs">
-            <code class="box">.cell--2-*</code>
+          <div class="cell cell-2">
+            <code class="box">cell-2</code>
           </div>
-          <div class="cell cell--10-@xs">
-            <code class="box">.cell--10-*</code>
+          <div class="cell cell-10">
+            <code class="box">cell-10</code>
           </div>
-          <div class="cell cell--3-@xs">
-            <code class="box">.cell--3-*</code>
+          <div class="cell cell-3">
+            <code class="box">cell-3</code>
           </div>
-          <div class="cell cell--9-@xs">
-            <code class="box">.cell--9-*</code>
+          <div class="cell cell-9">
+            <code class="box">cell-9</code>
           </div>
-          <div class="cell cell--4-@xs">
-            <code class="box">.cell--4-*</code>
+          <div class="cell cell-4">
+            <code class="box">cell-4</code>
           </div>
-          <div class="cell cell--8-@xs">
-            <code class="box">.cell--8-*</code>
+          <div class="cell cell-8">
+            <code class="box">cell-8</code>
           </div>
-          <div class="cell cell--5-@xs">
-            <code class="box">.cell--5-*</code>
+          <div class="cell cell-5">
+            <code class="box">cell-5</code>
           </div>
-          <div class="cell cell--7-@xs">
-            <code class="box">.cell--7-*</code>
+          <div class="cell cell-7">
+            <code class="box">cell-7</code>
           </div>
-          <div class="cell cell--6-@xs">
-            <code class="box">.cell--6-*</code>
+          <div class="cell cell-6">
+            <code class="box">cell-6</code>
           </div>
-          <div class="cell cell--6-@xs">
-            <code class="box">.cell--6-*</code>
+          <div class="cell cell-6">
+            <code class="box">cell-6</code>
           </div>
-          <div class="cell cell--12-@xs">
-            <code class="box">.cell--12-*</code>
+          <div class="cell cell-12">
+            <code class="box">cell-12</code>
           </div>
         </div>
 
@@ -454,14 +451,14 @@
             class="anchor-link"
             >#</a
           >
-          Expended / Collapsed <code>&amp;.cell--*</code> /
-          <code>&amp;.cell--0-*</code>
+          Grow / Shrink
         </h4>
         <div class="grid">
-          <div class="cell cell--@xs"><code class="box">.cell--*</code></div>
-          <div class="cell cell--3-@xs"><code class="box">.cell--3-*</code></div>
-          <div class="cell cell--0-@xs"><code class="box">.cell--0-*</code></div>
+          <div class="cell cell-grow"><code class="box">cell-grow</code></div>
+          <div class="cell cell"><code class="box">cell</code></div>
+          <div class="cell cell-shrink"><code class="box">cell-shrink</code></div>
         </div>
+        <p>Note: <code>cell-shrink</code> behaves the same as <code>cell</code> but can be use to explicitly override <code>cell-grow</code>.</p>
 
         <hr />
 
@@ -469,33 +466,32 @@
           <a id="cell-visibility" href="#cell-visibility" class="anchor-link"
             >#</a
           >Visibility
-          <code>&amp;.cell--hidden|visible-*</code>
         </h3>
         <div class="grid">
-          <div class="cell cell--6-@xs cell--hidden-@xs">
-            <code class="box">.cell--hidden-*</code>
+          <div class="cell cell-6 cell-hidden">
+            <code class="box">cell-hidden</code>
           </div>
-          <div class="cell cell--6-@xs cell--visible-@xs">
-            <code class="box">.cell--visible-*</code>
+          <div class="cell cell-6 cell-visible">
+            <code class="box">cell-visible</code>
           </div>
         </div>
+        <p>Note: <code>cell-hidden</code> is used to hide a cell.</p>
 
         <hr />
 
         <h3 class="counter-index-2 anchor">
-          <a id="cell-no-gutter" href="#cell-no-gutter" class="anchor-link">#</a
-          >No gutter
-          <code>&amp;.cell--noGutter|gutter-*</code>
+          <a id="cell-no-gutter" href="#cell-gutter" class="anchor-link">#</a
+          >Gutter
         </h3>
         <div class="grid">
-          <div class="cell cell--@xs"><code class="box">.cell</code></div>
-          <div class="cell cell--@xs cell--noGutter-@xs">
-            <code class="box">.cell--noGutter-*</code>
+          <div class="cell cell-grow"><code class="box">cell-gutter</code></div>
+          <div class="cell cell-grow cell-no-gutter">
+            <code class="box">cell-no-gutter</code>
           </div>
-          <div class="cell cell--@xs cell--noGutter-@xs">
-            <code class="box">.cell--noGutter-*</code>
+          <div class="cell cell-grow cell-no-gutter">
+            <code class="box">cell-no-gutter</code>
           </div>
-          <div class="cell cell--@xs"><code class="box">.cell</code></div>
+          <div class="cell cell-grow"><code class="box">cell-gutter</code></div>
         </div>
 
         <hr />
@@ -508,8 +504,59 @@
             >#</a
           >Self justification
         </h3>
-        <div class="grid grid--hide-debug">
-          <div class="cell cell--12-@xs cell--6-@md">
+        <div class="grid grid-hide-debug">
+          <div class="cell cell-12 md:cell-5">
+            <h4 class="anchor">
+              <a
+                id="cell-self-justification-x"
+                href="#cell-self-justification-x"
+                class="anchor-link"
+                >#</a
+              >X axis
+            </h4>
+            <h5>Start</h5>
+            <div class="grid">
+              <div class="cell cell-3 cell-x-start">
+                <code class="box">cell-x-start</code>
+              </div>
+              <div class="cell cell-3">
+                <code class="box">&nbsp;</code>
+              </div>
+              <div class="cell cell-3">
+                <code class="box">&nbsp;</code>
+              </div>
+            </div>
+
+            <h5>Center</h5>
+            <div class="grid">
+              <div class="cell cell-3">
+                <code class="box">&nbsp;</code>
+              </div>
+              <div class="cell cell-3 cell-x-center">
+                <code class="box">cell-x-center</code>
+              </div>
+              <div class="cell cell-3">
+                <code class="box">&nbsp;</code>
+              </div>
+            </div>
+
+            <h5>End</h5>
+            <div class="grid">
+              <div class="cell cell-3">
+                <code class="box">&nbsp;</code>
+              </div>
+              <div class="cell cell-3">
+                <code class="box">&nbsp;</code>
+              </div>
+              <div class="cell cell-3 cell-x-end">
+                <code class="box">cell-x-end</code>
+              </div>
+            </div>
+          </div>
+
+          <div class="cell cell-12 md:cell-1">&nbsp;</div>
+
+          <div class="cell cell-12 md:cell-6">
             <h4 class="anchor">
               <a
                 id="cell-self-justification-y"
@@ -518,45 +565,45 @@
                 >#</a
               >
               Y axis
-              <code>&amp;.cell--yStretch(default)|yStart|yCenter|yEnd-*</code>
             </h4>
-            <div class="grid" style="height: 90px">
-              <div class="cell cell--@xs cell--yStretch-@xs">
-                <code class="box">.cell--yStretch-*</code>
+
+            <h5>Stretch (default)</h5>
+            <div class="grid" style="height: 90px;">
+              <div class="cell cell-6 cell-y-stretch">
+                <code class="box">cell-y-stretch</code>
               </div>
-              <div class="cell cell--@xs cell--yStart-@xs">
-                <code class="box">.cell--yStart-*</code>
-              </div>
-              <div class="cell cell--@xs cell--yCenter-@xs">
-                <code class="box">.cell--yCenter-*</code>
-              </div>
-              <div class="cell cell--@xs cell--yEnd-@xs">
-                <code class="box">.cell--yEnd-*</code>
+              <div class="cell cell-6">
+                <code class="box">&nbsp;</code>
               </div>
             </div>
-          </div>
 
-          <div class="cell cell--12-@xs cell--1-@md">&nbsp;</div>
+            <h5>Start</h5>
+            <div class="grid" style="height: 90px;">
+              <div class="cell cell-6 cell-y-start">
+                <code class="box">cell-y-start</code>
+              </div>
+              <div class="cell cell-6">
+                <code class="box">&nbsp;</code>
+              </div>
+            </div>
 
-          <div class="cell cell--12-@xs cell--5-@md">
-            <h4 class="anchor">
-              <a
-                id="cell-self-justification-x"
-                href="#cell-self-justification-x"
-                class="anchor-link"
-                >#</a
-              >X axis
-              <code>&amp;.cell--xCenter|xStart|xEnd-*</code>
-            </h4>
-            <div class="grid">
-              <div class="cell cell--3-@xs cell--xStart-@xs">
-                <code class="box">.cell--xStart-*</code>
+            <h5>Center</h5>
+            <div class="grid" style="height: 90px;">
+              <div class="cell cell-6 cell-y-center">
+                <code class="box">cell-y-center</code>
               </div>
-              <div class="cell cell--3-@xs cell--xCenter-@xs">
-                <code class="box">.cell--xCenter-*</code>
+              <div class="cell cell-6">
+                <code class="box">&nbsp;</code>
               </div>
-              <div class="cell cell--3-@xs cell--xEnd-@xs">
-                <code class="box">.cell--xEnd-*</code>
+            </div>
+
+            <h5>End</h5>
+            <div class="grid" style="height: 90px;">
+              <div class="cell cell-6 cell-y-end">
+                <code class="box">cell-y-end</code>
+              </div>
+              <div class="cell cell-6">
+                <code class="box">&nbsp;</code>
               </div>
             </div>
           </div>
@@ -566,20 +613,42 @@
 
         <h3 class="counter-index-2 anchor">
           <a id="cell-order" href="#cell-order" class="anchor-link">#</a>Order
-          <code>&amp;.cell--first|ordered|last-*</code>
         </h3>
         <div class="grid">
-          <div class="cell cell--@xs cell--last-@xs">
-            <code class="box">A .cell--last-*</code>
+          <div class="cell cell-grow cell-last">
+            <code class="box">A cell-last</code>
           </div>
-          <div class="cell cell--@xs cell--ordered-@xs">
-            <code class="box">B .cell--ordered-*</code>
+          <div class="cell cell-grow cell-ordered">
+            <code class="box">B cell-ordered</code>
           </div>
-          <div class="cell cell--@xs cell--first-@xs">
-            <code class="box">C .cell--first-*</code>
+          <div class="cell cell-grow cell-first">
+            <code class="box">C cell-first</code>
           </div>
         </div>
 
+        <!-- GitHub Corner -->
+        <a
+          href="https://github.com/JohanMouchet/fluxgrid"
+          class="github-corner"
+          aria-label="View source on GitHub"
+        >
+          <svg width="80" height="80" viewbox="0 0 250 250" aria-hidden="true">
+            <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+            <path
+              d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor"
+              style="transform-origin: 130px 106px;"
+              class="octo-arm"
+            ></path>
+            <path
+              d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor"
+              class="octo-body"
+            ></path>
+          </svg>
+        </a>
+
+        <!-- Show Grid Debug button -->
         <label class="toggle-grid-debug">
           <input
             type="checkbox"

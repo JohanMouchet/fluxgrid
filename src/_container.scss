@@ -9,19 +9,14 @@
 }
 
 /** No gutters **/
-.container--noGutter {
-  padding-left: $fluxgrid-half-gutter;
-  padding-right: $fluxgrid-half-gutter;
-}
-
-/** No gutters large grid **/
-.container--noGutter-lgGrid {
-  padding-left: $fluxgrid-half-gutter-lg;
-  padding-right: $fluxgrid-half-gutter-lg;
+.container-no-gutter {
+  padding-left: 0;
+  padding-right: 0;
+  overflow-x: hidden;
 }
 
 @mixin fluxgrid-responsive-container($breakpoint, $size) {
-  .container--#{$breakpoint} {
+  .container-#{$breakpoint} {
     max-width: $size;
   }
 }

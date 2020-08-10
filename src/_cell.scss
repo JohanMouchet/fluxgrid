@@ -6,104 +6,104 @@
   padding-right: $fluxgrid-half-gutter;
 }
 
-@mixin fluxgrid-responsive-cell($breakpoint) {
+@mixin fluxgrid-responsive-cell($breakpoint: "") {
   /* Sizes */
   @for $i from 1 through $fluxgrid-division {
-    .cell--#{$i}-\@#{$breakpoint} {
+    .#{$breakpoint}cell-#{$i} {
       flex-basis: percentage($i / $fluxgrid-division);
       max-width: percentage($i / $fluxgrid-division);
     }
   }
 
-  /* Collapsed */
-  .cell--0-\@#{$breakpoint} {
+  /* Shrink */
+  .#{$breakpoint}cell-shrink {
     flex-grow: 0;
     flex-basis: auto;
     max-width: none;
   }
 
-  /* Expended */
-  .cell--\@#{$breakpoint} {
+  /* Grow */
+  .#{$breakpoint}cell-grow {
     flex-grow: 1;
     flex-basis: auto;
     max-width: none;
   }
 
   /* No gutters */
-  .cell--noGutter-\@#{$breakpoint} {
+  .#{$breakpoint}cell-no-gutter {
     padding-left: 0;
     padding-right: 0;
   }
 
   /* Gutters */
-  .cell--gutter-\@#{$breakpoint} {
+  .#{$breakpoint}cell-gutter {
     padding-left: $fluxgrid-half-gutter;
     padding-right: $fluxgrid-half-gutter;
   }
 
-  [class*="grid--lgGutter"] > .cell--gutter-\@#{$breakpoint} {
+  [class*="grid-lg-gutter"] > .#{$breakpoint}cell-gutter {
     padding-left: $fluxgrid-half-gutter-lg;
     padding-right: $fluxgrid-half-gutter-lg;
   }
 
   /* Visibility */
-  .cell--hidden-\@#{$breakpoint} {
+  .#{$breakpoint}cell-hidden {
     display: none;
   }
 
-  .cell--visible-\@#{$breakpoint} {
+  .#{$breakpoint}cell-visible {
     display: block;
   }
 
   /* Self justification Y axis */
-  .cell--yStretch-\@#{$breakpoint} {
+  .#{$breakpoint}cell-y-stretch {
     align-self: stretch;
   }
 
-  .cell--yStart-\@#{$breakpoint} {
+  .#{$breakpoint}cell-y-start {
     align-self: flex-start;
   }
 
-  .cell--yCenter-\@#{$breakpoint} {
+  .#{$breakpoint}cell-y-center {
     align-self: center;
   }
 
-  .cell--yEnd-\@#{$breakpoint} {
+  .#{$breakpoint}cell-y-end {
     align-self: flex-end;
   }
 
   /* Self justification X axis */
-  .cell--xCenter-\@#{$breakpoint} {
+  .#{$breakpoint}cell-x-center {
     margin-left: auto;
     margin-right: auto;
   }
 
-  .cell--xStart-\@#{$breakpoint} {
+  .#{$breakpoint}cell-x-start {
     margin-right: auto;
   }
 
-  .cell--xEnd-\@#{$breakpoint} {
+  .#{$breakpoint}cell-x-end {
     margin-left: auto;
   }
 
   /* Order */
-  .cell--first-\@#{$breakpoint} {
+  .#{$breakpoint}cell-first {
     order: -1;
   }
 
-  .cell--last-\@#{$breakpoint} {
+  .#{$breakpoint}cell-last {
     order: 1;
   }
 
-  .cell--ordered-\@#{$breakpoint} {
+  .#{$breakpoint}cell-ordered {
     order: 0;
   }
 }
 
-@include fluxgrid-responsive-cell("xs");
+@include fluxgrid-responsive-cell();
 
 @each $breakpoint, $size in $fluxgrid-breakpoints {
   @media (min-width: $size) {
-    @include fluxgrid-responsive-cell($breakpoint);
+    @include fluxgrid-responsive-cell("#{$breakpoint}\\:");
   }
 }

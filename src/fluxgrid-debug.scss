@@ -45,11 +45,11 @@
     }
   }
 
-  @mixin debug-responsive-grid($breakpoint) {
+  @mixin debug-responsive-grid($breakpoint: "") {
     /* Grid */
     .grid {
       /** Grid large gutters **/
-      &.grid--lgGutter-\@#{$breakpoint} {
+      &.#{$breakpoint}grid-lg-gutter {
         /* stylelint-disable-next-line max-nesting-depth, selector-max-class */
         &::after,
         > .cell::after {
@@ -59,7 +59,7 @@
       }
 
       /** Grid no gutters **/
-      &.grid--noGutter-\@#{$breakpoint} {
+      &.#{$breakpoint}grid-no-gutter {
         /* stylelint-disable-next-line max-nesting-depth, selector-max-class */
         &::after,
         > .cell::after {
@@ -70,7 +70,7 @@
     }
 
     /* Cell */
-    .cell--noGutter-\@#{$breakpoint} {
+    .#{$breakpoint}cell-no-gutter {
       &::after {
         left: 0;
         right: 0;
@@ -78,17 +78,17 @@
     }
   }
 
-  @include debug-responsive-grid("xs");
+  @include debug-responsive-grid();
 
   @each $breakpoint, $size in $fluxgrid-breakpoints {
     @media (min-width: $size) {
-      @include debug-responsive-grid($breakpoint);
+      @include debug-responsive-grid("#{$breakpoint}\\:");
     }
   }
 
   /* stylelint-disable-next-line no-duplicate-selectors */
   .grid {
-    &--hide-debug {
+    &-hide-debug {
       &::after {
         outline: none;
       }

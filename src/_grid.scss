@@ -7,29 +7,29 @@
   margin-right: -1 * $fluxgrid-half-gutter;
 }
 
-@mixin fluxgrid-responsive-grid($breakpoint) {
+@mixin fluxgrid-responsive-grid($breakpoint: "") {
   /* Direction */
-  .grid--row-\@#{$breakpoint} {
+  .#{$breakpoint}grid-row {
     flex-direction: row;
   }
 
-  .grid--rowReverse-\@#{$breakpoint} {
+  .#{$breakpoint}grid-row-reverse {
     flex-direction: row-reverse;
   }
 
   /* Wrap */
-  .grid--wrap-\@#{$breakpoint} {
+  .#{$breakpoint}grid-wrap {
     flex-wrap: wrap;
   }
 
-  .grid--noWrap-\@#{$breakpoint} {
+  .#{$breakpoint}grid-no-wrap {
     flex-wrap: nowrap;
   }
 
   /* Gutters */
 
   /** Large **/
-  .grid--lgGutter-\@#{$breakpoint} {
+  .#{$breakpoint}grid-lg-gutter {
     margin-left: -1 * $fluxgrid-half-gutter-lg;
     margin-right: -1 * $fluxgrid-half-gutter-lg;
 
@@ -40,7 +40,7 @@
   }
 
   /** None **/
-  .grid--noGutter-\@#{$breakpoint} {
+  .#{$breakpoint}grid-no-gutter {
     margin-left: 0;
     margin-right: 0;
 
@@ -51,73 +51,73 @@
   }
 
   /* Justification X axis */
-  .grid--xStart-\@#{$breakpoint} {
+  .#{$breakpoint}grid-x-start {
     justify-content: flex-start;
   }
 
-  .grid--xCenter-\@#{$breakpoint} {
+  .#{$breakpoint}grid-x-center {
     justify-content: center;
   }
 
-  .grid--xEnd-\@#{$breakpoint} {
+  .#{$breakpoint}grid-x-end {
     justify-content: flex-end;
   }
 
-  .grid--xAround-\@#{$breakpoint} {
+  .#{$breakpoint}grid-x-around {
     justify-content: space-around;
   }
 
-  .grid--xBetween-\@#{$breakpoint} {
+  .#{$breakpoint}grid-x-between {
     justify-content: space-between;
   }
 
   /* Justification Y axis */
-  .grid--yStretch-\@#{$breakpoint} {
+  .#{$breakpoint}grid-y-stretch {
     align-items: stretch;
   }
 
-  .grid--yStart-\@#{$breakpoint} {
+  .#{$breakpoint}grid-y-start {
     align-items: flex-start;
   }
 
-  .grid--yCenter-\@#{$breakpoint} {
+  .#{$breakpoint}grid-y-center {
     align-items: center;
   }
 
-  .grid--yEnd-\@#{$breakpoint} {
+  .#{$breakpoint}grid-y-end {
     align-items: flex-end;
   }
 
   /* Justification Y axis when wrapped: Z */
-  .grid--zStretch-\@#{$breakpoint} {
+  .#{$breakpoint}grid-z-stretch {
     align-content: stretch;
   }
 
-  .grid--zStart-\@#{$breakpoint} {
+  .#{$breakpoint}grid-z-start {
     align-content: flex-start;
   }
 
-  .grid--zCenter-\@#{$breakpoint} {
+  .#{$breakpoint}grid-z-center {
     align-content: center;
   }
 
-  .grid--zEnd-\@#{$breakpoint} {
+  .#{$breakpoint}grid-z-end {
     align-content: flex-end;
   }
 
-  .grid--zAround-\@#{$breakpoint} {
+  .#{$breakpoint}grid-z-around {
     align-content: space-around;
   }
 
-  .grid--zBetween-\@#{$breakpoint} {
+  .#{$breakpoint}grid-z-between {
     align-content: space-between;
   }
 }
 
-@include fluxgrid-responsive-grid("xs");
+@include fluxgrid-responsive-grid();
 
 @each $breakpoint, $size in $fluxgrid-breakpoints {
   @media (min-width: $size) {
-    @include fluxgrid-responsive-grid($breakpoint);
+    @include fluxgrid-responsive-grid("#{$breakpoint}\\:");
   }
 }

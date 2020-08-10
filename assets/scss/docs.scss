@@ -5,11 +5,15 @@
 /* stylelint-disable color-no-hex */
 $fluxgrid-doc-color-primary: $fluxgrid-debug-grid-color;
 $fluxgrid-doc-color-secondary: $fluxgrid-debug-cell-color;
+$fluxgrid-doc-color-tertiary: $fluxgrid-debug-container-color;
+
 $fluxgrid-doc-color-white: #fff;
-$fluxgrid-doc-color-grey: rgba(27, 31, 35, 0.05);
+$fluxgrid-doc-color-grey-light: #e1e4e8;
+$fluxgrid-doc-color-grey: #eaecef;
 $fluxgrid-doc-color-grey-dark: #24292e;
-$fluxgrid-doc-color-syntax-grey: #282c35;
-$fluxgrid-doc-color-syntax-w: #d7dae0;
+
+$fluxgrid-doc-color-syntax-grey: #282c34;
+$fluxgrid-doc-color-syntax-w: #abb2bf;
 $fluxgrid-doc-color-syntax-r: #e06c75;
 $fluxgrid-doc-color-syntax-g: #98c379;
 $fluxgrid-doc-color-syntax-y: #d19a66;
@@ -111,23 +115,34 @@ pre {
   }
 }
 
-.syntax {
+.code-block {
   background-color: $fluxgrid-doc-color-syntax-grey;
-}
-
-.syntax--w {
   color: $fluxgrid-doc-color-syntax-w;
 }
 
-.syntax--r {
+/* Colors */
+
+.color-primary {
+  color: $fluxgrid-doc-color-primary;
+}
+
+.color-secondary {
+  color: $fluxgrid-doc-color-secondary;
+}
+
+.color-tertiary {
+  color: $fluxgrid-doc-color-tertiary;
+}
+
+.color-r {
   color: $fluxgrid-doc-color-syntax-r;
 }
 
-.syntax--g {
+.color-g {
   color: $fluxgrid-doc-color-syntax-g;
 }
 
-.syntax--y {
+.color-y {
   color: $fluxgrid-doc-color-syntax-y;
 }
 
@@ -135,9 +150,9 @@ pre {
 hr {
   height: 0;
   width: 100%;
-  margin: 2.5em 0;
+  margin: 3em 0;
   border: 0;
-  border-bottom: 1px solid $fluxgrid-doc-color-grey;
+  border-bottom: 1px solid $fluxgrid-doc-color-grey-light;
 }
 
 .box {
@@ -145,6 +160,7 @@ hr {
   height: 100%;
   width: 100%;
   padding: 0.5em;
+  text-align: center;
 }
 
 /* Grid */
@@ -153,18 +169,12 @@ hr {
   position: fixed;
   bottom: 1em;
   right: 1em;
-  background-image: linear-gradient(
-    45deg,
-    $fluxgrid-doc-color-primary,
-    $fluxgrid-doc-color-secondary
-  );
-  color: $fluxgrid-doc-color-white;
+  color: $fluxgrid-doc-color-primary;
+  background: $fluxgrid-doc-color-white;
+  border: 2px dashed;
   white-space: nowrap;
   cursor: pointer;
   padding: 1em;
-  border-radius: 0.5em;
-  box-shadow: 0 5px 10px rgba(17, 17, 17, 0.2), 0 2px 5px rgba(17, 17, 17, 0.2);
-  transition: background-color 0.2s ease-out;
   animation: slide-in 0.4s ease-out both;
   z-index: 1;
 
@@ -237,5 +247,44 @@ hr {
         content: #{$k} " ";
       }
     }
+  }
+}
+
+/* Github Corner */
+.github-corner {
+  fill: $fluxgrid-doc-color-secondary;
+  color: $fluxgrid-doc-color-white;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 1;
+}
+
+.github-corner:hover .octo-arm {
+  animation: octocat-wave 560ms ease-in-out;
+}
+
+@keyframes octocat-wave {
+  0%,
+  100% {
+    transform: rotate(0);
+  }
+  20%,
+  60% {
+    transform: rotate(-25deg);
+  }
+  40%,
+  80% {
+    transform: rotate(10deg);
+  }
+}
+
+@media (max-width: 500px) {
+  .github-corner:hover .octo-arm {
+    animation: none;
+  }
+
+  .github-corner .octo-arm {
+    animation: octocat-wave 560ms ease-in-out;
   }
 }

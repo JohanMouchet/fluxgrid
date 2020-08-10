@@ -2,7 +2,7 @@
 $fluxgrid-division: 12 !default;
 $fluxgrid-gutter: 1rem !default;
 $fluxgrid-gutter-lg: $fluxgrid-gutter * 3 !default;
-$fluxgrid-outside-margin: $fluxgrid-gutter + 1 !default;
+$fluxgrid-outside-margin: $fluxgrid-gutter * 2 !default;
 
 $fluxgrid-half-gutter: $fluxgrid-gutter / 2;
 $fluxgrid-half-gutter-lg: $fluxgrid-gutter-lg / 2;
@@ -16,7 +16,7 @@ $fluxgrid-breakpoints: (
 
 /* Test */
 @if ($fluxgrid-outside-margin < $fluxgrid-half-gutter) {
-  @error "To avoid overflow, the 'outside-margin' (#{$fluxgrid-outside-margin}) has to be as large or larger than half the 'gutter' (#{$fluxgrid-half-gutter}). This is for the .container to cancel the .grid negative margins used to align the .cells.";
+  @error "To avoid an overflow, the 'outside-margin' (#{$fluxgrid-outside-margin}) has to be as large or larger than half the 'gutter' (#{$fluxgrid-half-gutter}). This is for the .container to cancel the .grid negative margins used to align the .cells when not using .container-no-gutter";
 }
 
 /* Debug */
