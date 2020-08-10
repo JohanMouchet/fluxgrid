@@ -23,8 +23,8 @@
   ],
   "scripts": {
     "dev": "parcel index.html --open --out-dir dev/",
-    "build": "parcel build src/{fluxgrid,fluxgrid-debug}.scss --no-source-maps --out-dir dist/",
-    "docs": "parcel build index.html --out-dir docs/",
+    "build": "parcel build src/{fluxgrid,fluxgrid-debug}.scss --no-source-maps",
+    "docs": "parcel build index.html --out-dir docs/ --public-url './'",
     "lint": "stylelint src/**/*.scss",
     "format": "npm run lint -- --fix && prettier --write **/*.md",
     "deploy": "npm run format && npm run build && npm run docs"
