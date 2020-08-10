@@ -23,19 +23,19 @@ npm i fluxgrid
 | ---------- | ----------- | ------- | ------- | ------------- | ------------------- |
 | Device     | Phone       | Tablet  | Desktop | Large desktop | Extra large desktop |
 | Breakpoint | > 0         | ≥ 425px | ≥ 768px | ≥ 1024px      | ≥ 1366px            |
-| Suffix     | `@xs`       | `@sm`   | `@md`   | `@lg`         | `@xl`               |
+| Prefix     |             | `sm:`   | `md:`   | `lg:`         | `xl:`               |
 
 ## Syntax
 
 ```html
-<div class="container container--modifier">
-  <div class="grid grid--modifier-*">
-    <div class="cell cell--modifier-*"></div>
+<div class="container container-modifier">
+  <div class="grid *grid-modifier">
+    <div class="cell *cell-modifier"></div>
   </div>
 </div>
 ```
 
-Responsive: \*`@xs|@sm|@md|@lg|@xl`
+`*` Responsive prefix: `sm:|md:|lg:|xl:`
 
 ## Options
 
