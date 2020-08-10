@@ -39,7 +39,7 @@ Responsive: \*`@xs|@sm|@md|@lg|@xl`
 
 ## Options
 
-Head over to the [doc page](https://johanmouchet.github.io/fluxgrid/index.html).
+Head over to the [doc page](https://johanmouchet.github.io/fluxgrid/).
 
 ## Getting Started
 
