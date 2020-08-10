@@ -2,7 +2,7 @@
 
 # ![Fluxgrid](assets/img/fluxgrid.png)
 
-_Responsive and customisable utility-based CSS grid built with Sass._
+_Yet another responsive utility-based CSS grid customisable with Sass._
 
 ## Install
 
