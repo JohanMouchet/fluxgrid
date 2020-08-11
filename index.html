@@ -654,7 +654,6 @@
             type="checkbox"
             class="toggle-grid-debug-checkbox"
             checked
-            onchange="toggleGridDebug()"
             tabindex="1"
           />
           Show Grid Debug
@@ -662,12 +661,6 @@
         &nbsp;
       </div>
     </main>
-
-    <script>
-      function toggleGridDebug() {
-        var body = document.body;
-        body.classList.toggle("fluxgrid-debug");
-      }
-    </script>
+    <script src="assets/scripts/toggle-grid-debug.js"></script>
   </body>
 </html>

@@ -59,7 +59,7 @@
     "{src/**/*.scss,assets/scss/**/*.scss}": [
       "stylelint --fix"
     ],
-    "**/*.md": [
+    "{assets/scripts/**/*.js,**/*.md}": [
       "prettier --write"
     ]
   }

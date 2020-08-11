@@ -1,6 +1,6 @@
 ![npm](https://img.shields.io/npm/v/fluxgrid?style=flat-square) ![npm](https://img.shields.io/npm/dt/fluxgrid?style=flat-square) ![npm bundle size](https://img.shields.io/bundlephobia/minzip/fluxgrid?style=flat-square) <sup>(with debug)</sup>
 
-# ![Fluxgrid](assets/img/fluxgrid.png)
+# ![Fluxgrid](assets/imgs/fluxgrid.png)
 
 _Yet another responsive utility-based CSS grid customisable with Sass._
 
