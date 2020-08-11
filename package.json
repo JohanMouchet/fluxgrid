@@ -2,7 +2,6 @@
   "name": "fluxgrid",
   "version": "5.0.0",
   "description": "Yet another responsive utility-based CSS grid customisable with Sass",
-  "main": "src/fluxgrid.scss",
   "style": "src/fluxgrid.scss",
   "author": "Johan Mouchet <mouchet-johan@gmail.com> (https://johan-mouchet.com)",
   "license": "MIT",
@@ -22,9 +21,9 @@
     "dist/**/*.css"
   ],
   "scripts": {
-    "dev": "parcel index.html --open --out-dir dev/",
+    "dev": "parcel index.html --open --dist-dir dev/",
     "build": "parcel build src/{fluxgrid,fluxgrid-debug}.scss --no-source-maps",
-    "docs": "parcel build index.html --public-url ./ --out-dir docs/",
+    "docs": "parcel build index.html --public-url ./ --dist-dir docs/",
     "lint": "stylelint src/**/*.scss",
     "format": "npm run lint -- --fix && prettier --write **/*.md",
     "deploy": "npm run format && npm run build && npm run docs"
@@ -32,7 +31,7 @@
   "devDependencies": {
     "husky": "^4.2.5",
     "lint-staged": "^10.2.11",
-    "parcel-bundler": "^1.12.4",
+    "parcel": "^2.0.0-beta.1",
     "prettier": "^2.0.5",
     "sass": "^1.26.10",
     "stylelint": "^13.6.1",
