@@ -8,24 +8,30 @@ $fluxgrid-doc-color-secondary: $fluxgrid-debug-cell-color;
 $fluxgrid-doc-color-tertiary: $fluxgrid-debug-container-color;
 
 $fluxgrid-doc-color-white: #fff;
-$fluxgrid-doc-color-grey-light: #e1e4e8;
-$fluxgrid-doc-color-grey: #eaecef;
-$fluxgrid-doc-color-grey-dark: #24292e;
+$fluxgrid-doc-color-grey-lighter: #f7fafc;
+$fluxgrid-doc-color-grey-light: #edf2f7;
+$fluxgrid-doc-color-grey: #edf2f7;
+$fluxgrid-doc-color-grey-dark: #4a5568;
+$fluxgrid-doc-color-grey-darker: #1a202c;
 
-$fluxgrid-doc-color-syntax-grey: #282c34;
-$fluxgrid-doc-color-syntax-w: #abb2bf;
-$fluxgrid-doc-color-syntax-r: #e06c75;
-$fluxgrid-doc-color-syntax-g: #98c379;
-$fluxgrid-doc-color-syntax-y: #d19a66;
+$fluxgrid-doc-color-syntax-grey: #2d3748;
+$fluxgrid-doc-color-syntax-b: #93ddfd;
+$fluxgrid-doc-color-syntax-r: #ff8383;
+$fluxgrid-doc-color-syntax-g: #b5f4a5;
+$fluxgrid-doc-color-syntax-y: #ffe484;
 /* stylelint-enable color-no-hex */
 
 html {
   box-sizing: border-box;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial,
     sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
-  font-size: 16px;
+  font-size: 15px;
   line-height: 1.5;
   color: $fluxgrid-doc-color-grey-dark;
+
+  @media (min-width: map-get($fluxgrid-breakpoints, sm)) {
+    font-size: 16px;
+  }
 }
 
 *,
@@ -56,6 +62,15 @@ a {
   }
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: $fluxgrid-doc-color-grey-darker;
+}
+
 .logo {
   display: inline-flex;
   font-size: 2rem;
@@ -84,7 +99,7 @@ a {
 code,
 pre {
   border-radius: 0.3em;
-  background-color: $fluxgrid-doc-color-grey;
+  background-color: $fluxgrid-doc-color-grey-lighter;
 }
 
 /** Inline code **/
@@ -117,7 +132,7 @@ pre {
 
 .code-block {
   background-color: $fluxgrid-doc-color-syntax-grey;
-  color: $fluxgrid-doc-color-syntax-w;
+  color: $fluxgrid-doc-color-syntax-b;
 }
 
 /* Colors */
@@ -146,13 +161,37 @@ pre {
   color: $fluxgrid-doc-color-syntax-y;
 }
 
+.highlight {
+  padding: 0 0.15em;
+  border-radius: 0.15em;
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  &-primary {
+    background-color: $fluxgrid-doc-color-primary;
+    color: $fluxgrid-doc-color-white;
+  }
+
+  &-secondary {
+    background-color: $fluxgrid-doc-color-secondary;
+    color: $fluxgrid-doc-color-white;
+  }
+
+  &-tertiary {
+    background-color: $fluxgrid-doc-color-tertiary;
+    color: $fluxgrid-doc-color-white;
+  }
+}
+
 /* hr */
 hr {
   height: 0;
   width: 100%;
   margin: 3em 0;
   border: 0;
-  border-bottom: 1px solid $fluxgrid-doc-color-grey-light;
+  border-bottom: 2px solid $fluxgrid-doc-color-grey-light;
 }
 
 .box {
@@ -161,6 +200,7 @@ hr {
   width: 100%;
   padding: 0.5em;
   text-align: center;
+  background-color: $fluxgrid-doc-color-grey-light;
 }
 
 /* Grid */
