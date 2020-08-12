@@ -5,7 +5,7 @@ node_modules/
 dev/
 
 # cache
-.parcel-cache/
+.cache/
 
 # misc
 .DS_Store
