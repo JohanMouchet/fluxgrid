@@ -1,6 +1,6 @@
 {
   "name": "fluxgrid",
-  "version": "5.0.0",
+  "version": "5.1.0",
   "description": "Yet another responsive utility-based CSS grid customisable with Sass",
   "main": "src/fluxgrid.scss",
   "style": "src/fluxgrid.scss",
@@ -37,6 +37,7 @@
     "sass": "^1.26.10",
     "stylelint": "^13.6.1",
     "stylelint-config-prettier": "^8.0.2",
+    "stylelint-config-recess-order": "^2.1.0",
     "stylelint-config-standard": "^20.0.0",
     "stylelint-prettier": "^1.1.2",
     "stylelint-scss": "^3.18.0"

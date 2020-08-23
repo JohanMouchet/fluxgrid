@@ -2,16 +2,16 @@
 .container {
   box-sizing: border-box;
   width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: $fluxgrid-outside-margin;
   padding-right: $fluxgrid-outside-margin;
+  padding-left: $fluxgrid-outside-margin;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 /** No gutters **/
 .container-no-gutter {
-  padding-left: 0;
   padding-right: 0;
+  padding-left: 0;
   overflow-x: hidden;
 }
 

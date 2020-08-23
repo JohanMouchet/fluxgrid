@@ -2,8 +2,8 @@
 .cell {
   box-sizing: border-box;
   flex: 0 1 auto;
-  padding-left: $fluxgrid-half-gutter;
   padding-right: $fluxgrid-half-gutter;
+  padding-left: $fluxgrid-half-gutter;
 }
 
 @mixin fluxgrid-responsive-cell($breakpoint: "") {
@@ -17,33 +17,33 @@
 
   /* Shrink */
   .#{$breakpoint}cell-shrink {
-    flex-grow: 0;
     flex-basis: auto;
+    flex-grow: 0;
     max-width: none;
   }
 
   /* Grow */
   .#{$breakpoint}cell-grow {
-    flex-grow: 1;
     flex-basis: auto;
+    flex-grow: 1;
     max-width: none;
   }
 
   /* No gutters */
   .#{$breakpoint}cell-no-gutter {
-    padding-left: 0;
     padding-right: 0;
+    padding-left: 0;
   }
 
   /* Gutters */
   .#{$breakpoint}cell-gutter {
-    padding-left: $fluxgrid-half-gutter;
     padding-right: $fluxgrid-half-gutter;
+    padding-left: $fluxgrid-half-gutter;
   }
 
   [class*="grid-lg-gutter"] > .#{$breakpoint}cell-gutter {
-    padding-left: $fluxgrid-half-gutter-lg;
     padding-right: $fluxgrid-half-gutter-lg;
+    padding-left: $fluxgrid-half-gutter-lg;
   }
 
   /* Visibility */
@@ -74,8 +74,8 @@
 
   /* Self justification X axis */
   .#{$breakpoint}cell-x-center {
-    margin-left: auto;
     margin-right: auto;
+    margin-left: auto;
   }
 
   .#{$breakpoint}cell-x-start {

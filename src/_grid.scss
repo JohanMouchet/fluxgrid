@@ -3,8 +3,8 @@
   box-sizing: border-box;
   display: flex;
   flex-wrap: wrap;
-  margin-left: -1 * $fluxgrid-half-gutter;
   margin-right: -1 * $fluxgrid-half-gutter;
+  margin-left: -1 * $fluxgrid-half-gutter;
 }
 
 @mixin fluxgrid-responsive-grid($breakpoint: "") {
@@ -30,23 +30,23 @@
 
   /** Large **/
   .#{$breakpoint}grid-lg-gutter {
-    margin-left: -1 * $fluxgrid-half-gutter-lg;
     margin-right: -1 * $fluxgrid-half-gutter-lg;
+    margin-left: -1 * $fluxgrid-half-gutter-lg;
 
     > .cell {
-      padding-left: $fluxgrid-half-gutter-lg;
       padding-right: $fluxgrid-half-gutter-lg;
+      padding-left: $fluxgrid-half-gutter-lg;
     }
   }
 
   /** None **/
   .#{$breakpoint}grid-no-gutter {
-    margin-left: 0;
     margin-right: 0;
+    margin-left: 0;
 
     > .cell {
-      padding-left: 0;
       padding-right: 0;
+      padding-left: 0;
     }
   }
 

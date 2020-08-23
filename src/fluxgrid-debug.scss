@@ -10,38 +10,38 @@
     position: relative;
 
     &::after {
-      content: "";
       position: absolute;
       top: 0;
       bottom: 0;
-      outline: 1px dashed;
       pointer-events: none;
+      content: "";
+      outline: 1px dashed;
       outline-offset: -1px;
     }
   }
 
   .container {
     &::after {
-      outline-color: $fluxgrid-debug-container-color;
-      left: 0;
       right: 0;
+      left: 0;
+      outline-color: $fluxgrid-debug-container-color;
     }
   }
 
   .grid {
     &::after {
-      outline-color: $fluxgrid-debug-grid-color;
-      left: $fluxgrid-half-gutter;
       right: $fluxgrid-half-gutter;
+      left: $fluxgrid-half-gutter;
+      outline-color: $fluxgrid-debug-grid-color;
     }
   }
 
   .cell {
     &::after {
+      right: $fluxgrid-half-gutter;
+      left: $fluxgrid-half-gutter;
       outline-style: dotted;
       outline-color: $fluxgrid-debug-cell-color;
-      left: $fluxgrid-half-gutter;
-      right: $fluxgrid-half-gutter;
     }
   }
 
@@ -53,8 +53,8 @@
         /* stylelint-disable-next-line max-nesting-depth, selector-max-class */
         &::after,
         > .cell::after {
-          left: $fluxgrid-half-gutter-lg;
           right: $fluxgrid-half-gutter-lg;
+          left: $fluxgrid-half-gutter-lg;
         }
       }
 
@@ -63,8 +63,8 @@
         /* stylelint-disable-next-line max-nesting-depth, selector-max-class */
         &::after,
         > .cell::after {
-          left: 0;
           right: 0;
+          left: 0;
         }
       }
     }
@@ -72,8 +72,8 @@
     /* Cell */
     .#{$breakpoint}cell-no-gutter {
       &::after {
-        left: 0;
         right: 0;
+        left: 0;
       }
     }
   }

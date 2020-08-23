@@ -91,7 +91,7 @@ In the project directory, you can `npm run`:
 1. Update `CHANGELOG.md` following the [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) format
 2. Run `npm run deploy`
 3. Update `package.json` and `package-lock.json` using [semver](https://semver.org/): `"version": "<semver>"`
-4. Once merged / commited to `master`, tag: `git tag <semver>`
+4. Once merged to `master`, tag: `git tag <semver>`
 5. Publish to npm: `npm publish`
 
 ## Contribution
