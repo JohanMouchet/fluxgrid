@@ -1,8 +1,7 @@
 {
   "name": "fluxgrid",
-  "version": "5.1.0",
+  "version": "6.0.0",
   "description": "Yet another responsive utility-based CSS grid customisable with Sass",
-  "main": "src/fluxgrid.scss",
   "style": "src/fluxgrid.scss",
   "author": "Johan Mouchet <mouchet-johan@gmail.com> (https://johan-mouchet.com)",
   "license": "MIT",
@@ -22,30 +21,29 @@
     "dist/**/*.css"
   ],
   "scripts": {
-    "dev": "parcel index.html --open --out-dir dev/",
+    "dev": "parcel index.html --open --dist-dir dev/",
     "build": "parcel build src/{fluxgrid,fluxgrid-debug}.scss --no-source-maps",
-    "docs": "parcel build index.html --public-url ./ --out-dir docs/",
+    "docs": "parcel build index.html --public-url ./ --dist-dir docs/",
     "lint": "stylelint src/**/*.scss",
-    "format": "npm run lint -- --fix && prettier --write **/*.md",
-    "deploy": "npm run format && npm run build && npm run docs"
+    "format": "prettier --write src/**/*.scss && stylelint src/**/*.scss --fix",
+    "deploy": "npm run format && npm run build && npm run docs",
+    "prepare": "husky"
   },
   "devDependencies": {
-    "husky": "^4.2.5",
-    "lint-staged": "^10.2.11",
-    "parcel-bundler": "^1.12.4",
-    "prettier": "^2.0.5",
-    "sass": "^1.26.10",
-    "stylelint": "^13.6.1",
-    "stylelint-config-prettier": "^8.0.2",
-    "stylelint-config-recess-order": "^2.1.0",
-    "stylelint-config-standard": "^20.0.0",
-    "stylelint-prettier": "^1.1.2",
-    "stylelint-scss": "^3.18.0"
+    "@parcel/transformer-sass": "^2.15.4",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.1.2",
+    "parcel": "^2.15.4",
+    "prettier": "^3.6.2",
+    "sass": "^1.89.2",
+    "stylelint": "^16.21.0",
+    "stylelint-config-recess-order": "^7.1.0",
+    "stylelint-config-standard": "^38.0.0",
+    "stylelint-config-standard-scss": "^15.0.1",
+    "stylelint-scss": "^6.12.1"
   },
-  "postcss": {
-    "plugins": {
-      "autoprefixer": true
-    }
+  "peerDependencies": {
+    "sass": "^1.89.2"
   },
   "browserslist": [
     "defaults",
@@ -58,9 +56,10 @@
   },
   "lint-staged": {
     "{src/**/*.scss,assets/scss/**/*.scss}": [
+      "prettier --write",
       "stylelint --fix"
     ],
-    "{assets/scripts/**/*.js,**/*.md}": [
+    "assets/scripts/**/*.js": [
       "prettier --write"
     ]
   }

@@ -6,8 +6,14 @@ _Yet another responsive utility-based CSS grid customisable with Sass._
 
 ## Install
 
-```
+```bash
 npm i fluxgrid
+```
+
+If you'd like to [change the default config](#b-with-a-custom-config), make sure to install Sass as a peer dependency:
+
+```bash
+npm i sass@^1.26.10
 ```
 
 ## Default config
@@ -39,7 +45,7 @@ npm i fluxgrid
 
 ## Options
 
-Head over to the [doc page](https://johanmouchet.github.io/fluxgrid/).
+Head over to the [demo page](https://johanmouchet.github.io/fluxgrid/).
 
 ## Getting Started
 
@@ -49,15 +55,14 @@ Choose your preferred way:
 
 - [Install](#install) Fluxgrid
 - Import it to your build environment, either with:
-  - Sass: `@import "~fluxgrid/dist/fluxgrid";`\*
-  - JS: `import "fluxgrid/dist/fluxgrid.css";`
   - HTML: `<link rel="stylesheet" type="text/css" href="node_modules/fluxgrid/dist/fluxgrid.css"/>`
+  - JS: `import "fluxgrid/dist/fluxgrid.css";`
 - Optionally (not recommended in production) import `fluxgrid-debug.css` the same way
 
 ### B. With a custom config
 
-- [Install](#install) Fluxgrid
-- Overwrite the default config by redefine any of the `!default` Sass variables from `_settings.scss`:
+- [Install](#install) Fluxgrid, and it's peer dependency
+- Overwrite the default config by redefine any of the `!default` Sass variables from `src/_settings.scss`:
   ```scss
   $fluxgrid-division;
   $fluxgrid-gutter;
@@ -66,12 +71,12 @@ Choose your preferred way:
   $fluxgrid-breakpoints;
   ```
 - Import it to your build environment, either with:
-  - Sass: `@import "~fluxgrid/src/fluxgrid";`\*
+  - Sass: `@use "fluxgrid/src/fluxgrid";`\*
   - JS: `import "fluxgrid/src/fluxgrid.scss";`
 - Optionally (not recommended in production) import `fluxgrid-debug.scss` the same way
 - Run these through your build pipeline. It is advised to Autoprefix and minify them
 
-\*: `~` is a Webpack [feature](https://webpack.js.org/loaders/css-loader/#url), replace with `node_modules/` if needed
+\*: if using legacy bundlers like Webpack or others, prefix the import with [`~`](https://webpack.js.org/loaders/css-loader/#url), or `node_modules/`
 
 # Development
 

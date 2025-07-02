@@ -1,16 +1,14 @@
 {
-  "plugins": [
-    "stylelint-scss",
-    "stylelint-prettier"
-  ],
+  "plugins": ["stylelint-scss"],
   "extends": [
     "stylelint-config-standard",
-    "stylelint-config-prettier",
+    "stylelint-config-standard-scss",
     "stylelint-config-recess-order"
   ],
   "rules": {
-    "prettier/prettier": true,
     "at-rule-no-unknown": null,
+    "scss/at-rule-no-unknown": true,
+    "scss/function-no-unknown": true,
     "at-rule-no-vendor-prefix": [
       true,
       {
@@ -20,9 +18,7 @@
     "color-named": [
       "never",
       {
-        "ignore": [
-          "inside-function"
-        ]
+        "ignore": ["inside-function"]
       }
     ],
     "color-no-hex": true,
@@ -32,9 +28,7 @@
     "function-url-quotes": [
       "always",
       {
-        "except": [
-          "empty"
-        ]
+        "except": ["empty"]
       }
     ],
     "max-nesting-depth": [
@@ -61,7 +55,6 @@
         "severity": "warning"
       }
     ],
-    "scss/at-rule-no-unknown": true,
     "selector-max-attribute": 2,
     "selector-max-class": [
       2,
@@ -87,6 +80,7 @@
       }
     ],
     "selector-no-vendor-prefix": true,
-    "value-no-vendor-prefix": true
+    "value-no-vendor-prefix": true,
+    "annotation-no-unknown": [true, { "ignoreAnnotations": ["/^default/"] }]
   }
 }

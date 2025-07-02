@@ -1,9 +1,11 @@
+@use "settings";
+
 /* Container */
 .container {
   box-sizing: border-box;
   width: 100%;
-  padding-right: $fluxgrid-outside-margin;
-  padding-left: $fluxgrid-outside-margin;
+  padding-right: settings.$fluxgrid-outside-margin;
+  padding-left: settings.$fluxgrid-outside-margin;
   margin-right: auto;
   margin-left: auto;
 }
@@ -21,6 +23,6 @@
   }
 }
 
-@each $breakpoint, $size in $fluxgrid-breakpoints {
+@each $breakpoint, $size in settings.$fluxgrid-breakpoints {
   @include fluxgrid-responsive-container($breakpoint, $size);
 }

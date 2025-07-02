@@ -1,31 +1,34 @@
+@use "sass:math";
+@use "settings";
+
 /* Cell */
 .cell {
   box-sizing: border-box;
   flex: 0 1 auto;
-  padding-right: $fluxgrid-half-gutter;
-  padding-left: $fluxgrid-half-gutter;
+  padding-right: settings.$fluxgrid-half-gutter;
+  padding-left: settings.$fluxgrid-half-gutter;
 }
 
 @mixin fluxgrid-responsive-cell($breakpoint: "") {
   /* Sizes */
-  @for $i from 1 through $fluxgrid-division {
+  @for $i from 1 through settings.$fluxgrid-division {
     .#{$breakpoint}cell-#{$i} {
-      flex-basis: percentage($i / $fluxgrid-division);
-      max-width: percentage($i / $fluxgrid-division);
+      flex-basis: math.percentage(math.div($i, settings.$fluxgrid-division));
+      max-width: math.percentage(math.div($i, settings.$fluxgrid-division));
     }
   }
 
   /* Shrink */
   .#{$breakpoint}cell-shrink {
-    flex-basis: auto;
     flex-grow: 0;
+    flex-basis: auto;
     max-width: none;
   }
 
   /* Grow */
   .#{$breakpoint}cell-grow {
-    flex-basis: auto;
     flex-grow: 1;
+    flex-basis: auto;
     max-width: none;
   }
 
@@ -37,13 +40,13 @@
 
   /* Gutters */
   .#{$breakpoint}cell-gutter {
-    padding-right: $fluxgrid-half-gutter;
-    padding-left: $fluxgrid-half-gutter;
+    padding-right: settings.$fluxgrid-half-gutter;
+    padding-left: settings.$fluxgrid-half-gutter;
   }
 
   [class*="grid-lg-gutter"] > .#{$breakpoint}cell-gutter {
-    padding-right: $fluxgrid-half-gutter-lg;
-    padding-left: $fluxgrid-half-gutter-lg;
+    padding-right: settings.$fluxgrid-half-gutter-lg;
+    padding-left: settings.$fluxgrid-half-gutter-lg;
   }
 
   /* Visibility */
@@ -100,9 +103,9 @@
   }
 }
 
-@include fluxgrid-responsive-cell();
+@include fluxgrid-responsive-cell;
 
-@each $breakpoint, $size in $fluxgrid-breakpoints {
+@each $breakpoint, $size in settings.$fluxgrid-breakpoints {
   @media (min-width: $size) {
     @include fluxgrid-responsive-cell("#{$breakpoint}\\:");
   }

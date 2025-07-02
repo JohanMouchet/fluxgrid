@@ -5,6 +5,26 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [6.0.0] - 2025-07-02
+
+### Changed
+
+- [Breaking] Updated Sass peer dependency support to ^1.89.2
+
+  replace
+
+  ```SCSS
+  @import "fluxgrid/src/fluxgrid";
+  ```
+
+  by
+
+  ```SCSS
+  @use "fluxgrid/src/fluxgrid";
+  ```
+
+- Updated development dependencies
+
 ## [5.1.0] - 2020-08-23
 
 ### Changed
@@ -31,7 +51,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Removed
 
 - [Breaking] `$fluxgrid-namespace` Sass config. The new recommended way is to raise the specificity by wrapping the import into a class:
-  ```
+  ```SCSS
     .namespace {
       @import "fluxgrid";
     }

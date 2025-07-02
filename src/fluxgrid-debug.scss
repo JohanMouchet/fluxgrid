@@ -1,6 +1,6 @@
 /* Fluxgrid | MIT License | https://github.com/JohanMouchet/fluxgrid */
 
-@import "settings";
+@use "settings";
 
 /* Debug */
 .fluxgrid-debug {
@@ -14,9 +14,9 @@
       top: 0;
       bottom: 0;
       pointer-events: none;
-      content: "";
       outline: 1px dashed;
       outline-offset: -1px;
+      content: "";
     }
   }
 
@@ -24,24 +24,24 @@
     &::after {
       right: 0;
       left: 0;
-      outline-color: $fluxgrid-debug-container-color;
+      outline-color: settings.$fluxgrid-debug-container-color;
     }
   }
 
   .grid {
     &::after {
-      right: $fluxgrid-half-gutter;
-      left: $fluxgrid-half-gutter;
-      outline-color: $fluxgrid-debug-grid-color;
+      right: settings.$fluxgrid-half-gutter;
+      left: settings.$fluxgrid-half-gutter;
+      outline-color: settings.$fluxgrid-debug-grid-color;
     }
   }
 
   .cell {
     &::after {
-      right: $fluxgrid-half-gutter;
-      left: $fluxgrid-half-gutter;
+      right: settings.$fluxgrid-half-gutter;
+      left: settings.$fluxgrid-half-gutter;
       outline-style: dotted;
-      outline-color: $fluxgrid-debug-cell-color;
+      outline-color: settings.$fluxgrid-debug-cell-color;
     }
   }
 
@@ -53,8 +53,8 @@
         /* stylelint-disable-next-line max-nesting-depth, selector-max-class */
         &::after,
         > .cell::after {
-          right: $fluxgrid-half-gutter-lg;
-          left: $fluxgrid-half-gutter-lg;
+          right: settings.$fluxgrid-half-gutter-lg;
+          left: settings.$fluxgrid-half-gutter-lg;
         }
       }
 
@@ -78,9 +78,9 @@
     }
   }
 
-  @include debug-responsive-grid();
+  @include debug-responsive-grid;
 
-  @each $breakpoint, $size in $fluxgrid-breakpoints {
+  @each $breakpoint, $size in settings.$fluxgrid-breakpoints {
     @media (min-width: $size) {
       @include debug-responsive-grid("#{$breakpoint}\\:");
     }
