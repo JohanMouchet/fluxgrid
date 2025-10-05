@@ -13,7 +13,7 @@ npm i fluxgrid
 If you'd like to [change the default config](#b-with-a-custom-config), make sure to install Sass as a peer dependency:
 
 ```bash
-npm i sass@^1.26.10
+npm i sass@^1.89.2
 ```
 
 ## Default config
@@ -54,7 +54,7 @@ Choose your preferred way:
 ### A. Quick start, with the default config
 
 - [Install](#install) Fluxgrid
-- Import it to your build environment, either with:
+- Import it, either with:
   - HTML: `<link rel="stylesheet" type="text/css" href="node_modules/fluxgrid/dist/fluxgrid.css"/>`
   - JS: `import "fluxgrid/dist/fluxgrid.css";`
 - Optionally (not recommended in production) import `fluxgrid-debug.css` the same way
@@ -62,21 +62,23 @@ Choose your preferred way:
 ### B. With a custom config
 
 - [Install](#install) Fluxgrid, and it's peer dependency
-- Overwrite the default config by redefine any of the `!default` Sass variables from `src/_settings.scss`:
+- Import and overwrite any of the default settings defined in `src/_settings.scss` with `!default`. Eg.:
   ```scss
-  $fluxgrid-division;
-  $fluxgrid-gutter;
-  $fluxgrid-gutter-lg;
-  $fluxgrid-outside-margin;
-  $fluxgrid-breakpoints;
+  @use "sass:math";
+  @use "fluxgrid/src/fluxgrid" with (
+    $fluxgrid-breakpoints: (
+      sm: 425px,
+      md: 768px,
+      lg: 1024px,
+      xl: 1366px,
+    ),
+    $fluxgrid-gutter: 1.5rem,
+    $fluxgrid-gutter-lg: 4.5rem,
+    $fluxgrid-outside-margin: math.div(4.5rem, 2)
+  );
   ```
-- Import it to your build environment, either with:
-  - Sass: `@use "fluxgrid/src/fluxgrid";`\*
-  - JS: `import "fluxgrid/src/fluxgrid.scss";`
-- Optionally (not recommended in production) import `fluxgrid-debug.scss` the same way
-- Run these through your build pipeline. It is advised to Autoprefix and minify them
-
-\*: if using legacy bundlers like Webpack or others, prefix the import with [`~`](https://webpack.js.org/loaders/css-loader/#url), or `node_modules/`
+- Optionally (not recommended in production) import `fluxgrid-debug"` the same way
+- Run the file through your build pipeline. It is advised to Autoprefix and minify them
 
 # Development
 
